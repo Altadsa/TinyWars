@@ -23,6 +23,11 @@ public class UnitMovement : MonoBehaviour
             MoveToMouse();
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            _agent.ResetPath();
+            _animator.SetTrigger("action");
+        }
         _animator.SetBool("moving", _agent.hasPath);
     }
 
