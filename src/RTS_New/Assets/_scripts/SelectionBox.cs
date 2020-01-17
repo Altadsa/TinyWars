@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
+
+/// <summary>
+/// Draws the selection area for the player
+/// </summary>
 public class SelectionBox : MonoBehaviour
 {
     private const int LEFT_MOUSE_BUTTON = 0;

@@ -21,10 +21,14 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerSelectionController.cs" t="Include" />
           <e p="SelectionBox.cs" t="Include" />
+          <e p="SelectionUI" t="Include">
+            <e p="SelectionUI.cs" t="Include" />
+          </e>
           <e p="Unit" t="Include">
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
             <e p="UnitMovement.cs" t="Include" />
+            <e p="UnitType.cs" t="Include" />
           </e>
         </e>
         <e p="UnitIdleBehaviour.cs" t="Include" />

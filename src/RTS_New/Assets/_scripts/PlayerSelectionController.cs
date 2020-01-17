@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSelectionController : MonoBehaviour, ISelectionController
+
+ /// <summary>
+ ///  Handles Entity Selection for real players using mouse input
+ /// </summary>
+ public class PlayerSelectionController : MonoBehaviour, ISelectionController
 {
 
     const int LEFT_MOUSE_BUTTON = 0;
@@ -10,8 +14,10 @@ public class PlayerSelectionController : MonoBehaviour, ISelectionController
     [SerializeField] CameraController cameraController;
     Camera mainCamera;
 
+    //List of all selectable entities that share the same player
     [HideInInspector]
     public List<ISelectable> Selectable { get; set; } = new List<ISelectable>();
+    //List of selected entities
     public List<ISelectable> Selected { get; private set; } = new List<ISelectable>();
 
     private void Awake()

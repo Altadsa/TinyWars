@@ -5,7 +5,7 @@ public class PlayerActionController : IActionController
 {
     public void AssignUnitActions(List<ISelectable> selected, RaycastHit acttionTarget)
     {
-        bool isSelectionValid = selected[0].GetType() == typeof(Unit);//typeof(Building);
+        bool isSelectionValid = selected[0].GetType() == typeof(Unit);
         if (!isSelectionValid) return;
 
         foreach (var selectable in selected)
