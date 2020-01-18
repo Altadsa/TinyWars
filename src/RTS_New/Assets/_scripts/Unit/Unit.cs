@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Linq;
+using Units;
 using UnityEngine;
 
 public class Unit : MonoBehaviour, ISelectable
 {
+    [SerializeField] private UnitType _type;
+    
     ISelectionController selectionController;
 
+    private UnitModifiers _modifiers;
 
     [SerializeField] UnitActions unitActions;
     //[SerializeField] UnitHealth health;
@@ -18,8 +22,9 @@ public class Unit : MonoBehaviour, ISelectable
         Player = player;
         selectionIndicator.SetActive(false);
         FindObjectsOfType<PlayerController>()
-            .FirstOrDefault(/*c => c.Player == Player*/)
+            .FirstOrDefault(c => c.Player == Player)
             ?.SelectionController.Selectable.Add(this);
+        _modifiers = Player.GetUnitModifiers(_type);
         //health.Initialize(player);
     }
 
@@ -27,8 +32,25 @@ public class Unit : MonoBehaviour, ISelectable
     {
         selectionIndicator.SetActive(false);
         FindObjectOfType<PlayerController>().SelectionController.Selectable.Add(this);
+        SetupModifiers();
     }
 
+    private void SetupModifiers()
+    {
+        _modifiers = FindObjectOfType<PlayerController>().Player.GetUnitModifiers(_type);
+        _modifiers.ModifiersChanged += SetModifiers;
+        SetModifiers();
+    }
+
+    public float _dmg = 0;
+    public float _amr = 0;
+
+    private void SetModifiers()
+    {
+        _dmg = _modifiers.GetModifier(Modifier.Damage);
+        _amr = _modifiers.GetModifier(Modifier.Armour);
+    }
+    
     public void Select()
     {
         Debug.Log($"Selected by {Player}");

@@ -57,8 +57,8 @@ public interface IUnitAction
 
 public enum Modifier
 {
-    MeleeDamage,
-    MeleeArmour,
+    Damage,
+    Armour,
     AttackSpeed,
     MoraleMax,
     MoraleDecay

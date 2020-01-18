@@ -31,6 +31,7 @@
             <e p="UnitType.cs" t="Include" />
           </e>
         </e>
+        <e p="TestModifiers.cs" t="Include" />
         <e p="UnitIdleBehaviour.cs" t="Include" />
         <e p="UnitMovingBehaviour.cs" t="Include" />
       </e>

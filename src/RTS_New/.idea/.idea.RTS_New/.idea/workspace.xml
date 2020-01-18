@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/MoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/MoveAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/SelectionUI/SelectionUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TestModifiers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7559BF97-67E7-4FF5-906F-18401F66CD57/4b/119f1e5c/Camera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0D2763AD-8235-4FC6-A022-A2846086CA7B/12/ecc2e7a0/StateMachineBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,11 +57,9 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitIdleBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitMovingBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/SelectionUI/SelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs" />
@@ -68,7 +67,10 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" />
         <option value="$PROJECT_DIR$/Assets/InterfaceEx.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/TestModifiers.cs" />
       </list>
     </option>
   </component>
@@ -81,6 +83,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -103,10 +106,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="2012">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="22120">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="2012" />
+      <option name="pid" value="22120" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -127,7 +130,7 @@
       <workItem from="1576696866359" duration="3110000" />
       <workItem from="1576702456240" duration="4303000" />
       <workItem from="1579273264086" duration="3773000" />
-      <workItem from="1579291473858" duration="1055000" />
+      <workItem from="1579291473858" duration="4210000" />
     </task>
     <servers />
   </component>
@@ -159,6 +162,32 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs</url>
+          <line>48</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" initialLine="48">
+            <startOffsets>
+              <option value="1355" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1356" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/TestModifiers.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/TestModifiers.cs" initialLine="17">
+            <startOffsets>
+              <option value="382" />
+            </startOffsets>
+            <endOffsets>
+              <option value="445" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
