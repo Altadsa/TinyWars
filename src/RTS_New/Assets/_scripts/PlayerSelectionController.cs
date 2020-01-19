@@ -16,9 +16,9 @@ using UnityEngine;
 
     //List of all selectable entities that share the same player
     [HideInInspector]
-    public List<ISelectable> Selectable { get; set; } = new List<ISelectable>();
+    public List<Entity> Selectable { get; set; } = new List<Entity>();
     //List of selected entities
-    public List<ISelectable> Selected { get; private set; } = new List<ISelectable>();
+    public List<Entity> Selected { get; private set; } = new List<Entity>();
 
     private void Awake()
     {
@@ -69,6 +69,7 @@ using UnityEngine;
         {
             if (IsBuilding(selected))
             {
+                Debug.LogWarning("Selected Building");
                 DeselectAll();
                 selected.Select();
                 Selected.Add(selected);
@@ -92,10 +93,10 @@ using UnityEngine;
     {
         DeselectAll();
         Selectable.RemoveAll(s => s == null);
-        foreach (ISelectable selectable in Selectable)
+        foreach (Entity selectable in Selectable)
         {
             if (IsBuilding(selectable)) continue;
-            var viewportPosition = mainCamera.WorldToViewportPoint(selectable.Transform.position);
+            var viewportPosition = mainCamera.WorldToViewportPoint(selectable.transform.position);
             if (area.Contains(viewportPosition, true))
             {
                 selectable.Select();
@@ -104,7 +105,7 @@ using UnityEngine;
         }
     }
 
-    private void AddToSelection(ISelectable selectable)
+    private void AddToSelection(Entity selectable)
     {
         selectable.Select();
         Selected.Add(selectable);
@@ -117,17 +118,16 @@ using UnityEngine;
         Selected.Clear();
     }
 
-    private ISelectable RaycastSelection(RaycastHit hitSelection)
+    private Entity RaycastSelection(RaycastHit hitSelection)
     {
         GameObject objectHit = hitSelection.collider.gameObject;
-        ISelectable selection = objectHit.GetComponentInParent<ISelectable>();
+        Entity selection = objectHit.GetComponentInParent<Entity>();
         return selection;
     }
 
-    private bool IsBuilding(ISelectable selectable)
+    private bool IsBuilding(Entity selectable)
     {
-        //return selectable.GetType() == typeof(Building);
-        return false;
+        return selectable.GetType() == typeof(Building);
     }
 
     private Rect DrawRect()

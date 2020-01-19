@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
-using Units;
+﻿using Units;
 using UnityEngine;
 
-public class Unit : MonoBehaviour, ISelectable
+public class Unit : Entity
 {
     [SerializeField] private UnitType _type;
     
@@ -14,18 +12,12 @@ public class Unit : MonoBehaviour, ISelectable
     [SerializeField] UnitActions unitActions;
     //[SerializeField] UnitHealth health;
     [SerializeField] GameObject selectionIndicator;
-    public Player Player { get; private set; }
-    public Transform Transform => transform;
 
-    public void Initialize(Player player)
+    public override void Initialize(Player player)
     {
-        Player = player;
-        selectionIndicator.SetActive(false);
-        FindObjectsOfType<PlayerController>()
-            .FirstOrDefault(c => c.Player == Player)
-            ?.SelectionController.Selectable.Add(this);
+        base.Initialize(player);
         SetupModifiers();
-        //health.Initialize(player);
+
     }
 
     private void SetupModifiers()
@@ -44,13 +36,13 @@ public class Unit : MonoBehaviour, ISelectable
         _amr = _modifiers.GetModifier(Modifier.Armour);
     }
     
-    public void Select()
+    public override void Select()
     {
         Debug.Log($"Selected by {Player}");
         selectionIndicator.SetActive(true);
     }
 
-    public void Deselect()
+    public override void Deselect()
     {
         Debug.Log($"Deselected by {Player}");
         selectionIndicator.SetActive(false);

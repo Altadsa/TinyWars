@@ -1,36 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Building : MonoBehaviour, ISelectable, IPlayerControllable
+public class Building : Entity
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Initialize(Player player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public Transform Transform { get; }
-    public void Select()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Deselect()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public Player Player { get; private set; }
-    public void Initialize(Player player)
-    {
-        Player = player;
+        base.Initialize(player);
+        //Assuming Children have mesh renderers to set player material
         GetComponentInChildren<MeshRenderer>().material = Player.EntityMaterial;
+    }
+
+    public override void Select()
+    {
+        Debug.Log("Selected " + name);
+    }
+
+    public override void Deselect()
+    {
+        Debug.Log("Deselected " + name);
     }
 }

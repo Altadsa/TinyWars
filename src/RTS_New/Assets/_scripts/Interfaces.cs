@@ -19,8 +19,8 @@ public interface ISelectable
 
 public interface ISelectionController
 {
-    List<ISelectable> Selectable { get; }
-    List<ISelectable> Selected { get; }
+    List<Entity> Selectable { get; }
+    List<Entity> Selected { get; }
 }
 
 public interface IPlayerController //: IPlayerControllable
@@ -31,7 +31,7 @@ public interface IPlayerController //: IPlayerControllable
 
 public interface IActionController
 {
-    void AssignUnitActions(List<ISelectable> selected, RaycastHit actionTarget);
+    void AssignUnitActions(List<Entity> selected, RaycastHit actionTarget);
 }
 
 public interface IPlayerControllable

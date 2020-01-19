@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerActionController : IActionController
 {
-    public void AssignUnitActions(List<ISelectable> selected, RaycastHit acttionTarget)
+    public void AssignUnitActions(List<Entity> selected, RaycastHit acttionTarget)
     {
         bool isSelectionValid = selected[0].GetType() == typeof(Unit);
         if (!isSelectionValid) return;
