@@ -24,15 +24,8 @@ public class Unit : MonoBehaviour, ISelectable
         FindObjectsOfType<PlayerController>()
             .FirstOrDefault(c => c.Player == Player)
             ?.SelectionController.Selectable.Add(this);
-        _modifiers = Player.GetUnitModifiers(_type);
-        //health.Initialize(player);
-    }
-
-    private void Start()
-    {
-        selectionIndicator.SetActive(false);
-        FindObjectOfType<PlayerController>().SelectionController.Selectable.Add(this);
         SetupModifiers();
+        //health.Initialize(player);
     }
 
     private void SetupModifiers()

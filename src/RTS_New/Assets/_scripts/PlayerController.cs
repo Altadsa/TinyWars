@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
     {
         SelectionController = GetComponent<ISelectionController>();
         ActionController = new PlayerActionController();
-        Player = new Player(Color.blue, false);
     }
 
     private void Update()

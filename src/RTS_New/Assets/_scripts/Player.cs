@@ -7,6 +7,8 @@ using Units;
 public class Player : IUpgradeable
 {
     public Color Color { get; private set; }
+    
+    public Material EntityMaterial { get; private set; }
     public bool IsAi { get; private set; }
 
     private PlayerModifiers _playerModifiers = new PlayerModifiers();
@@ -20,9 +22,10 @@ public class Player : IUpgradeable
 
     public event Action<Dictionary<Modifier, float>> OnModifiersChanged;
 
-    public Player(Color color, bool isAi)
+    public Player(Color color, Material entityMaterial, bool isAi)
     {
         Color = color;
+        EntityMaterial = entityMaterial;
         IsAi = isAi;
         Modifiers = startModifiers;
         _playerModifiers = new PlayerModifiers();
