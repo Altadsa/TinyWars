@@ -39,8 +39,7 @@
             <e p="UnitType.cs" t="Include" />
           </e>
         </e>
-        <e p="UnitIdleBehaviour.cs" t="Include" />
-        <e p="UnitMovingBehaviour.cs" t="Include" />
+        <e p="UnitSelectionUI.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -20,6 +21,8 @@ using UnityEngine;
     //List of selected entities
     public List<Entity> Selected { get; private set; } = new List<Entity>();
 
+    public event Action<List<Entity>> SelectionUpdated;
+    
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -45,6 +48,7 @@ using UnityEngine;
         if (!hitSelection.HasValue)
         {
             if (!selectMultiple) DeselectAll();
+ 
             return;
         }
         var selected = RaycastSelection(hitSelection.Value);
@@ -57,6 +61,7 @@ using UnityEngine;
                 selected.Deselect();
                 Selected.Remove((selected));
             }
+            SelectionUpdated?.Invoke(Selected);
             return;
         }
 
@@ -64,6 +69,7 @@ using UnityEngine;
         {
             if (selectMultiple) return;
             DeselectAll();
+            SelectionUpdated?.Invoke(Selected);
         }
         else
         {
@@ -85,6 +91,7 @@ using UnityEngine;
                     DeselectAll();
                     AddToSelection(selected);
                 }
+                SelectionUpdated?.Invoke(Selected);
             }
         }
     }
@@ -103,6 +110,7 @@ using UnityEngine;
                 Selected.Add(selectable);
             }
         }
+        SelectionUpdated?.Invoke(Selected);
     }
 
     private void AddToSelection(Entity selectable)
@@ -116,6 +124,7 @@ using UnityEngine;
         Selected.RemoveAll(s => s == null);
         Selected.ForEach(s => s.Deselect());
         Selected.Clear();
+        SelectionUpdated?.Invoke(Selected);
     }
 
     private Entity RaycastSelection(RaycastHit hitSelection)

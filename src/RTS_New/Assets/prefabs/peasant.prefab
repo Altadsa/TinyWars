@@ -98,11 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4361fd8aef6841e9a94a676f73aa578e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 12
+  _data: {fileID: 11400000, guid: 4421c1a9d592c0444a20a43e66f80ab6, type: 2}
   unitActions: {fileID: 1629727984278909782}
   selectionIndicator: {fileID: 1629727984251755828}
-  _dmg: 0
-  _amr: 0
 --- !u!114 &1629727984278909782
 MonoBehaviour:
   m_ObjectHideFlags: 0
