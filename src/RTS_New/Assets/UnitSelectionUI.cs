@@ -23,6 +23,11 @@ public class UnitSelectionUI : MonoBehaviour
             _selectionObjects[i].GetComponentInChildren<Image>().sprite = unit.Data.Icon;
             _selectionObjects[i].SetActive(true);
         }
+
+        for (int i = units.Count; i < _selectionObjects.Length; i++)
+        {
+            _selectionObjects[i].SetActive(false);
+        }
     }
 
     private void SetObjects()

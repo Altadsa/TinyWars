@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GameInit : MonoBehaviour
 {
+    public int StartUnitCount = 1;
     public int PLayerCount = 1;
     public Unit StartUnit;
     public Building StartBuilding;
@@ -37,8 +38,12 @@ public class GameInit : MonoBehaviour
 
         foreach (var player in _players)
         {
-            var newUnit = Instantiate(StartUnit);
-            newUnit.Initialize(player);
+            for (int i = 0; i < StartUnitCount; i++)
+            {
+                var newUnit = Instantiate(StartUnit);
+                newUnit.Initialize(player);                
+            }
+
             var newBuilding = Instantiate(StartBuilding);
             newBuilding.Initialize(player);
         }
