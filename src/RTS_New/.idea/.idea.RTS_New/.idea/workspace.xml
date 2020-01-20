@@ -74,8 +74,8 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
       </list>
     </option>
   </component>
@@ -140,7 +140,7 @@
       <workItem from="1579428907094" duration="2336000" />
       <workItem from="1579511179079" duration="317000" />
       <workItem from="1579528114006" duration="2917000" />
-      <workItem from="1579545210730" duration="234000" />
+      <workItem from="1579545210730" duration="1389000" />
     </task>
     <servers />
   </component>
