@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
             if (cameraController.Hit != null)
             {
                 ActionController.AssignUnitActions(SelectionController.Selected, cameraController.Hit.Value);
-                Debug.Log(cameraController.Hit.Value.point);
             }
         }
     }

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\spark\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\spark\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_RTS_New.612131103.00" t="ExcludeRecursive" />
-    <e p="C:\Users\spark\Documents\Unity Projects\RTS_New\src\RTS_New" t="IncludeRecursive">
+    <e p="C:\Users\spark\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_RTS_New.-703461023.00" t="ExcludeRecursive" />
+    <e p="C:\Users\spark\Documents\tinywars_rts\src\RTS_New" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_scripts" t="Include">
@@ -34,6 +34,7 @@
           <e p="Unit" t="Include">
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
+            <e p="UnitData.cs" t="Include" />
             <e p="UnitMovement.cs" t="Include" />
             <e p="UnitType.cs" t="Include" />
           </e>

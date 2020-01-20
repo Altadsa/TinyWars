@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Unit : Entity
 {
-    [SerializeField] private UnitType _type;
+    [SerializeField] private UnitData _data;
+    public UnitData Data => _data;
     
     ISelectionController selectionController;
 
@@ -17,25 +18,20 @@ public class Unit : Entity
     {
         base.Initialize(player);
         SetupModifiers();
-
     }
 
     private void SetupModifiers()
     {
-        _modifiers = FindObjectOfType<PlayerController>().Player.GetUnitModifiers(_type);
+        _modifiers = FindObjectOfType<PlayerController>().Player.GetUnitModifiers(_data.Type);
         _modifiers.ModifiersChanged += SetModifiers;
         SetModifiers();
     }
-
-    public float _dmg = 0;
-    public float _amr = 0;
-
+    
     private void SetModifiers()
     {
-        _dmg = _modifiers.GetModifier(Modifier.Damage);
-        _amr = _modifiers.GetModifier(Modifier.Armour);
+        //TODO Setup modifiers
     }
-    
+
     public override void Select()
     {
         Debug.Log($"Selected by {Player}");
