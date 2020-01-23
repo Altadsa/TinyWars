@@ -29,7 +29,6 @@ public class UnitSelectionUI : MonoBehaviour
 
         for (int i = units.Count; i < _selectionObjects.Length; i++)
         {
-            _selectionObjects[i].GetComponent<Button>().onClick.RemoveAllListeners();
             _selectionObjects[i].SetActive(false);
         }
     }
