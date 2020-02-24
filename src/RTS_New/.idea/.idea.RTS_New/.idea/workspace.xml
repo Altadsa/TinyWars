@@ -36,12 +36,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/building.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scenes/Demo.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/SelectionUI/SelectionUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnitSelectionUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,6 +78,8 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
       </list>
     </option>
   </component>
@@ -142,6 +146,7 @@
       <workItem from="1579528114006" duration="2917000" />
       <workItem from="1579545210730" duration="1544000" />
       <workItem from="1579633832174" duration="694000" />
+      <workItem from="1582569870936" duration="1346000" />
     </task>
     <servers />
   </component>

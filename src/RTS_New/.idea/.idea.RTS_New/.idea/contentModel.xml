@@ -10,6 +10,7 @@
           <e p="AxisInput.cs" t="Include" />
           <e p="Buildings" t="Include">
             <e p="Building.cs" t="Include" />
+            <e p="BuildMenuData.cs" t="Include" />
           </e>
           <e p="camera" t="Include">
             <e p="CameraController.cs" t="Include" />
@@ -31,6 +32,8 @@
           <e p="Setup" t="Include">
             <e p="GameInit.cs" t="Include" />
           </e>
+          <e p="UiActionMenu.cs" t="Include" />
+          <e p="UiBuildMenu.cs" t="Include" />
           <e p="Unit" t="Include">
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
