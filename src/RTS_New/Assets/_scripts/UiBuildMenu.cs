@@ -28,8 +28,7 @@ public class UiBuildMenu : MonoBehaviour
                 var building = _menuData[i];
                 _meunButtons[i].onClick.AddListener(delegate
                 {
-                    //topAllCoroutines();
-                    Debug.Log("Button Press");
+                    StopAllCoroutines();
                     StartCoroutine(SelectBuilding(building));
                 });
                 _meunButtons[i].gameObject.SetActive(true);
@@ -46,24 +45,28 @@ public class UiBuildMenu : MonoBehaviour
 
     private IEnumerator SelectBuilding(BuildMenuData data)
     {
-        Debug.Log("Hello World");
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         var worldPos = GetMouseLocation(mouseRay);
-        Debug.Log("Spawn at " + worldPos);
-        SpawnBuilding(data.Building, worldPos);
+        if (!worldPos.HasValue)
+        {
+            Debug.LogError("No valid position selected.");
+            yield break;
+        }
+        SpawnBuilding(data.Building, worldPos.Value);
     }
 
 
-    private Vector3 GetMouseLocation(Ray mouseRay)
+    private Vector3? GetMouseLocation(Ray mouseRay)
     {
         RaycastHit hit;
         if (Physics.Raycast(mouseRay, out hit))
         {
             return hit.point;
         }
-        return Vector3.one;
+
+        return null;
     }
     
     private void SpawnBuilding(Building building, Vector3 spawnPos)
