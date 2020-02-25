@@ -48,11 +48,24 @@ public class UiBuildMenu : MonoBehaviour
     {
         Debug.Log("Hello World");
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-        var worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var worldPos = GetMouseLocation(mouseRay);
         Debug.Log("Spawn at " + worldPos);
         SpawnBuilding(data.Building, worldPos);
     }
 
+
+    private Vector3 GetMouseLocation(Ray mouseRay)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(mouseRay, out hit))
+        {
+            return hit.point;
+        }
+        return Vector3.one;
+    }
+    
     private void SpawnBuilding(Building building, Vector3 spawnPos)
     {
         var newBuilding = Instantiate(building, spawnPos, Quaternion.identity); 
