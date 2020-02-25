@@ -66,7 +66,6 @@
         <option value="$PROJECT_DIR$/Assets/InterfaceEx.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs" />
         <option value="$PROJECT_DIR$/Assets/TestModifiers.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerControllableEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
@@ -79,6 +78,8 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
       </list>
     </option>
@@ -146,7 +147,8 @@
       <workItem from="1579528114006" duration="2917000" />
       <workItem from="1579545210730" duration="1544000" />
       <workItem from="1579633832174" duration="694000" />
-      <workItem from="1582569870936" duration="1346000" />
+      <workItem from="1582569870936" duration="2139000" />
+      <workItem from="1582649613482" duration="999000" />
     </task>
     <servers />
   </component>

@@ -7,7 +7,7 @@ public class UnitActions : MonoBehaviour
     private void Start()
     {
         actions = GetComponents<IUnitAction>();
-        Debug.Log(actions.Length);
+        //wDebug.Log(actions.Length);
     }
 
     public void DetermineAction(RaycastHit actionTarget)

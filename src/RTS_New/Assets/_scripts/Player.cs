@@ -63,7 +63,7 @@ public class PlayerModifiers
     {
         try
         {
-            Debug.Log("Successfully retrieved Modifier Data for " + unitType);
+            //Debug.Log("Successfully retrieved Modifier Data for " + unitType);
             return _pModifiers[unitType];
         }
         catch (KeyNotFoundException e)

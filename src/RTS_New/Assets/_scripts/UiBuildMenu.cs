@@ -25,11 +25,12 @@ public class UiBuildMenu : MonoBehaviour
             {
                 _meunButtons[i].onClick.RemoveAllListeners();
                 _meunButtons[i].GetComponent<Image>().sprite = _menuData[i].Icon;
-                var building = _menuData[i].Building;
+                var building = _menuData[i];
                 _meunButtons[i].onClick.AddListener(delegate
                 {
-                    var newBuilding = Instantiate(building); 
-                    newBuilding.Initialize(_controller.Player);
+                    //topAllCoroutines();
+                    Debug.Log("Button Press");
+                    StartCoroutine(SelectBuilding(building));
                 });
                 _meunButtons[i].gameObject.SetActive(true);
             }
@@ -39,4 +40,24 @@ public class UiBuildMenu : MonoBehaviour
             }
         }
     }
+    
+    //Click on a button, we need to know which building data to pass
+    //Wait for next left click such that we can spawn a building and deduct the appropriate resources
+
+    private IEnumerator SelectBuilding(BuildMenuData data)
+    {
+        Debug.Log("Hello World");
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        var worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log("Spawn at " + worldPos);
+        SpawnBuilding(data.Building, worldPos);
+    }
+
+    private void SpawnBuilding(Building building, Vector3 spawnPos)
+    {
+        var newBuilding = Instantiate(building, spawnPos, Quaternion.identity); 
+        newBuilding.Initialize(_controller.Player);
+    }
+    
+
 }
