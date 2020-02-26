@@ -68,6 +68,11 @@ public class UiBuildMenu : MonoBehaviour
         var building = Instantiate(data.Building);
         while (!Input.GetMouseButtonDown(0))
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                Destroy(building.gameObject);
+                yield break;
+            }
             worldPos = GetMouseLocation();
             building.transform.position = worldPos.Value;
             yield return null;
