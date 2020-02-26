@@ -1,9 +1,8 @@
-﻿using System;
+﻿
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class UiBuildMenu : MonoBehaviour
 {
@@ -15,12 +14,30 @@ public class UiBuildMenu : MonoBehaviour
     [SerializeField] private Button[] _meunButtons;
 
     [Header("Debug")] public BuildMenuData[] _menuData;
+
+    private Building[] _placementModels;
+
+    private Camera _mCam;
     
+    private void Awake()
+    {
+        _mCam = Camera.main;
+        _placementModels = new Building[_menuData.Length];
+        for (int i = 0; i < _placementModels.Length; i++)
+        {
+            var building = _menuData[i].Building;
+            var buildingInstance = Instantiate(building);
+            _placementModels[i] = buildingInstance;
+            _placementModels[i].gameObject.SetActive(false);
+        }
+    }
+
     private void OnEnable()
     {
         //var buildings = _controller.Player;
         for (int i = 0; i < _meunButtons.Length; i++)
         {
+            //Setup buttons for which there exists build data
             if (i < _menuData.Length)
             {
                 _meunButtons[i].onClick.RemoveAllListeners();
@@ -33,6 +50,7 @@ public class UiBuildMenu : MonoBehaviour
                 });
                 _meunButtons[i].gameObject.SetActive(true);
             }
+            //set all remaining buttons to inactive
             else
             {
                 _meunButtons[i].gameObject.SetActive(false);
@@ -45,23 +63,31 @@ public class UiBuildMenu : MonoBehaviour
 
     private IEnumerator SelectBuilding(BuildMenuData data)
     {
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-        var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        var worldPos = GetMouseLocation(mouseRay);
+        Debug.Log("Building Selected");
+        var worldPos = GetMouseLocation();
+        var building = Instantiate(data.Building);
+        while (!Input.GetMouseButtonDown(0))
+        {
+            worldPos = GetMouseLocation();
+            building.transform.position = worldPos.Value;
+            yield return null;
+        }
+
         if (!worldPos.HasValue)
         {
             Debug.LogError("No valid position selected.");
             yield break;
         }
-        SpawnBuilding(data.Building, worldPos.Value);
+        building.Initialize(_controller.Player);
+        //SpawnBuilding(data.Building, worldPos.Value);
     }
 
 
-    private Vector3? GetMouseLocation(Ray mouseRay)
+    private Vector3? GetMouseLocation()
     {
+        Ray mouseRay = _mCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(mouseRay, out hit))
+        if (Physics.Raycast(mouseRay, out hit, 100f, 9))
         {
             return hit.point;
         }
@@ -74,6 +100,5 @@ public class UiBuildMenu : MonoBehaviour
         var newBuilding = Instantiate(building, spawnPos, Quaternion.identity); 
         newBuilding.Initialize(_controller.Player);
     }
-    
 
 }

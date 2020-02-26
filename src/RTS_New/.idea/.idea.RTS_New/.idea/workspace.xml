@@ -35,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/building.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/BuildingMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scenes/Demo.unity" root0="FORCE_HIGHLIGHTING" />
@@ -148,7 +149,8 @@
       <workItem from="1579545210730" duration="1544000" />
       <workItem from="1579633832174" duration="694000" />
       <workItem from="1582569870936" duration="2139000" />
-      <workItem from="1582649613482" duration="2340000" />
+      <workItem from="1582649613482" duration="3005000" />
+      <workItem from="1582747318097" duration="2409000" />
     </task>
     <servers />
   </component>
