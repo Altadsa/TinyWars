@@ -12,6 +12,12 @@ public class Building : Entity
         GetComponentInChildren<MeshRenderer>().material = Player.EntityMaterial;
     }
 
+    public float GetHeight()
+    {
+        var size = GetComponentInChildren<BoxCollider>().size;
+        return size.y;
+    }
+
     public override void Select()
     {
         Debug.Log("Selected " + name);

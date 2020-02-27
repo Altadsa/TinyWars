@@ -77,17 +77,19 @@ public class UiBuildMenu : MonoBehaviour
             building.transform.position = worldPos.Value;
             yield return null;
         }
-
+            
         if (!worldPos.HasValue)
         {
             Debug.LogError("No valid position selected.");
             yield break;
-        }
+        }    
+
+        building.transform.position = worldPos.Value - new Vector3(0, (building.GetHeight()/2) + 1, 0);
         building.Initialize(_controller.Player);
         //SpawnBuilding(data.Building, worldPos.Value);
     }
 
-
+    
     private Vector3? GetMouseLocation()
     {
         Ray mouseRay = _mCam.ScreenPointToRay(Input.mousePosition);
@@ -106,7 +108,7 @@ public class UiBuildMenu : MonoBehaviour
         float pZ = Mathf.Floor(pos.z);
         return new Vector3(pX, pos.y, pZ);
     }
-    
+
     private void SpawnBuilding(Building building, Vector3 spawnPos)
     {
         var newBuilding = Instantiate(building, spawnPos, Quaternion.identity); 
