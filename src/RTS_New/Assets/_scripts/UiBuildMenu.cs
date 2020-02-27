@@ -94,10 +94,17 @@ public class UiBuildMenu : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(mouseRay, out hit, 100f, 9))
         {
-            return hit.point;
+            return SnapToPosition(hit.point);
         }
 
         return null;
+    }
+    
+    private Vector3 SnapToPosition(Vector3 pos)
+    {
+        float pX = Mathf.Floor(pos.x);
+        float pZ = Mathf.Floor(pos.z);
+        return new Vector3(pX, pos.y, pZ);
     }
     
     private void SpawnBuilding(Building building, Vector3 spawnPos)
