@@ -75,7 +75,8 @@ public class UiBuildMenu : MonoBehaviour
         //Set Build Area active and adjust size to that of selected building
         _buildArea.Hide(false);
         _buildArea.SetSize(size);
-        while (!Input.GetMouseButtonDown(0))
+        bool canPlace = false;
+        while (!canPlace)
         {
             var placementValid = IsPlacementValid(building);
             _buildArea.SetColor(placementValid);
@@ -93,6 +94,15 @@ public class UiBuildMenu : MonoBehaviour
                 building.transform.position = worldPos.Value;           
             }
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (placementValid)
+                    canPlace = true;
+                else
+                {
+                    Debug.LogWarning("Cant place building due to obstruction!", this);
+                }
+            }
             yield return null;
         }
             
@@ -102,19 +112,18 @@ public class UiBuildMenu : MonoBehaviour
             yield break;
         }
         _buildArea.Hide(true);
-        var modelOffset = worldPos.Value - new Vector3(0, (size.y / 2) + 1, 0);
-        building.SetConstruction(modelOffset);
+        building.SetConstruction();
         building.Initialize(_controller.Player);
     }
 
+    private Vector3 c, s;
     private bool IsPlacementValid(Building building)
     {
-        var collider = building.GetComponentInChildren<BoxCollider>();
+        var collider = building.GetComponent<BoxCollider>();
         var centre = building.transform.position;
-        var overlapCount = Physics.OverlapBox(centre, collider.size / 2,
+        var overlapCount = Physics.OverlapBox(centre + collider.center, collider.size / 2,
             building.transform.rotation,
             1<<9);
-
         for (int i = 0; i < overlapCount.Length; i++)
         {
             Debug.LogFormat(this, "Collision: Name - {0} || ID: {1} ", overlapCount[i].gameObject.name, overlapCount[i].gameObject.GetInstanceID());

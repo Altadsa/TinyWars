@@ -14,7 +14,7 @@ public class BuildArea : MonoBehaviour
     /// <param name="size">The Size of the object.</param>
     public void SetSize(Vector3 size)
     {
-        Area.transform.localScale = size/2;
+        Area.transform.localScale = size;
         var o = transform.position;
         Area.transform.position = o + new Vector3(0, size.y / 4 + 1, 0);
     }
