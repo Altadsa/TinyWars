@@ -1,6 +1,7 @@
 ﻿
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -11,7 +12,9 @@ public class UiBuildMenu : MonoBehaviour
     
     //Menu needs a reference to the player to inspect its data
     [SerializeField] private PlayerController _controller;
-    [SerializeField] private Button[] _meunButtons;
+    [SerializeField] private BuildArea _buildArea;
+    [FormerlySerializedAs("_meunButtons")] 
+    [SerializeField] private Button[] _menuButtons;
 
     [Header("Debug")] public BuildMenuData[] _menuData;
 
@@ -35,25 +38,25 @@ public class UiBuildMenu : MonoBehaviour
     private void OnEnable()
     {
         //var buildings = _controller.Player;
-        for (int i = 0; i < _meunButtons.Length; i++)
+        for (int i = 0; i < _menuButtons.Length; i++)
         {
             //Setup buttons for which there exists build data
             if (i < _menuData.Length)
             {
-                _meunButtons[i].onClick.RemoveAllListeners();
-                _meunButtons[i].GetComponent<Image>().sprite = _menuData[i].Icon;
+                _menuButtons[i].onClick.RemoveAllListeners();
+                _menuButtons[i].GetComponent<Image>().sprite = _menuData[i].Icon;
                 var building = _menuData[i];
-                _meunButtons[i].onClick.AddListener(delegate
+                _menuButtons[i].onClick.AddListener(delegate
                 {
                     StopAllCoroutines();
                     StartCoroutine(SelectBuilding(building));
                 });
-                _meunButtons[i].gameObject.SetActive(true);
+                _menuButtons[i].gameObject.SetActive(true);
             }
             //set all remaining buttons to inactive
             else
             {
-                _meunButtons[i].gameObject.SetActive(false);
+                _menuButtons[i].gameObject.SetActive(false);
             }
         }
     }
@@ -66,14 +69,20 @@ public class UiBuildMenu : MonoBehaviour
         Debug.Log("Building Selected");
         var worldPos = GetMouseLocation();
         var building = Instantiate(data.Building);
+        var size = building.GetSize();
+        //Set Build Area active and adjust size to that of selected building
+        _buildArea.Hide(false);
+        _buildArea.SetSize(size);
         while (!Input.GetMouseButtonDown(0))
         {
             if (Input.GetMouseButtonDown(1))
             {
                 Destroy(building.gameObject);
+                _buildArea.Hide(true);
                 yield break;
             }
             worldPos = GetMouseLocation();
+            _buildArea.transform.position = worldPos.Value;
             building.transform.position = worldPos.Value;
             yield return null;
         }
@@ -84,11 +93,15 @@ public class UiBuildMenu : MonoBehaviour
             yield break;
         }    
 
-        building.transform.position = worldPos.Value - new Vector3(0, (building.GetHeight()/2) + 1, 0);
+        building.transform.position = worldPos.Value - new Vector3(0, (size.y/2) + 1, 0);
         building.Initialize(_controller.Player);
         //SpawnBuilding(data.Building, worldPos.Value);
     }
 
+    private bool IsPlacementValid(Building building)
+    {
+        return false;
+    }
     
     private Vector3? GetMouseLocation()
     {

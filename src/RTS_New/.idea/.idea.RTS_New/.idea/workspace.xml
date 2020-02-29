@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/prefabs/player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/building.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/BuildingMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -42,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
@@ -75,10 +76,11 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
       </list>
     </option>
   </component>
@@ -150,7 +152,7 @@
       <workItem from="1582747318097" duration="3992000" />
       <workItem from="1582825523104" duration="2985000" />
       <workItem from="1582985908244" duration="468000" />
-      <workItem from="1582986414350" duration="921000" />
+      <workItem from="1582986414350" duration="2970000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,7 @@
         <e p="_scripts" t="Include">
           <e p="AxisInput.cs" t="Include" />
           <e p="Buildings" t="Include">
+            <e p="BuildArea.cs" t="Include" />
             <e p="Building.cs" t="Include" />
             <e p="BuildMenuData.cs" t="Include" />
           </e>

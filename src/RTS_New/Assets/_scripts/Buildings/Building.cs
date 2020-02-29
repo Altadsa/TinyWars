@@ -20,6 +20,11 @@ public class Building : Entity
         return size.y;
     }
 
+    public Vector3 GetSize()
+    {
+        return GetComponentInChildren<BoxCollider>().size;
+    }
+    
     public override void Select()
     {
         Debug.Log("Selected " + name);
