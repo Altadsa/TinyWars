@@ -9,6 +9,7 @@ public abstract class Entity : MonoBehaviour
 
     public abstract void Deselect();
 
+    //Used to initialise the entity after it is instantiated in the game world.
     public virtual void Initialize(Player player)
     {
         Player = player;
@@ -16,6 +17,12 @@ public abstract class Entity : MonoBehaviour
         FindObjectsOfType<PlayerController>()
             .FirstOrDefault(c => c.Player == Player)
             ?.SelectionController.Selectable.Add(this);
+    }
+
+    //To be used by entities to decided course of action on another entity/
+    public bool IsAllied(Player player)
+    {
+        return player == Player;
     }
     
 }

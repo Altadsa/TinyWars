@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Building : Entity
 {
+    private bool _constructed = false;
+    
     public override void Initialize(Player player)
     {
         base.Initialize(player);

@@ -1,6 +1,9 @@
 ﻿using Units;
 using UnityEngine;
 
+/// <summary>
+/// Data object that stores initialisation and general information
+/// </summary>
 [CreateAssetMenu( menuName = "Data/UnitData")]
 public class UnitData : ScriptableObject
 {

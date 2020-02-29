@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4efb14018387b343bac8b18bf591673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartUnitCount: 5
+  StartUnitCount: 1
   PLayerCount: 1
   StartUnit: {fileID: 1629727984278909781, guid: eb343a77c6ae0dd499a6fdbd6ff2dca0,
     type: 3}
