@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -84,9 +85,14 @@ public class UiBuildMenu : MonoBehaviour
                 _buildArea.Hide(true);
                 yield break;
             }
-            worldPos = GetMouseLocation();
-            _buildArea.transform.position = worldPos.Value;
-            building.transform.position = worldPos.Value;
+
+            if (worldPos.HasValue)
+            {
+                worldPos = GetMouseLocation();
+                _buildArea.transform.position = worldPos.Value;
+                building.transform.position = worldPos.Value;           
+            }
+
             yield return null;
         }
             
@@ -94,28 +100,34 @@ public class UiBuildMenu : MonoBehaviour
         {
             Debug.LogError("No valid position selected.");
             yield break;
-        }    
-
-        building.transform.position = worldPos.Value - new Vector3(0, (size.y/2) + 1, 0);
+        }
+        _buildArea.Hide(true);
+        var modelOffset = worldPos.Value - new Vector3(0, (size.y / 2) + 1, 0);
+        building.SetConstruction(modelOffset);
         building.Initialize(_controller.Player);
-        //SpawnBuilding(data.Building, worldPos.Value);
     }
 
     private bool IsPlacementValid(Building building)
     {
         var collider = building.GetComponentInChildren<BoxCollider>();
-        var centre = building.transform.position + new Vector3(0,collider.size.y / 2,0);
+        var centre = building.transform.position;
         var overlapCount = Physics.OverlapBox(centre, collider.size / 2,
-            building.GetComponentInChildren<Transform>().rotation,
-            0);
+            building.transform.rotation,
+            1<<9);
+
+        for (int i = 0; i < overlapCount.Length; i++)
+        {
+            Debug.LogFormat(this, "Collision: Name - {0} || ID: {1} ", overlapCount[i].gameObject.name, overlapCount[i].gameObject.GetInstanceID());
+        }
         return overlapCount.Length == 0;
     }
-    
+
+    private int m = 1 << 10;
     private Vector3? GetMouseLocation()
     {
         Ray mouseRay = _mCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(mouseRay, out hit, 100f, 9))
+        if (Physics.Raycast(mouseRay, out hit, 100f, m))
         {
             return SnapToPosition(hit.point);
         }
@@ -129,11 +141,5 @@ public class UiBuildMenu : MonoBehaviour
         float pZ = Mathf.Floor(pos.z);
         return new Vector3(pX, pos.y, pZ);
     }
-
-    private void SpawnBuilding(Building building, Vector3 spawnPos)
-    {
-        var newBuilding = Instantiate(building, spawnPos, Quaternion.identity); 
-        newBuilding.Initialize(_controller.Player);
-    }
-
+    
 }

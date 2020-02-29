@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/building.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/building.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +79,8 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
       </list>
     </option>
@@ -153,6 +155,7 @@
       <workItem from="1582985908244" duration="468000" />
       <workItem from="1582986414350" duration="3352000" />
       <workItem from="1582990266939" duration="2006000" />
+      <workItem from="1583007816377" duration="3046000" />
     </task>
     <servers />
   </component>
