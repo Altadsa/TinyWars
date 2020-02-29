@@ -1,5 +1,6 @@
 ﻿
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -75,6 +76,8 @@ public class UiBuildMenu : MonoBehaviour
         _buildArea.SetSize(size);
         while (!Input.GetMouseButtonDown(0))
         {
+            var placementValid = IsPlacementValid(building);
+            _buildArea.SetColor(placementValid);
             if (Input.GetMouseButtonDown(1))
             {
                 Destroy(building.gameObject);
@@ -100,7 +103,12 @@ public class UiBuildMenu : MonoBehaviour
 
     private bool IsPlacementValid(Building building)
     {
-        return false;
+        var collider = building.GetComponentInChildren<BoxCollider>();
+        var centre = building.transform.position + new Vector3(0,collider.size.y / 2,0);
+        var overlapCount = Physics.OverlapBox(centre, collider.size / 2,
+            building.GetComponentInChildren<Transform>().rotation,
+            0);
+        return overlapCount.Length == 0;
     }
     
     private Vector3? GetMouseLocation()
