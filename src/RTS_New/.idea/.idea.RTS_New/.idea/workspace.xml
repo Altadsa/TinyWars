@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/BuildingData/Debug.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/BuildingData/Debug.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/BuildingData/DebugKeep.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/BuildingData/DebugKeep.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/keep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/keep.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -186,7 +173,7 @@
       <workItem from="1583056705681" duration="2910000" />
       <workItem from="1583069801433" duration="5825000" />
       <workItem from="1583084904371" duration="7512000" />
-      <workItem from="1583097023121" duration="2913000" />
+      <workItem from="1583097023121" duration="4385000" />
     </task>
     <servers />
   </component>

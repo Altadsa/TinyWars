@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -18,6 +19,8 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private Camera _mCamera;
     Vector3 _boxStart, _boxEnd;
 
+    public Image debug;
+    
     private void Start()
     {
         _mCamera = Camera.main;
@@ -26,17 +29,15 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Pointer Down");
         if (Input.GetMouseButtonDown(LEFT_MOUSE_BUTTON))
         {
-            _boxStart = eventData.position;
+            _boxStart = Input.mousePosition;
             StartCoroutine(DrawBox());
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Pointer Up");
         if (Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON))
         {
             StopAllCoroutines();
@@ -44,45 +45,24 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
 
-    private void OnMouseDrag()
+    IEnumerator DrawBox()
     {
         if (!_selectionBox.gameObject.activeInHierarchy)
         {
             _selectionBox.gameObject.SetActive(true);
         }
-
-        _boxEnd = Input.mousePosition;
-
-        Vector3 rectStart = Camera.main.WorldToScreenPoint(_boxStart);
-        Vector3 centre = (rectStart + _boxEnd) / 2;
-        rectStart.z = 0;
-        float sizeX = Mathf.Abs(rectStart.x - _boxEnd.x);
-        float sizeY = Mathf.Abs(rectStart.y - _boxEnd.y);
-
-        _selectionBox.sizeDelta = new Vector2(sizeX, sizeY);
-        _selectionBox.position = centre;
-    }
-
-    IEnumerator DrawBox()
-    {
         while (!Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON))
         {
-            if (!_selectionBox.gameObject.activeInHierarchy)
-            {
-                _selectionBox.gameObject.SetActive(true);
-            }
-
             _boxEnd = Input.mousePosition;
-
-            Vector3 rectStart = Camera.main.WorldToScreenPoint(_boxStart);
-            Vector3 centre = (rectStart + _boxEnd) / 2;
-            rectStart.z = 0;
-            float sizeX = Mathf.Abs(rectStart.x - _boxEnd.x);
-            float sizeY = Mathf.Abs(rectStart.y - _boxEnd.y);
+            
+            Vector3 centre = (_boxStart + _boxEnd) / 2;
+            _boxStart.z = 0;
+            float sizeX = Mathf.Abs(_boxStart.x - _boxEnd.x);
+            float sizeY = Mathf.Abs(_boxStart.y - _boxEnd.y);
 
             _selectionBox.sizeDelta = new Vector2(sizeX, sizeY);
-            _selectionBox.position = centre;          
-            yield return new WaitForEndOfFrame();
+            _selectionBox.position = centre;       
+            yield return null;
         }
 
     }
