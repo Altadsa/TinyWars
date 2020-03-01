@@ -2,11 +2,11 @@
 
 public class BuildArea : MonoBehaviour
 {
-    public GameObject Area;
+    public Transform Area;
     public MeshRenderer Renderer;
 
-    private readonly Color _valid = new Color(0.0f,1.0f,0.0f,0.5f);
-    private readonly Color _invalid = new Color(1.0f,0.0f,0.0f,0.5f);
+    private readonly Color _valid = new Color(0.0f,1.0f,0.0f,0.25f);
+    private readonly Color _invalid = new Color(1.0f,0.0f,0.0f,0.25f);
     
     /// <summary>
     /// Set size of Area to visualise size of building object.
@@ -14,9 +14,9 @@ public class BuildArea : MonoBehaviour
     /// <param name="size">The Size of the object.</param>
     public void SetSize(Vector3 size)
     {
-        Area.transform.localScale = size;
+        Area.localScale = size;
         var o = transform.position;
-        Area.transform.position = o + new Vector3(0, size.y / 4 + 1, 0);
+        Area.position = o + new Vector3(0, size.y / 2, 0);
     }
 
     /// <summary>
