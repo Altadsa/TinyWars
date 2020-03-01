@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a51f24778f415d4cac210c295e32b03, type: 3}
   m_Name: Keep
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 08367032efe53ea438dd14a0db24bc0e, type: 3}
   _buildingPrefab: {fileID: 5321121232333414465, guid: d61f4eadff57b6e47bcc7a002799dde6,
     type: 3}
