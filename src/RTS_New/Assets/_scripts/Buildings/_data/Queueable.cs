@@ -11,7 +11,7 @@ public abstract class Queueable : ScriptableObject
 
     public string Name => _name;
     public string Description => _desc;
-    private double Time => _time;
+    public double Time => _time;
     
     public abstract void Complete();
 }

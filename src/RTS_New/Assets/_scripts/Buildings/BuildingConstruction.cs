@@ -9,7 +9,8 @@ public class BuildingConstruction : MonoBehaviour
         var player = GetComponent<Building>().Player;
         for (int i = 0; i < transform.childCount; i++)
         {
-            var meshRenderer = transform.GetChild(i).GetComponent<MeshRenderer>();
+            var model = transform.GetChild(i);
+            var meshRenderer = model.GetComponent<MeshRenderer>();
             meshRenderer.material = player.EntityMaterial;
         }
     }
@@ -32,6 +33,7 @@ public class BuildingConstruction : MonoBehaviour
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(true);
             GetComponent<BuildingHealth>().HealthChanged -= ConstructionProgress;
+            gameObject.AddComponent<BuildingQueue>();
             Destroy(this);
         }
     }

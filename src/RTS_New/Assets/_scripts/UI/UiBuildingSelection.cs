@@ -11,6 +11,17 @@ public class UiBuildingSelection : MonoBehaviour
         _sc.SelectionUpdated += SelectionUpdated;
     }
 
+    //The Building Selection UI needs to handle 2 things related to the selected building:
+    // 1. Get the basic info of the building
+    //        Icon
+    //        Name
+    //        Current Health
+    //        Armour
+    // 2. If the Building is constructed, then it must retrieve the queue information for that building.
+    //        Item in production
+    //        Items in queue
+    //        Progress towards completion for the item
+
     private void SelectionUpdated(List<Entity> entities)
     {
         if (entities.Count == 0)
@@ -24,6 +35,7 @@ public class UiBuildingSelection : MonoBehaviour
             return;
         }
         _selectionUI.SetActive(true);
+        
     }
     
 }

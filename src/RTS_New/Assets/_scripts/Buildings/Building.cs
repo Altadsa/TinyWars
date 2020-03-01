@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(BuildingHealth))]
@@ -25,13 +26,19 @@ public class Building : Entity
     public void SetConstruction()
     {
         gameObject.AddComponent<BuildingConstruction>();
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(2).gameObject.SetActive(false);
     }
 
     public Vector3 GetSize()
     {
         return GetComponentInChildren<BoxCollider>().size;
+    }
+
+    public BuildingData BuildingData => _buildingData;
+
+    public BuildingQueue GetQueue()
+    {
+        if (!_constructed) return null;
+        return GetComponent<BuildingQueue>();
     }
     
     public override void Select()

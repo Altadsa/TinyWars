@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/SelectionUI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/SelectionUI/SelectionUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/SelectionUI/SelectionUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiActionMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiActionMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/house.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/house.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/SelectionBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" root0="FORCE_HIGHLIGHTING" />
@@ -89,17 +87,18 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
       </list>
     </option>
   </component>
@@ -175,7 +174,8 @@
       <workItem from="1582990266939" duration="2006000" />
       <workItem from="1583007816377" duration="6634000" />
       <workItem from="1583056705681" duration="2910000" />
-      <workItem from="1583069801433" duration="4808000" />
+      <workItem from="1583069801433" duration="5825000" />
+      <workItem from="1583084904371" duration="2018000" />
     </task>
     <servers />
   </component>
