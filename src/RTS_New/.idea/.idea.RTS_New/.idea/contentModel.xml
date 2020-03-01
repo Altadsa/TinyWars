@@ -19,6 +19,7 @@
             <e p="BuildingConstruction.cs" t="Include" />
             <e p="BuildingHealth.cs" t="Include" />
             <e p="BuildingQueue.cs" t="Include" />
+            <e p="QueueRts.cs" t="Include" />
           </e>
           <e p="camera" t="Include">
             <e p="CameraController.cs" t="Include" />
@@ -33,7 +34,6 @@
           <e p="PlayerActionController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerSelectionController.cs" t="Include" />
-          <e p="SelectionBox.cs" t="Include" />
           <e p="Setup" t="Include">
             <e p="GameInit.cs" t="Include" />
           </e>
@@ -43,6 +43,7 @@
             <e p="UiBuildMenu.cs" t="Include" />
             <e p="UiUnitSelection.cs" t="Include" />
           </e>
+          <e p="UiSelectionBox.cs" t="Include" />
           <e p="Unit" t="Include">
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />

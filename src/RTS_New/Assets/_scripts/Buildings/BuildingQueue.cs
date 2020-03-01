@@ -3,30 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Queue component for Buildings to produce items. 
+/// </summary>
 public class BuildingQueue : MonoBehaviour
 {
-    //Handles production of Queueable items relative to the building.
-    //Unlike the generic queue we want to be able to view everything in the queue and remove items from
-    //So we must implement our own custom queue
+    // Used to update the active items in the Queue.
     public event Action QueueChanged;
+    // Used to update the production progress of the current item.
     public event Action<double> QueueProcessing;
+    public List<Queueable> Queue => _buildQueue.Queue;
+
+    private QueueRts<Queueable> _buildQueue;
     
-    private QueueRTS<Queueable> _buildQueue;
+    // We need to keep the elapsed time of the queue global in the event that we remove a processing item from the queue
+    // and don't want to waste production time.
     private double _elapsedTime = 0;
-    
-    [Header("Debug Only")]
-    public Queueable DebugItem;
-    public int DebugCount;
     
     private void Awake()
     {
-        _buildQueue = new QueueRTS<Queueable>(5);
-        for (int i = 0; i < DebugCount; i++)
-        {
-            AddToQueue(DebugItem);
-        }
+        _buildQueue = new QueueRts<Queueable>(5);
     }
 
+    /// <summary>
+    /// Add an item to the Building's Production Queue if there is space.
+    /// </summary>
+    /// <param name="item">The item to be added.</param>
     public void AddToQueue(Queueable item)
     {
         //If Queue is empty, we want to start processing it once we add an item.
@@ -40,21 +42,27 @@ public class BuildingQueue : MonoBehaviour
         _buildQueue.Enequeue(item);
     }
 
+    /// <summary>
+    /// Remove an item from anywhere in the Queue.
+    /// </summary>
+    /// <param name="index">The index of the item to be removed.</param>
     public void RemoveFromQueue(int index)
     {
         Debug.LogFormat("Remove {0} from queue", index);
+        // Halt Queue production while we remove the item
         StopAllCoroutines();
         _buildQueue.RemoveFromQueue(index);
+        
+        // Start the queue again if it isn't empty
         if (!_buildQueue.IsEmpty())
             StartCoroutine(ProcessQueue(_elapsedTime));
         QueueChanged?.Invoke();
     }
     
-    public List<Queueable> Queue => _buildQueue.Queue;
 
+    // We only want to update the Queue once it has items in it.
     IEnumerator ProcessQueue(double elapsedTime = 0)
     {
-        //Do this while there are elements in the queue
         do
         {
             _elapsedTime = elapsedTime;
@@ -67,58 +75,11 @@ public class BuildingQueue : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
             QueueProcessing?.Invoke(0);
-            item.Complete();
+            item.Complete(GetComponent<Building>());
+            
             _buildQueue.Dequeue();
             QueueChanged?.Invoke();
         } while (!_buildQueue.IsEmpty());
     }
     
-}
-
-public class QueueRTS<T>
-{
-    private readonly int _maxLength;
-    private List<T> _queue;
-    
-    public QueueRTS(int maxLength)
-    {
-        _maxLength = maxLength;
-        _queue = new List<T>(_maxLength);
-    }
-
-    public List<T> Queue => _queue;
-
-    public bool IsEmpty()
-    {
-        return _queue.Count == 0;
-    }
-
-    public T Peek()
-    {
-        var queueLen = _queue.Count;
-        return _queue[queueLen - 1];
-    }
-    
-    public void Dequeue()
-    {
-        var queueLen = _queue.Count;
-        var item = _queue[queueLen - 1];
-        _queue.Remove(item);
-    }
-
-    public void Enequeue(T item)
-    {
-        var queueLen = _queue.Count;
-        if (queueLen == _maxLength)
-        {
-            Debug.LogWarning("Queue at max capacity.");
-            return;
-        }
-        _queue.Insert(0, item);
-    }
-
-    public void RemoveFromQueue(int index)
-    {
-        _queue.RemoveAt(index);
-    }
 }

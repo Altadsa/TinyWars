@@ -8,6 +8,7 @@ public class UiUnitSelection : MonoBehaviour
 {
     [SerializeField] private PlayerSelectionController _sc;
     [SerializeField] private GameObject _selectionUI;
+    [SerializeField] private Transform _selection;
     private GameObject[] _selectionObjects;
 
     void Awake()
@@ -46,11 +47,10 @@ public class UiUnitSelection : MonoBehaviour
 
     private void SetObjects()
     {
-        var grid = GetComponentInChildren<GridLayoutGroup>().transform;
-        _selectionObjects = new GameObject[grid.childCount];
-        for (int i = 0; i < grid.childCount; i++)
+        _selectionObjects = new GameObject[_selection.childCount];
+        for (int i = 0; i < _selection.childCount; i++)
         {
-            _selectionObjects[i] = grid.GetChild(i).gameObject;
+            _selectionObjects[i] = _selection.GetChild(i).gameObject;
             _selectionObjects[i].SetActive(false);
         }
     }

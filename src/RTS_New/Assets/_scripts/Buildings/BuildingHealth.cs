@@ -8,13 +8,14 @@ public class BuildingHealth : MonoBehaviour
     const float MAX_H = 100;
 
     private int _armourValue = 0;
-    
+    public bool Initialise = false;
     public event Action<float,float> HealthChanged;
     public event Action EntityDestroyed;
     
     void Awake()
     {
-        _cHealth = 0.25f * MAX_H;
+        if (!Initialise)
+            _cHealth = 0.25f * MAX_H;
     }
 
     private void Update()

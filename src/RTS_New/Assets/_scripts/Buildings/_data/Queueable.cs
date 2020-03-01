@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class Queueable : ScriptableObject
 {
@@ -13,7 +14,7 @@ public abstract class Queueable : ScriptableObject
     public string Description => _desc;
     public double Time => _time;
     
-    public abstract void Complete();
+    public abstract void Complete(Building building);
 }
 
 [CreateAssetMenu(menuName = "Data/Building Upgrade")]
@@ -27,8 +28,12 @@ public class BuildingUpgrade : Queueable
     public GameObject InProgress => _inProgress;
     public GameObject Completed => _complete;
     
-    public override void Complete()
+    public override void Complete(Building building)
     {
-        
+        var player = building.Player;
+        var oldModel = building.transform.GetChild(2);
+        Destroy(oldModel);
+        var newModel = Instantiate(_complete, building.transform);
+        newModel.GetComponent<MeshRenderer>().material = player.EntityMaterial;
     }
 }

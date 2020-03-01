@@ -46,6 +46,7 @@ public class GameInit : MonoBehaviour
 
             var newBuilding = Instantiate(StartBuilding);
             newBuilding.Initialize(player);
+            newBuilding.GetComponentInChildren<MeshRenderer>().material = player.EntityMaterial;
         }
     }
     
