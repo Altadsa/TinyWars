@@ -69,7 +69,7 @@ public class UiBuildMenu : MonoBehaviour
     private IEnumerator SelectBuilding(BuildMenuData data)
     {
         Debug.Log("Building Selected");
-        var worldPos = GetMouseLocation();
+        Vector3 worldPos = Vector3.zero;
         var building = Instantiate(data.Building);
         var size = building.GetSize();
         //Set Build Area active and adjust size to that of selected building
@@ -86,15 +86,12 @@ public class UiBuildMenu : MonoBehaviour
                 _buildArea.Hide(true);
                 yield break;
             }
+            
+            worldPos = GetMouseLocation(worldPos);
+            _buildArea.transform.position = worldPos;
+            building.transform.position = worldPos;
 
-            if (worldPos.HasValue)
-            {
-                worldPos = GetMouseLocation();
-                _buildArea.transform.position = worldPos.Value;
-                building.transform.position = worldPos.Value;           
-            }
-
-            if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))
             {
                 if (placementValid)
                     canPlace = true;
@@ -105,25 +102,20 @@ public class UiBuildMenu : MonoBehaviour
             }
             yield return null;
         }
-            
-        if (!worldPos.HasValue)
-        {
-            Debug.LogError("No valid position selected.");
-            yield break;
-        }
+        
         _buildArea.Hide(true);
         building.SetConstruction();
         building.Initialize(_controller.Player);
     }
 
-    private Vector3 c, s;
+    private int _buildingLayer = 1 << 9;
     private bool IsPlacementValid(Building building)
     {
         var collider = building.GetComponent<BoxCollider>();
         var centre = building.transform.position;
         var overlapCount = Physics.OverlapBox(centre + collider.center, collider.size / 2,
             building.transform.rotation,
-            1<<9);
+            _buildingLayer);
         for (int i = 0; i < overlapCount.Length; i++)
         {
             Debug.LogFormat(this, "Collision: Name - {0} || ID: {1} ", overlapCount[i].gameObject.name, overlapCount[i].gameObject.GetInstanceID());
@@ -131,17 +123,17 @@ public class UiBuildMenu : MonoBehaviour
         return overlapCount.Length == 0;
     }
 
-    private int m = 1 << 10;
-    private Vector3? GetMouseLocation()
+    private int _terrainLayer = 1 << 10;
+    private Vector3 GetMouseLocation(Vector3 oldPosition)
     {
         Ray mouseRay = _mCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(mouseRay, out hit, 100f, m))
+        if (Physics.Raycast(mouseRay, out hit, 100f, _terrainLayer))
         {
             return SnapToPosition(hit.point);
         }
 
-        return null;
+        return oldPosition;
     }
     
     private Vector3 SnapToPosition(Vector3 pos)

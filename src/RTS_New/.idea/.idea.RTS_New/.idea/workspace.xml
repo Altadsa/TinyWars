@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/keep.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/keep.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +75,8 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
       </list>
     </option>
   </component>
@@ -155,7 +151,7 @@
       <workItem from="1582986414350" duration="3352000" />
       <workItem from="1582990266939" duration="2006000" />
       <workItem from="1583007816377" duration="6634000" />
-      <workItem from="1583056705681" duration="330000" />
+      <workItem from="1583056705681" duration="930000" />
     </task>
     <servers />
   </component>
