@@ -17,6 +17,11 @@ public class BuildingHealth : MonoBehaviour
         _cHealth = 0.25f * MAX_H;
     }
 
+    private void Update()
+    {
+        HealthChanged?.Invoke(_cHealth,MAX_H);
+    }
+
     public void TakeDamage(float dmg)
     {
         var rDmg = dmg * (1 - 0.01f * _armourValue);

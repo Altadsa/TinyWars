@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(BuildingHealth))]
@@ -8,7 +7,7 @@ public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
     
-    private bool _constructed = false;
+    private bool _constructed = true;
 
     private void Awake()
     {

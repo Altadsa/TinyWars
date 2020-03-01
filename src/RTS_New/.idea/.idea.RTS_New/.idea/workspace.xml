@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/house.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/house.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/keep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/keep.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,18 +87,18 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
       </list>
     </option>
   </component>
@@ -134,10 +134,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="23076">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="1444">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23076" />
+      <option name="pid" value="1444" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -175,7 +175,7 @@
       <workItem from="1583007816377" duration="6634000" />
       <workItem from="1583056705681" duration="2910000" />
       <workItem from="1583069801433" duration="5825000" />
-      <workItem from="1583084904371" duration="2018000" />
+      <workItem from="1583084904371" duration="3775000" />
     </task>
     <servers />
   </component>
@@ -207,6 +207,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs</url>
+          <line>71</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" initialLine="71">
+            <startOffsets>
+              <option value="1993" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2025" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

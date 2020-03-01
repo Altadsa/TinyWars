@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbc884863ce9604a8f68e7e2e63ab68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingData: {fileID: 0}
+  _buildingData: {fileID: 11400000, guid: 0b033882576e89540a2b12c4651df55a, type: 2}
 --- !u!208 &1988211999206352586
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff5089daf4d88143b6768de73b516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugItem: {fileID: 11400000, guid: 648c4829280692243bc02da990295954, type: 2}
+  DebugCount: 1
 --- !u!1001 &2041440515692676603
 PrefabInstance:
   m_ObjectHideFlags: 0

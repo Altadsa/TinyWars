@@ -8,14 +8,21 @@ public class BuildingQueue : MonoBehaviour
     //Handles production of Queueable items relative to the building.
     //Unlike the generic queue we want to be able to view everything in the queue and remove items from
     //So we must implement our own custom queue
-
     public event Action<double> QueueProcessing;
     
     private QueueRTS<Queueable> _buildQueue;
 
+    [Header("Debug Only")]
+    public Queueable DebugItem;
+    public int DebugCount;
+    
     private void Awake()
     {
         _buildQueue = new QueueRTS<Queueable>(5);
+        for (int i = 0; i < DebugCount; i++)
+        {
+            AddToQueue(DebugItem);
+        }
     }
 
     public void AddToQueue(Queueable item)
