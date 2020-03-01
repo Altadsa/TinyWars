@@ -4,13 +4,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnitSelectionUI : MonoBehaviour
+public class UiUnitSelection : MonoBehaviour
 {
     [SerializeField] private PlayerSelectionController _sc;
+    [SerializeField] private GameObject _selectionUI;
     private GameObject[] _selectionObjects;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SetObjects();
         _sc.SelectionUpdated += SelectionUpdated;
@@ -18,6 +18,17 @@ public class UnitSelectionUI : MonoBehaviour
 
     private void SelectionUpdated(List<Entity> units)
     {
+        if (units.Count == 0) 
+        {
+            _selectionUI.SetActive(false);
+            return;
+        }
+        if (units[0] is Building)
+        {
+            _selectionUI.SetActive(false);
+            return;
+        }
+        _selectionUI.SetActive(true);
         for (int i = 0; i < units.Count; i++)
         {
             var unit = units[i] as Unit;
@@ -43,5 +54,5 @@ public class UnitSelectionUI : MonoBehaviour
             _selectionObjects[i].SetActive(false);
         }
     }
-    
+
 }

@@ -52,7 +52,7 @@ using UnityEngine;
             return;
         }
         var selected = RaycastSelection(hitSelection.Value);
-        if (selected == null || !Selectable.Contains(selected) || Selected.Contains(selected))
+        if (!selected || !Selectable.Contains(selected) || Selected.Contains(selected))
         {
             if (!selectMultiple)
                 DeselectAll();
@@ -91,8 +91,9 @@ using UnityEngine;
                     DeselectAll();
                     AddToSelection(selected);
                 }
-                SelectionUpdated?.Invoke(Selected);
+
             }
+            SelectionUpdated?.Invoke(Selected);
         }
     }
 
@@ -121,6 +122,8 @@ using UnityEngine;
 
     private void DeselectAll()
     {
+        if (Selected.Count == 0)
+            return;
         Selected.RemoveAll(s => s == null);
         Selected.ForEach(s => s.Deselect());
         Selected.Clear();
