@@ -63,7 +63,10 @@ public class UiBuildingSelection : MonoBehaviour
         _target.GetComponent<BuildingHealth>().HealthChanged -= UpdateBuildingHealth;
         var queue = _target.GetComponent<BuildingQueue>();
         if (queue)
-            queue.QueueProcessing += ProcessQueue;
+        {
+            queue.QueueProcessing -= ProcessQueue;
+            queue.QueueChanged -= UpdateQueue;
+        }
         _target = null;
     }
     
@@ -81,10 +84,12 @@ public class UiBuildingSelection : MonoBehaviour
             if (i < buildingQueue.Count)
             {
                 var itemIcon = buildingQueue[i].Icon;
+                var index = i;
+                QueueButtons[i].onClick.RemoveAllListeners();
                 QueueButtons[i].GetComponent<Image>().sprite = itemIcon; 
                 QueueButtons[i].onClick.AddListener(delegate
                 {
-                    queue.RemoveFromQueue(i);
+                    queue.RemoveFromQueue(index);
                 });
                 QueueButtons[i].gameObject.SetActive(true);
             }
@@ -93,6 +98,7 @@ public class UiBuildingSelection : MonoBehaviour
                 QueueButtons[i].gameObject.SetActive(false);
             }
         }
+        queue.QueueChanged += UpdateQueue;
         queue.QueueProcessing += ProcessQueue;
     }
 
@@ -101,6 +107,32 @@ public class UiBuildingSelection : MonoBehaviour
         Health.fillAmount = (float)Math.Round(current / max, 2);
     }
 
+    private void UpdateQueue()
+    {
+        var queue = _target.GetQueue();
+        if (!queue) return;
+        var buildingQueue = queue.Queue;
+        for (int i = 0; i < QueueButtons.Length; i++)
+        {
+            if (i < buildingQueue.Count)
+            {
+                var index = i;
+                var itemIcon = buildingQueue[i].Icon;
+                QueueButtons[i].onClick.RemoveAllListeners();
+                QueueButtons[i].GetComponent<Image>().sprite = itemIcon; 
+                QueueButtons[i].onClick.AddListener(delegate
+                {
+                    queue.RemoveFromQueue(index);
+                });
+                QueueButtons[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                QueueButtons[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    
     private void ProcessQueue(double progress)
     {
         ProgressBar.fillAmount = (float) progress;

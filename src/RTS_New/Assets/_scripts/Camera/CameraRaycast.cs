@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraRaycast
 {
@@ -13,6 +14,7 @@ public class CameraRaycast
 
     public RaycastHit? RaycastForHit()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return null;
         _mouseRay = _mCam.ScreenPointToRay(Input.mousePosition);
         bool hasHit = Physics.Raycast(_mouseRay, out _hit);
         if (hasHit)

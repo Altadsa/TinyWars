@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
- /// <summary>
+/// <summary>
  ///  Handles Entity Selection for real players using mouse input
  /// </summary>
  public class PlayerSelectionController : MonoBehaviour, ISelectionController
@@ -30,6 +31,7 @@ using UnityEngine;
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (Input.GetMouseButtonDown(LEFT_MOUSE_BUTTON))
         {
             startMousePosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);

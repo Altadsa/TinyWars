@@ -8,10 +8,12 @@ public class BuildingQueue : MonoBehaviour
     //Handles production of Queueable items relative to the building.
     //Unlike the generic queue we want to be able to view everything in the queue and remove items from
     //So we must implement our own custom queue
+    public event Action QueueChanged;
     public event Action<double> QueueProcessing;
     
     private QueueRTS<Queueable> _buildQueue;
-
+    private double _elapsedTime = 0;
+    
     [Header("Debug Only")]
     public Queueable DebugItem;
     public int DebugCount;
@@ -32,6 +34,7 @@ public class BuildingQueue : MonoBehaviour
         {
             _buildQueue.Enequeue(item);
             StartCoroutine(ProcessQueue());
+            return;
         }
         //Otherwise, it is already processing items, so just add another.
         _buildQueue.Enequeue(item);
@@ -39,27 +42,34 @@ public class BuildingQueue : MonoBehaviour
 
     public void RemoveFromQueue(int index)
     {
-        
+        Debug.LogFormat("Remove {0} from queue", index);
+        StopAllCoroutines();
+        _buildQueue.RemoveFromQueue(index);
+        if (!_buildQueue.IsEmpty())
+            StartCoroutine(ProcessQueue(_elapsedTime));
+        QueueChanged?.Invoke();
     }
     
     public List<Queueable> Queue => _buildQueue.Queue;
 
-    IEnumerator ProcessQueue()
+    IEnumerator ProcessQueue(double elapsedTime = 0)
     {
         //Do this while there are elements in the queue
         do
         {
+            _elapsedTime = elapsedTime;
             var item = _buildQueue.Peek();
             var queueTime = item.Time;
-            double elapsedTime = 0;
-            while (elapsedTime < queueTime)
+            while (_elapsedTime < queueTime)
             {
-                elapsedTime += Time.deltaTime;
-                QueueProcessing?.Invoke(Math.Round(elapsedTime/queueTime, 2));
+                _elapsedTime += Time.deltaTime;
+                QueueProcessing?.Invoke(Math.Round(_elapsedTime/queueTime, 2));
                 yield return new WaitForEndOfFrame();
             }
+            QueueProcessing?.Invoke(0);
             item.Complete();
             _buildQueue.Dequeue();
+            QueueChanged?.Invoke();
         } while (!_buildQueue.IsEmpty());
     }
     
@@ -99,11 +109,16 @@ public class QueueRTS<T>
     public void Enequeue(T item)
     {
         var queueLen = _queue.Count;
-        if (queueLen == _maxLength - 1)
+        if (queueLen == _maxLength)
         {
             Debug.LogWarning("Queue at max capacity.");
             return;
         }
         _queue.Insert(0, item);
+    }
+
+    public void RemoveFromQueue(int index)
+    {
+        _queue.RemoveAt(index);
     }
 }

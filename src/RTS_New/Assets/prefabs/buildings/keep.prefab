@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugItem: {fileID: 11400000, guid: 648c4829280692243bc02da990295954, type: 2}
-  DebugCount: 1
+  DebugCount: 5
 --- !u!1001 &2041440515692676603
 PrefabInstance:
   m_ObjectHideFlags: 0
