@@ -68,7 +68,7 @@ public class UiBuildMenu : MonoBehaviour
 
     private IEnumerator SelectBuilding(BuildMenuData data)
     {
-        Debug.Log("Building Selected");
+        //World pos represents the position we want to place the building at.
         Vector3 worldPos = Vector3.zero;
         var building = Instantiate(data.Building);
         var size = building.GetSize();
@@ -91,7 +91,7 @@ public class UiBuildMenu : MonoBehaviour
             _buildArea.transform.position = worldPos;
             building.transform.position = worldPos;
 
-                if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (placementValid)
                     canPlace = true;
@@ -108,14 +108,15 @@ public class UiBuildMenu : MonoBehaviour
         building.Initialize(_controller.Player);
     }
 
-    private int _buildingLayer = 1 << 9;
+    private int _structuresLayer = 1 << 9;
     private bool IsPlacementValid(Building building)
     {
         var collider = building.GetComponent<BoxCollider>();
         var centre = building.transform.position;
+        //Get a list of overlapping colliders. We use the structures layer for selection
         var overlapCount = Physics.OverlapBox(centre + collider.center, collider.size / 2,
             building.transform.rotation,
-            _buildingLayer);
+            _structuresLayer);
         for (int i = 0; i < overlapCount.Length; i++)
         {
             Debug.LogFormat(this, "Collision: Name - {0} || ID: {1} ", overlapCount[i].gameObject.name, overlapCount[i].gameObject.GetInstanceID());
@@ -128,11 +129,12 @@ public class UiBuildMenu : MonoBehaviour
     {
         Ray mouseRay = _mCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        //If we successfully hit an object, then return the new hit point
         if (Physics.Raycast(mouseRay, out hit, 100f, _terrainLayer))
         {
             return SnapToPosition(hit.point);
         }
-
+        //otherwise, return the input (old) hit point.
         return oldPosition;
     }
     

@@ -9,10 +9,16 @@
         <e p="_scripts" t="Include">
           <e p="AxisInput.cs" t="Include" />
           <e p="Buildings" t="Include">
+            <e p="_data" t="Include">
+              <e p="BuildingData.cs" t="Include" />
+              <e p="BuildMenuData.cs" t="Include" />
+              <e p="Queueable.cs" t="Include" />
+            </e>
             <e p="BuildArea.cs" t="Include" />
             <e p="Building.cs" t="Include" />
-            <e p="BuildingData.cs" t="Include" />
-            <e p="BuildMenuData.cs" t="Include" />
+            <e p="BuildingConstruction.cs" t="Include" />
+            <e p="BuildingHealth.cs" t="Include" />
+            <e p="BuildingQueue.cs" t="Include" />
           </e>
           <e p="camera" t="Include">
             <e p="CameraController.cs" t="Include" />

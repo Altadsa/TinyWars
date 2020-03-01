@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(BuildingHealth))]
 [RequireComponent(typeof(NavMeshObstacle))]
 public class Building : Entity
 {
@@ -17,16 +18,13 @@ public class Building : Entity
     public override void Initialize(Player player)
     {
         base.Initialize(player);
-        //Assuming Children have mesh renderers to set player material
-        //TODO Change ref to complete model
-        transform.GetChild(2).GetComponent<MeshRenderer>().material = Player.EntityMaterial;
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
     }
 
     public void SetConstruction()
     {
-        _constructed = false;
+        gameObject.AddComponent<BuildingConstruction>();
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(2).gameObject.SetActive(false);
     }
@@ -39,6 +37,8 @@ public class Building : Entity
     public override void Select()
     {
         Debug.Log("Selected " + name);
+        if (GetComponent<BuildingConstruction>())
+            Debug.LogFormat(this, "Building not fully constructed.");
     }
 
     public override void Deselect()

@@ -55,6 +55,16 @@ public interface IUnitAction
     bool IsActionValid(RaycastHit actionTarget);
 }
 
+public interface IQueueable
+{
+    string Name { get; }
+    string Description { get; }
+    double QueueTime { get; }
+    void Complete();
+    //TODO Add Data Structure for costs
+
+}
+
 public enum Modifier
 {
     Damage,
