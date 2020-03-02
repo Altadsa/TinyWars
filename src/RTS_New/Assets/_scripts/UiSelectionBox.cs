@@ -14,16 +14,12 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private const int LEFT_MOUSE_BUTTON = 0;
 
     [SerializeField] RectTransform _selectionBox;
-    [SerializeField] CameraController _cameraController;
-
-    private Camera _mCamera;
     Vector3 _boxStart, _boxEnd;
 
     public Image debug;
     
     private void Start()
     {
-        _mCamera = Camera.main;
         _selectionBox.gameObject.SetActive(false);
     }
 

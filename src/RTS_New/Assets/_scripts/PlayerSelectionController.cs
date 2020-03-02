@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 
 /// <summary>
@@ -31,7 +30,6 @@ using UnityEngine.EventSystems;
 
     private void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (Input.GetMouseButtonDown(LEFT_MOUSE_BUTTON))
         {
             startMousePosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);

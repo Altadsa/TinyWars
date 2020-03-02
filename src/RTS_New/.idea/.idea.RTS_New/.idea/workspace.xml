@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
@@ -75,7 +80,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
@@ -84,9 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" />
@@ -96,6 +97,11 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
       </list>
     </option>
   </component>
@@ -131,10 +137,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="24276">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="25016">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="24276" />
+      <option name="pid" value="25016" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -173,7 +179,8 @@
       <workItem from="1583056705681" duration="2910000" />
       <workItem from="1583069801433" duration="5825000" />
       <workItem from="1583084904371" duration="7512000" />
-      <workItem from="1583097023121" duration="4385000" />
+      <workItem from="1583097023121" duration="5359000" />
+      <workItem from="1583136413216" duration="3033000" />
     </task>
     <servers />
   </component>
@@ -206,17 +213,17 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs</url>
-          <line>74</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" initialLine="74">
+          <url>file://$PROJECT_DIR$/Assets/_scripts/Entity.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" initialLine="31">
             <startOffsets>
-              <option value="2060" />
+              <option value="906" />
             </startOffsets>
             <endOffsets>
-              <option value="2092" />
+              <option value="961" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
