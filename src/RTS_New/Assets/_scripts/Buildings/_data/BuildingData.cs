@@ -6,12 +6,28 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/BuildingData")]
 public class BuildingData : ScriptableObject
 {
+    [SerializeField] private BuildingType _buildingType;
     [SerializeField] private string _name;
     [SerializeField] private Sprite _icon;
-    [SerializeField] private float _baseHealth;
 
+    public BuildingType BuildingType => _buildingType;
     public string Name => _name;
     public Sprite Icon => _icon;
-    public float BaseHealth => _baseHealth;
 
+}
+
+public enum BuildingType
+{
+    ACADEMY,
+    ARCHERY,
+    BARRACKS,
+    BLACKSMITH,
+    CHAPEL,
+    FARM,
+    GRANARY,
+    HEADQUATERS,
+    HOUSE,
+    STABLES,
+    TOWER,
+    WORKSHOP
 }

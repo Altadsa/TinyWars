@@ -8,4 +8,15 @@ public static class Extensions
     {
         return GameObject.FindGameObjectWithTag("minimap").GetComponent<Camera>();
     }
+
+    public static Vector3[] VieportBounds(this Camera camera)
+    {
+        var viewportBounds = new Vector3[4];
+        viewportBounds[0] = camera.ViewportToWorldPoint(Vector3.zero);
+        viewportBounds[1] = camera.ViewportToWorldPoint(Vector3.up);
+        viewportBounds[2] = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        viewportBounds[3] = camera.ViewportToWorldPoint(Vector3.right);
+        return viewportBounds;
+    }
+
 }

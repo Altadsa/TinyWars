@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -10,7 +8,8 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
     private Camera _mCamera;
     private Camera _miniCam;
     private Vector3 _mapStart, _mapDim;
-    
+
+    private RenderTexture _mapTexture;
     
     private void Start()
     {
@@ -45,5 +44,15 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
         RaycastHit hit;
         Physics.Raycast(newRay, out hit);
         return hit.point;
+    }
+
+    private Vector3[] ViewportBounds(Camera camera)
+    {
+        var viewportBounds = new Vector3[4];
+        viewportBounds[0] = camera.ViewportToWorldPoint(Vector3.zero);
+        viewportBounds[1] = camera.ViewportToWorldPoint(Vector3.up);
+        viewportBounds[2] = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        viewportBounds[3] = camera.ViewportToWorldPoint(Vector3.right);
+        return viewportBounds;
     }
 }

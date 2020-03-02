@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbc884863ce9604a8f68e7e2e63ab68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingData: {fileID: 0}
+  _buildingData: {fileID: 11400000, guid: 910d55deefeded5489b75ce882140637, type: 2}
 --- !u!208 &1988211999206352586
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cHealth: 0
+  Initialise: 0
 --- !u!1001 &3264518057361364338
 PrefabInstance:
   m_ObjectHideFlags: 0

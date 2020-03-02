@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art_assets/minimap_texture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/minimap_texture.renderTexture" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +87,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" />
@@ -106,6 +104,7 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
       </list>
     </option>
   </component>
@@ -186,7 +185,7 @@
       <workItem from="1583097023121" duration="5359000" />
       <workItem from="1583136413216" duration="3412000" />
       <workItem from="1583155435235" duration="5683000" />
-      <workItem from="1583173480911" duration="2947000" />
+      <workItem from="1583173480911" duration="5667000" />
     </task>
     <servers />
   </component>
