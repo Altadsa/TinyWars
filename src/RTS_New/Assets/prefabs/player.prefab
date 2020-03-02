@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 185335313}
   - component: {fileID: 185335312}
   - component: {fileID: 185335311}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: unit_selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3647,7 +3647,7 @@ GameObject:
   - component: {fileID: 1544574265}
   - component: {fileID: 1544574264}
   - component: {fileID: 6588430672932242824}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: ui_build_menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6037,7 +6037,7 @@ GameObject:
   - component: {fileID: 525903319083638748}
   - component: {fileID: 525903319083638690}
   - component: {fileID: 525903319083638749}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: selection box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6112,7 +6112,8 @@ GameObject:
   - component: {fileID: 525903319575938937}
   - component: {fileID: 525903319575938936}
   - component: {fileID: 525903319575938939}
-  m_Layer: 2
+  - component: {fileID: 1874050361376373121}
+  m_Layer: 5
   m_Name: selection rect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6214,6 +6215,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectionBox: {fileID: 525903319083638748}
   debug: {fileID: 0}
+--- !u!114 &1874050361376373121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525903319575938933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad52ae35804fc6912da50597b648c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraController: {fileID: 525903319877800113}
 --- !u!1 &525903319877800114
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,7 +6239,6 @@ GameObject:
   - component: {fileID: 525903319877800118}
   - component: {fileID: 525903319877800113}
   - component: {fileID: 525903319877800112}
-  - component: {fileID: 525903319877800115}
   - component: {fileID: 7023410859361382126}
   - component: {fileID: 3439754039073240115}
   m_Layer: 0
@@ -6281,19 +6294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraController: {fileID: 525903319877800113}
---- !u!114 &525903319877800115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525903319877800114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ad52ae35804fc6912da50597b648c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraController: {fileID: 525903319877800113}
 --- !u!114 &7023410859361382126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6306,7 +6306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc63962fea48fb4b9f057f86fdb8152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sc: {fileID: 525903319877800115}
+  _sc: {fileID: 1874050361376373121}
   _selectionUI: {fileID: 185335309}
   _selection: {fileID: 976395454}
 --- !u!114 &3439754039073240115
@@ -6321,7 +6321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2964b787b365104190a52dbec76504d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sc: {fileID: 525903319877800115}
+  _sc: {fileID: 1874050361376373121}
   _selectionUI: {fileID: 5264940298261232987}
   Icon: {fileID: 5692290820082875134}
   Health: {fileID: 6492927271193714191}
@@ -7271,7 +7271,7 @@ GameObject:
   - component: {fileID: 4902124357299359657}
   - component: {fileID: 3966077637590165731}
   - component: {fileID: 6778685548147131899}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: selection_area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7689,7 +7689,7 @@ GameObject:
   - component: {fileID: 2135167730825429111}
   - component: {fileID: 2905950989750502113}
   - component: {fileID: 5686637644747957981}
-  m_Layer: 2
+  m_Layer: 5
   m_Name: building_selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}

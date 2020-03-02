@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void Awake()
     {
-        SelectionController = GetComponent<ISelectionController>();
+        SelectionController = GetComponentInChildren<ISelectionController>();
         ActionController = new PlayerActionController();
     }
 

@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 
 /// <summary>
  ///  Handles Entity Selection for real players using mouse input
  /// </summary>
- public class PlayerSelectionController : MonoBehaviour, ISelectionController
+ public class PlayerSelectionController : MonoBehaviour, ISelectionController, IPointerDownHandler, IPointerUpHandler
 {
 
     const int LEFT_MOUSE_BUTTON = 0;
     Vector3 startMousePosition, endMousePosition;
 
-    [SerializeField] CameraController cameraController;
-    Camera mainCamera;
+    [FormerlySerializedAs("cameraController")] [SerializeField] CameraController _cameraController;
+    Camera _mCamera;
 
     //List of all selectable entities that share the same player
     [HideInInspector]
@@ -25,19 +27,23 @@ using UnityEngine;
     
     private void Awake()
     {
-        mainCamera = Camera.main;
+        _mCamera = Camera.main;
     }
 
-    private void Update()
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (Input.GetMouseButtonDown(LEFT_MOUSE_BUTTON))
         {
-            startMousePosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
-            Select(cameraController.Hit, Input.GetKey(KeyCode.LeftControl));
+            startMousePosition = _mCamera.ScreenToViewportPoint(Input.mousePosition);
+            Select(_cameraController.Hit, Input.GetKey(KeyCode.LeftControl));
         }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
         if (Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON))
         {
-            endMousePosition = mainCamera.ScreenToViewportPoint(Input.mousePosition);
+            endMousePosition = _mCamera.ScreenToViewportPoint(Input.mousePosition);
             if (startMousePosition != endMousePosition)
                 SelectArea(DrawRect());
         }
@@ -104,7 +110,7 @@ using UnityEngine;
         foreach (Entity selectable in Selectable)
         {
             if (IsBuilding(selectable)) continue;
-            var viewportPosition = mainCamera.WorldToViewportPoint(selectable.transform.position);
+            var viewportPosition = _mCamera.WorldToViewportPoint(selectable.transform.position);
             if (area.Contains(viewportPosition, true))
             {
                 selectable.Select();
@@ -148,5 +154,6 @@ using UnityEngine;
         float height = endMousePosition.y - startMousePosition.y;
         return new Rect(startMousePosition.x, startMousePosition.y, width, height);
     }
+
 
 }

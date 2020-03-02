@@ -28,6 +28,7 @@
             <e p="CameraZoom.cs" t="Include" />
           </e>
           <e p="Entity.cs" t="Include" />
+          <e p="Extensions.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="MoveAction.cs" t="Include" />
           <e p="Player.cs" t="Include" />
@@ -41,9 +42,9 @@
             <e p="UiActionMenu.cs" t="Include" />
             <e p="UiBuildingSelection.cs" t="Include" />
             <e p="UiBuildMenu.cs" t="Include" />
+            <e p="UiSelectionBox.cs" t="Include" />
             <e p="UiUnitSelection.cs" t="Include" />
           </e>
-          <e p="UiSelectionBox.cs" t="Include" />
           <e p="Unit" t="Include">
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
