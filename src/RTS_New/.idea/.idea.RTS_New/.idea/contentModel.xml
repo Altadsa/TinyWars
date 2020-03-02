@@ -30,23 +30,27 @@
           <e p="Entity.cs" t="Include" />
           <e p="Extensions.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
-          <e p="MoveAction.cs" t="Include" />
-          <e p="Player.cs" t="Include" />
-          <e p="PlayerActionController.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
-          <e p="PlayerSelectionController.cs" t="Include" />
+          <e p="player" t="Include">
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerActionController.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+            <e p="PlayerModifiers.cs" t="Include" />
+            <e p="PlayerSelectionController.cs" t="Include" />
+          </e>
           <e p="Setup" t="Include">
             <e p="GameInit.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="UiActionMenu.cs" t="Include" />
-            <e p="UiBuildingSelection.cs" t="Include" />
+            <e p="UiBuilding.cs" t="Include" />
+            <e p="UiBuildingInfo.cs" t="Include" />
             <e p="UiBuildMenu.cs" t="Include" />
             <e p="UiMinimap.cs" t="Include" />
             <e p="UiSelectionBox.cs" t="Include" />
             <e p="UiUnitSelection.cs" t="Include" />
           </e>
-          <e p="Unit" t="Include">
+          <e p="units" t="Include">
+            <e p="MoveAction.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />

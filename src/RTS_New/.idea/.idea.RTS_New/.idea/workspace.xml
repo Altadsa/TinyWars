@@ -2,11 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art_assets/minimap_texture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/minimap_texture.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/MoveAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/MoveAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,42 +42,35 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/b7/65c0f07e/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/QueueRts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Entity.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/MoveAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/AudioManager.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/36/d1330c89/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/BuildingMenu.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scenes/Demo.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Unit/UnitMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraZoom.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiMinimap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraRaycast.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/Building.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f5/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -105,6 +121,9 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
       </list>
     </option>
   </component>
@@ -185,7 +204,7 @@
       <workItem from="1583097023121" duration="5359000" />
       <workItem from="1583136413216" duration="3412000" />
       <workItem from="1583155435235" duration="5683000" />
-      <workItem from="1583173480911" duration="5667000" />
+      <workItem from="1583173480911" duration="7619000" />
     </task>
     <servers />
   </component>
