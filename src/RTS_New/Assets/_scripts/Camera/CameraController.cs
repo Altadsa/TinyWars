@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
         _input = new AxisInput();
         _cameraRaycast = new CameraRaycast();
         _cameraMovement = new CameraMovement(transform, _input);
-        _cameraZoom = new CameraZoom(transform);
+        _cameraZoom = new CameraZoom(Camera.main.transform);
     }
 
     void Update()
