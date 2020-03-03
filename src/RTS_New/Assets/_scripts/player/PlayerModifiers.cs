@@ -10,6 +10,11 @@ public class PlayerModifiers
         {UnitType.ARCHER, new UnitModifiers()} 
     };
 
+    /// <summary>
+    /// Retrives the modfiers for the given unit
+    /// </summary>
+    /// <param name="unitType">The key to identify the modifiers to return</param>
+    /// <returns></returns>
     public UnitModifiers FetchModifiers(UnitType unitType)
     {
         try
@@ -24,6 +29,12 @@ public class PlayerModifiers
         }
     }
 
+    /// <summary>
+    /// Sets a new value for a given units modifier
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="modifier"></param>
+    /// <param name="value"></param>
     public void SetUnitModifier(UnitType type, Modifier modifier, float value)
     {
         _pModifiers[type].SetModifier(modifier, value);

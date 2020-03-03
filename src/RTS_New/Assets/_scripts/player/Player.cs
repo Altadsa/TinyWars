@@ -76,7 +76,9 @@ public class UnitModifiers
 
     public void SetModifier(Modifier modifier, float value)
     {
+        Debug.LogFormat("Before setting new modifier {0}: {1}", modifier, _uModifiers[modifier]);
         _uModifiers[modifier] = value;
+        Debug.LogFormat("Before setting new modifier {0}: {1}", modifier, _uModifiers[modifier]);
         ModifiersChanged?.Invoke();
     }
 }

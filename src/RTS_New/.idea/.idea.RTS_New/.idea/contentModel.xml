@@ -14,6 +14,7 @@
               <e p="BuildMenuData.cs" t="Include" />
               <e p="MenuData.cs" t="Include" />
               <e p="MenuDataUnit.cs" t="Include" />
+              <e p="MenuDataUpgrade.cs" t="Include" />
               <e p="Queueable.cs" t="Include" />
             </e>
             <e p="BuildArea.cs" t="Include" />

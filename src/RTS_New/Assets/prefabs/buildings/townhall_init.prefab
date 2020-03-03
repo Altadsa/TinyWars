@@ -51,6 +51,7 @@ MonoBehaviour:
   _buildingData: {fileID: 11400000, guid: 0b033882576e89540a2b12c4651df55a, type: 2}
   _buildingMenuItems:
   - {fileID: 11400000, guid: 8bca7910efe990841a37e883e798f203, type: 2}
+  - {fileID: 11400000, guid: 9f36ad4ab8eb6c9478c4ff04933620b6, type: 2}
 --- !u!208 &1988211999206352586
 NavMeshObstacle:
   m_ObjectHideFlags: 0

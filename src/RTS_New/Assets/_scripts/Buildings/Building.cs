@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
-    [SerializeField] private ScriptableObject[] _buildingMenuItems;
+    [SerializeField] private Queueable[] _buildingMenuItems;
     
     private bool _constructed = true;
 
