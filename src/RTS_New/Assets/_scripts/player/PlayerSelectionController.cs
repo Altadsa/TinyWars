@@ -4,11 +4,37 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
+public abstract class SelectionController : MonoBehaviour, ISelectionController
+{
+    // List of selectable entities
+    public List<Entity> Selectable { get; protected set; } = new List<Entity>();
+    //List of selected entities
+    public List<Entity> Selected { get; protected set; } = new List<Entity>();
+
+
+    
+    public void AddSelected(Entity entity)
+    {
+        Selectable.Add(entity);
+    }
+
+    public void RemoveSelected(Entity entity)
+    {
+        if (Selected.Contains(entity))
+        {
+            Selected.Remove(entity);
+        }
+        Selectable.Remove(entity);
+        UpdateSelection();
+    }
+
+    protected abstract void UpdateSelection();
+}
 
 /// <summary>
  ///  Handles Entity Selection for real players using mouse input
  /// </summary>
- public class PlayerSelectionController : MonoBehaviour, ISelectionController, IPointerDownHandler, IPointerUpHandler
+ public class PlayerSelectionController : SelectionController, IPointerDownHandler, IPointerUpHandler
 {
 
     const int LEFT_MOUSE_BUTTON = 0;
@@ -16,14 +42,8 @@ using UnityEngine.Serialization;
 
     [FormerlySerializedAs("cameraController")] [SerializeField] CameraController _cameraController;
     Camera _mCamera;
-
-    //List of all selectable entities that share the same player
-    [HideInInspector]
-    public List<Entity> Selectable { get; set; } = new List<Entity>();
-    //List of selected entities
-    public List<Entity> Selected { get; private set; } = new List<Entity>();
-
     public event Action<List<Entity>> SelectionUpdated;
+    public event Action<Entity> MenuUpdated;
     
     private void Awake()
     {
@@ -67,7 +87,7 @@ using UnityEngine.Serialization;
                 selected.Deselect();
                 Selected.Remove((selected));
             }
-            SelectionUpdated?.Invoke(Selected);
+            UpdateSelection();
             return;
         }
 
@@ -75,7 +95,7 @@ using UnityEngine.Serialization;
         {
             if (selectMultiple) return;
             DeselectAll();
-            SelectionUpdated?.Invoke(Selected);
+            UpdateSelection();
         }
         else
         {
@@ -99,10 +119,16 @@ using UnityEngine.Serialization;
                 }
 
             }
-            SelectionUpdated?.Invoke(Selected);
+            UpdateSelection();
         }
     }
 
+    protected override void UpdateSelection()
+    {
+        SelectionUpdated?.Invoke(Selected);
+        //MenuUpdated?.Invoke(Selected);
+    }
+    
     private void SelectArea(Rect area)
     {
         DeselectAll();
@@ -117,7 +143,7 @@ using UnityEngine.Serialization;
                 Selected.Add(selectable);
             }
         }
-        SelectionUpdated?.Invoke(Selected);
+        UpdateSelection();
     }
 
     private void AddToSelection(Entity selectable)
@@ -133,7 +159,7 @@ using UnityEngine.Serialization;
         Selected.RemoveAll(s => s == null);
         Selected.ForEach(s => s.Deselect());
         Selected.Clear();
-        SelectionUpdated?.Invoke(Selected);
+        UpdateSelection();
     }
 
     private Entity RaycastSelection(RaycastHit hitSelection)
@@ -154,6 +180,5 @@ using UnityEngine.Serialization;
         float height = endMousePosition.y - startMousePosition.y;
         return new Rect(startMousePosition.x, startMousePosition.y, width, height);
     }
-
 
 }

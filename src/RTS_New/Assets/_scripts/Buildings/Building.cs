@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(BuildingHealth))]
@@ -50,5 +51,11 @@ public class Building : Entity
     public override void Deselect()
     {
         Debug.Log("Deselected " + name);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.LogFormat("Building {0} destroyed", name);
+        _pc.RemoveSelected(this);
     }
 }

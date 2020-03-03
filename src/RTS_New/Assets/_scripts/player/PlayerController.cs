@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     [SerializeField] private CameraController cameraController;
 
-    public ISelectionController SelectionController { get; private set; }
+    public SelectionController SelectionController { get; private set; }
     public IActionController ActionController { get; private set; }
 
     public Player Player { get; private set; }
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void Awake()
     {
-        SelectionController = GetComponentInChildren<ISelectionController>();
+        SelectionController = GetComponentInChildren<SelectionController>();
         ActionController = new PlayerActionController();
     }
 

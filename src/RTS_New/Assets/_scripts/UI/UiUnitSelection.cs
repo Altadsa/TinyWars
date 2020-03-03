@@ -24,7 +24,7 @@ public class UiUnitSelection : MonoBehaviour
             _selectionUI.SetActive(false);
             return;
         }
-        if (units[0] is Building)
+        else if (units[0] is Building)
         {
             _selectionUI.SetActive(false);
             return;

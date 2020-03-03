@@ -7,14 +7,14 @@ public class UiBuildingInfo
 {
     private UiBuilding _uiBuilding;
     private PlayerSelectionController _sc;
-    private GameObject _selectionUI;
+    private GameObject _buildingInfo;
     private Building _target;
     
     public UiBuildingInfo(UiBuilding uiHandler, PlayerSelectionController sc, GameObject infoUi)
     {
         _uiBuilding = uiHandler;
         _sc = sc;
-        _selectionUI = infoUi;
+        _buildingInfo = infoUi;
         _sc.SelectionUpdated += SelectionUpdated;
     }
     
@@ -23,15 +23,15 @@ public class UiBuildingInfo
         ClearOldTarget();
         if (entities.Count == 0)
         {            
-            _selectionUI.SetActive(false);
+            _buildingInfo.SetActive(false);
             return;
         }
         if (entities[0] is Unit)
         {
-            _selectionUI.SetActive(false);
+            _buildingInfo.SetActive(false);
             return;
         }
-        _selectionUI.SetActive(true);
+        _buildingInfo.SetActive(true);
         _target = entities[0] as Building;
         SetupTarget();
     }

@@ -2,33 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/MoveAction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/MoveAction.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,15 +28,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Entity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/AudioManager.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuildMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/36/d1330c89/Camera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/player.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -73,12 +57,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/Building.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f5/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/UnitMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitIdleBehaviour.cs" />
@@ -100,7 +83,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
@@ -112,7 +94,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiSelectionBox.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" />
@@ -123,6 +104,14 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
       </list>
     </option>
@@ -159,10 +148,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="5324">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="932">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="5324" />
+      <option name="pid" value="932" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -204,7 +193,8 @@
       <workItem from="1583097023121" duration="5359000" />
       <workItem from="1583136413216" duration="3412000" />
       <workItem from="1583155435235" duration="5683000" />
-      <workItem from="1583173480911" duration="7619000" />
+      <workItem from="1583173480911" duration="7769000" />
+      <workItem from="1583220818663" duration="4120000" />
     </task>
     <servers />
   </component>

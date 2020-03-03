@@ -12,6 +12,7 @@
             <e p="_data" t="Include">
               <e p="BuildingData.cs" t="Include" />
               <e p="BuildMenuData.cs" t="Include" />
+              <e p="MenuData.cs" t="Include" />
               <e p="Queueable.cs" t="Include" />
             </e>
             <e p="BuildArea.cs" t="Include" />

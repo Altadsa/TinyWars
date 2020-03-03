@@ -25,7 +25,7 @@ public interface ISelectionController
 
 public interface IPlayerController //: IPlayerControllable
 {
-    ISelectionController SelectionController { get; }
+    SelectionController SelectionController { get; }
     IActionController ActionController { get; }
 }
 
