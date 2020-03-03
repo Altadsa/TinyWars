@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -51,9 +52,21 @@ public class UiBuilding : MonoBehaviour
             return;
         }
         _buildingMenuGo.SetActive(true);
+        var menuItems = _target.MenuItems;
         for (int i = 0; i < Menubuttons.Length; i++)
         {
             Menubuttons[i].gameObject.SetActive(false);
+            if (menuItems != null)
+            {
+                if (i < menuItems.Length)
+                {
+                    var item = menuItems[i] as Queueable;
+                    Menubuttons[i].onClick.RemoveAllListeners();
+                    Menubuttons[i].onClick.AddListener(delegate { _target.GetQueue().AddToQueue(item); });
+                    Menubuttons[i].GetComponent<Image>().sprite = item.Icon;
+                    Menubuttons[i].gameObject.SetActive(true);
+                }
+            }
             if (i == Menubuttons.Length - 1)
             {
                 Menubuttons[i].onClick.RemoveAllListeners();

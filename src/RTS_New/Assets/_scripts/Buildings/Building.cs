@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
+    [SerializeField] private ScriptableObject[] _buildingMenuItems;
     
     private bool _constructed = true;
 
@@ -23,6 +24,8 @@ public class Building : Entity
         GetComponent<NavMeshObstacle>().enabled = true;
     }
 
+    public ScriptableObject[] MenuItems => _constructed ? _buildingMenuItems : null;
+    
     public void SetConstruction()
     {
         gameObject.AddComponent<BuildingConstruction>();
@@ -55,7 +58,6 @@ public class Building : Entity
 
     private void OnDestroy()
     {
-        Debug.LogFormat("Building {0} destroyed", name);
         _pc.RemoveSelected(this);
     }
 }
