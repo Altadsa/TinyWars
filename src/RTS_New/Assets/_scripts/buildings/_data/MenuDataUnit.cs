@@ -10,8 +10,8 @@ public class MenuDataUnit : Queueable
 
     public override void Complete(Building building)
     {
-        var spawnPos = building.transform.position + building.transform.right * 5;
-        var newUnit = Instantiate(_unitPrefab, spawnPos, Quaternion.identity);
+        var spawnPos = building.UnitSpawn;
+        var newUnit = Instantiate(_unitPrefab, spawnPos.position, Quaternion.identity);
         newUnit.Initialize(building.Player);
     }
 }

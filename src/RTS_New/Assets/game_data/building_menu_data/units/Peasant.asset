@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7ef67b4c1445e7a883f601f32cd6fe, type: 3}
   m_Name: Peasant
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: b8d4632b61a24a745b2c8bed02f50c44, type: 3}
+  _icon: {fileID: 21300000, guid: 5d826be2d8538ae4990945d3b512c082, type: 3}
   _name: Peasant
   _desc: Peasant
   _time: 15

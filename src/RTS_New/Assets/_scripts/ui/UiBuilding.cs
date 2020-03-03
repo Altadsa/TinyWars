@@ -26,6 +26,7 @@ public class UiBuilding : MonoBehaviour
     public Button[] Menubuttons;
     
     public MenuData DestroyData;
+    public MenuData SetRallyPoint;
     
     //Keep a reference to the target such that we can remove listeners from its events once the selection changes
     private Building _target;
@@ -56,7 +57,21 @@ public class UiBuilding : MonoBehaviour
         for (int i = 0; i < Menubuttons.Length; i++)
         {
             Menubuttons[i].gameObject.SetActive(false);
-            if (menuItems != null)
+            if (i == 11)
+            {
+                Menubuttons[i].onClick.RemoveAllListeners();
+                Menubuttons[i].GetComponent<Image>().sprite = SetRallyPoint.Icon;
+                Menubuttons[i].onClick.AddListener(_target.SetRallyPoint);
+                Menubuttons[i].gameObject.SetActive(true);
+            }
+            else if (i == Menubuttons.Length - 1)
+            {
+                Menubuttons[i].onClick.RemoveAllListeners();
+                Menubuttons[i].GetComponent<Image>().sprite = DestroyData.Icon;
+                Menubuttons[i].onClick.AddListener(DestroySelectedBuilding);
+                Menubuttons[i].gameObject.SetActive(true);
+            }
+            else if (menuItems != null)
             {
                 if (i < menuItems.Length)
                 {
@@ -67,13 +82,8 @@ public class UiBuilding : MonoBehaviour
                     Menubuttons[i].gameObject.SetActive(true);
                 }
             }
-            if (i == Menubuttons.Length - 1)
-            {
-                Menubuttons[i].onClick.RemoveAllListeners();
-                Menubuttons[i].GetComponent<Image>().sprite = DestroyData.Icon;
-                Menubuttons[i].onClick.AddListener(DestroySelectedBuilding);
-                Menubuttons[i].gameObject.SetActive(true);
-            }
+
+
         }
 
     }

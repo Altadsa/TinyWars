@@ -4123,6 +4123,7 @@ MonoBehaviour:
   - {fileID: 3890431580123819092}
   - {fileID: 766376010892164657}
   DestroyData: {fileID: 11400000, guid: ac0c0487951bb44488aaf64c41ba1283, type: 2}
+  SetRallyPoint: {fileID: 11400000, guid: d6d2f0af743014f4290292ced6a8d927, type: 2}
 --- !u!1 &525903319981989091
 GameObject:
   m_ObjectHideFlags: 0

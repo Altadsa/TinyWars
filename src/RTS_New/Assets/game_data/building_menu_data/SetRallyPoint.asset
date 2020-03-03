@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d762098021cf34fa31f8c3c57e9192, type: 3}
+  m_Name: SetRallyPoint
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: 938d23c28c1969a4c8c89bf6814b68af, type: 3}
+  _name: Set Rally Point
+  _description: Choose a new point for units created by this building to move to.

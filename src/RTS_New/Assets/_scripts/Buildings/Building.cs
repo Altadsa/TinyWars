@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,10 +12,16 @@ public class Building : Entity
     
     private bool _constructed = true;
 
+    [SerializeField] private Transform _unitSpawn;
+    public Transform UnitSpawn => _unitSpawn;
+    public Vector3 RallyPoint { get; private set; }
+    
     private void Awake()
     {
         GetComponent<NavMeshObstacle>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
+        RallyPoint = _unitSpawn.position;
+        Debug.DrawLine(RallyPoint, Vector3.up*100, Color.blue, 100);
     }
 
     public override void Initialize(Player player)
@@ -25,6 +32,11 @@ public class Building : Entity
     }
 
     public ScriptableObject[] MenuItems => _constructed ? _buildingMenuItems : null;
+
+    public void SetRallyPoint()
+    {
+        StartCoroutine(SelectRallyPoint());
+    }
     
     public void SetConstruction()
     {
@@ -47,5 +59,22 @@ public class Building : Entity
     private void OnDestroy()
     {
         _pc.RemoveSelected(this);
+    }
+
+    IEnumerator SelectRallyPoint()
+    {
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1));
+
+        while (!Input.GetMouseButtonDown(0))
+        {
+            if (Input.GetMouseButtonDown(0))
+                yield break;
+            yield return new WaitForEndOfFrame();
+        }
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
+        RallyPoint = hit.point;
+        Debug.DrawLine(RallyPoint, Vector3.up*100, Color.blue, 100);
     }
 }
