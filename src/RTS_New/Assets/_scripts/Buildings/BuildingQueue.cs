@@ -36,10 +36,11 @@ public class BuildingQueue : MonoBehaviour
         {
             _buildQueue.Enequeue(item);
             StartCoroutine(ProcessQueue());
-            return;
         }
+        else
         //Otherwise, it is already processing items, so just add another.
-        _buildQueue.Enequeue(item);
+            _buildQueue.Enequeue(item);
+        QueueChanged?.Invoke();
     }
 
     /// <summary>
@@ -48,14 +49,19 @@ public class BuildingQueue : MonoBehaviour
     /// <param name="index">The index of the item to be removed.</param>
     public void RemoveFromQueue(int index)
     {
-        Debug.LogFormat("Remove {0} from queue", index);
         // Halt Queue production while we remove the item
         StopAllCoroutines();
         _buildQueue.RemoveFromQueue(index);
         
         // Start the queue again if it isn't empty
+        // Otherwise reset the elpased time
         if (!_buildQueue.IsEmpty())
             StartCoroutine(ProcessQueue(_elapsedTime));
+        else
+        {
+            _elapsedTime = 0;
+            QueueProcessing?.Invoke(_elapsedTime);
+        }
         QueueChanged?.Invoke();
     }
     

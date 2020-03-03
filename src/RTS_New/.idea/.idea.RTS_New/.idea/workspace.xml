@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/townhall_init.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/townhall_init.prefab" afterDir="false" />
-    </list>
+    <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitIdleBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitMovingBehaviour.cs" />
@@ -111,6 +103,7 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
       </list>
     </option>
   </component>
@@ -193,7 +186,7 @@
       <workItem from="1583155435235" duration="5683000" />
       <workItem from="1583173480911" duration="7769000" />
       <workItem from="1583220818663" duration="4731000" />
-      <workItem from="1583253819586" duration="1837000" />
+      <workItem from="1583253819586" duration="2521000" />
     </task>
     <servers />
   </component>
