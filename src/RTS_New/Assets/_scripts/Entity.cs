@@ -4,10 +4,6 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour
 {
     public Player Player { get; private set; }
-    
-    public abstract void Select();
-
-    public abstract void Deselect();
 
     protected SelectionController _pc;
     

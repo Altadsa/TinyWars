@@ -43,18 +43,6 @@ public class Building : Entity
         if (!_constructed) return null;
         return GetComponent<BuildingQueue>();
     }
-    
-    public override void Select()
-    {
-        Debug.Log("Selected " + name);
-        if (GetComponent<BuildingConstruction>())
-            Debug.LogFormat(this, "Building not fully constructed.");
-    }
-
-    public override void Deselect()
-    {
-        Debug.Log("Deselected " + name);
-    }
 
     private void OnDestroy()
     {

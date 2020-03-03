@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="" />
+    <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/BuildingMenu.cs" root0="SKIP_HIGHLIGHTING" />
@@ -53,7 +57,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitIdleBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitMovingBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/SelectionUI/SelectionUI.cs" />
@@ -98,12 +101,13 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
       </list>
     </option>
   </component>
@@ -186,7 +190,7 @@
       <workItem from="1583155435235" duration="5683000" />
       <workItem from="1583173480911" duration="7769000" />
       <workItem from="1583220818663" duration="4731000" />
-      <workItem from="1583253819586" duration="2521000" />
+      <workItem from="1583253819586" duration="2797000" />
     </task>
     <servers />
   </component>

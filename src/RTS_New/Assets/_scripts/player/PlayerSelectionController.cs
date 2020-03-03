@@ -84,7 +84,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
                 DeselectAll();
             else
             {
-                selected.Deselect();
                 Selected.Remove((selected));
             }
             UpdateSelection();
@@ -103,7 +102,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
             {
                 Debug.LogWarning("Selected Building");
                 DeselectAll();
-                selected.Select();
                 Selected.Add(selected);
             }
             else
@@ -139,7 +137,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
             var viewportPosition = _mCamera.WorldToViewportPoint(selectable.transform.position);
             if (area.Contains(viewportPosition, true))
             {
-                selectable.Select();
                 Selected.Add(selectable);
             }
         }
@@ -148,7 +145,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
 
     private void AddToSelection(Entity selectable)
     {
-        selectable.Select();
         Selected.Add(selectable);
     }
 
@@ -157,7 +153,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
         if (Selected.Count == 0)
             return;
         Selected.RemoveAll(s => s == null);
-        Selected.ForEach(s => s.Deselect());
         Selected.Clear();
         UpdateSelection();
     }

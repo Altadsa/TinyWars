@@ -32,18 +32,6 @@ public class Unit : Entity
         //TODO Setup modifiers
     }
 
-    public override void Select()
-    {
-        Debug.Log($"Selected by {Player}");
-        selectionIndicator.SetActive(true);
-    }
-
-    public override void Deselect()
-    {
-        Debug.Log($"Deselected by {Player}");
-        selectionIndicator.SetActive(false);
-    }
-
     public void AssignAction(RaycastHit actionTarget)
     {
         unitActions.DetermineAction(actionTarget);

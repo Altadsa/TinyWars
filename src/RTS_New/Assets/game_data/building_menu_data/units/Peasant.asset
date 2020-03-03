@@ -15,6 +15,6 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: b8d4632b61a24a745b2c8bed02f50c44, type: 3}
   _name: Peasant
   _desc: Peasant
-  _time: 30
+  _time: 15
   _unitPrefab: {fileID: 1629727984278909781, guid: eb343a77c6ae0dd499a6fdbd6ff2dca0,
     type: 3}
