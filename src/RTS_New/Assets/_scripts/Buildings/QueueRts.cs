@@ -42,8 +42,7 @@ public class QueueRts<T>
     /// </summary>
     public void Dequeue()
     {
-        var queueLen = _queue.Count;
-        var item = _queue[queueLen - 1];
+        var item = _queue[0];
         _queue.Remove(item);
     }
 
@@ -59,7 +58,7 @@ public class QueueRts<T>
             Debug.LogWarning("Queue at max capacity.");
             return;
         }
-        _queue.Insert(0, item);
+        _queue.Insert(queueLen, item);
     }
 
     /// <summary>
