@@ -46,18 +46,23 @@ public class UiBuilding : MonoBehaviour
     {
         _buildingInfoUi = new UiBuildingInfo(this, _sc, _buildingInfoGo);
         _sc.SelectionUpdated += UpdateMenu;
+        _rallyPoint = Instantiate(_rallyPoint);
+        _rallyPoint.RallyPointSet();
     }
 
     private void UpdateMenu(List<Entity> entities)
     {
         if (entities.Count == 0)
         {
+            _rallyPoint.RallyPointSet();
             _buildingMenuGo.SetActive(false);
             return; 
         }
         _target = entities[0] as Building;
+        _rallyPoint.SetRallyPoint(_target.RallyPoint);
         if (_target == null)
         {
+            _rallyPoint.RallyPointSet();
             _buildingMenuGo.SetActive(false);
             return;
         }
@@ -108,11 +113,12 @@ public class UiBuilding : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
+                _rallyPoint.RallyPointSet();
                 yield break;
             }
             newPosHit = _camera.Hit.Value.point;
             _rallyPoint.SetRallyPoint(newPosHit);
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         _target.SetRallyPoint(newPosHit);
     }

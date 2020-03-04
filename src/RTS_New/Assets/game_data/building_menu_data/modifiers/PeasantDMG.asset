@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe35903554a24f2fbf89e445ba61b797, type: 3}
   m_Name: PeasantDMG
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: fd3cd116077079d4c9b80d827d2e0d66, type: 3}
+  _icon: {fileID: 21300000, guid: d9a45c0b9dab78b40b122b86f15980e6, type: 3}
   _name: DMG1
   _desc: 
   _time: 10
