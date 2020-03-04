@@ -16,6 +16,7 @@ MonoBehaviour:
   _name: DMG1
   _desc: 
   _time: 10
+  _priority: 1
   _entityKey: 12
   _modifierKey: 0
   _value: 10

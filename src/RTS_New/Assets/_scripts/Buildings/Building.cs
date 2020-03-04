@@ -32,7 +32,7 @@ public class Building : Entity
         GetComponent<NavMeshObstacle>().enabled = true;
     }
 
-    public ScriptableObject[] MenuItems => _constructed ? _buildingMenuItems : null;
+    public Queueable[] MenuItems => _constructed ? _buildingMenuItems : null;
 
     public void SetRallyPoint(Vector3 pos)
     {

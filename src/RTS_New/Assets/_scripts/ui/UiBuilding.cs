@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -52,52 +52,53 @@ public class UiBuilding : MonoBehaviour
 
     private void UpdateMenu(List<Entity> entities)
     {
-        if (entities.Count == 0)
+        if (entities.Count == 0 || entities[0] is Unit || entities[0] == null)
         {
             _rallyPoint.RallyPointSet();
             _buildingMenuGo.SetActive(false);
             return; 
         }
         _target = entities[0] as Building;
+        
         _rallyPoint.SetRallyPoint(_target.RallyPoint);
-        if (_target == null)
-        {
-            _rallyPoint.RallyPointSet();
-            _buildingMenuGo.SetActive(false);
-            return;
-        }
         _buildingMenuGo.SetActive(true);
+        
         var menuItems = _target.MenuItems;
-        for (int i = 0; i < Menubuttons.Length; i++)
+        HideMenuButtons();
+        
+        SetButton(DestroyData, DestroySelectedBuilding);
+        SetButton(SetRallyPointData, delegate { StartCoroutine(SetRallyPoint()); });
+        if (menuItems == null) return;
+        for (int i = 0; i < menuItems.Length; i++)
         {
-            Menubuttons[i].gameObject.SetActive(false);
-            if (i == 11)
-            {
-                Menubuttons[i].onClick.RemoveAllListeners();
-                Menubuttons[i].GetComponent<Image>().sprite = SetRallyPointData.Icon;
-                Menubuttons[i].onClick.AddListener(delegate { StartCoroutine(SetRallyPoint()); });
-                Menubuttons[i].gameObject.SetActive(true);
-            }
-            else if (i == Menubuttons.Length - 1)
-            {
-                Menubuttons[i].onClick.RemoveAllListeners();
-                Menubuttons[i].GetComponent<Image>().sprite = DestroyData.Icon;
-                Menubuttons[i].onClick.AddListener(DestroySelectedBuilding);
-                Menubuttons[i].gameObject.SetActive(true);
-            }
-            else if (menuItems != null)
-            {
-                if (i < menuItems.Length)
-                {
-                    var item = menuItems[i] as Queueable;
-                    Menubuttons[i].onClick.RemoveAllListeners();
-                    Menubuttons[i].onClick.AddListener(delegate { _target.GetQueue().AddToQueue(item); });
-                    Menubuttons[i].GetComponent<Image>().sprite = item.Icon;
-                    Menubuttons[i].gameObject.SetActive(true);
-                }
-            }
+            SetButton(menuItems[i]);
         }
 
+    }
+    
+    private void HideMenuButtons()
+    {
+        foreach (var menubutton in Menubuttons)
+        {
+            menubutton.gameObject.SetActive(false);
+        }
+    }
+
+    private void SetButton(IMenuItem item, Action action = null)
+    {
+        var i = item.Priority;
+        Menubuttons[i].onClick.RemoveAllListeners();
+        if (action == null)
+        {
+            var qItem = item as Queueable;
+            Menubuttons[i].onClick.AddListener(delegate { _target.GetQueue().AddToQueue(qItem); });
+        }
+        else
+        {
+            Menubuttons[i].onClick.AddListener(delegate { action(); }); 
+        }
+        Menubuttons[i].GetComponent<Image>().sprite = item.Icon;
+        Menubuttons[i].gameObject.SetActive(true);
     }
     
     private void DestroySelectedBuilding()
@@ -123,4 +124,17 @@ public class UiBuilding : MonoBehaviour
         _target.SetRallyPoint(newPosHit);
     }
 
+}
+
+public class UiBuildingMenu
+{
+    private UiBuilding _uiBuilding;
+    private PlayerSelectionController _sc;
+    private GameObject _buildingMenuGo;
+    
+    public UiBuildingMenu(UiBuilding uiBuilding, PlayerSelectionController sc, GameObject buildingMenuGo)
+    {
+        
+    }
+    
 }

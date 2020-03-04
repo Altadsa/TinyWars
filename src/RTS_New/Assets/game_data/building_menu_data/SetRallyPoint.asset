@@ -15,3 +15,4 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 938d23c28c1969a4c8c89bf6814b68af, type: 3}
   _name: Set Rally Point
   _description: Choose a new point for units created by this building to move to.
+  _priority: 11

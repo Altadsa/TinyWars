@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUpgrade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUpgrade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRallyPoint.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRallyPoint.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +34,7 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/b7/65c0f07e/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" root0="FORCE_HIGHLIGHTING" />
@@ -40,32 +57,26 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/BuildingMenu.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scenes/Demo.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraZoom.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiMinimap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraRaycast.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/Building.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f5/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitType.cs" />
-        <option value="$PROJECT_DIR$/Assets/TestModifiers.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerControllableEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
@@ -97,23 +108,26 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
       </list>
     </option>
   </component>
@@ -198,7 +212,7 @@
       <workItem from="1583220818663" duration="4731000" />
       <workItem from="1583253819586" duration="6123000" />
       <workItem from="1583308205862" duration="3395000" />
-      <workItem from="1583331265244" duration="2260000" />
+      <workItem from="1583331265244" duration="5636000" />
     </task>
     <servers />
   </component>

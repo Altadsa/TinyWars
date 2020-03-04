@@ -57,12 +57,19 @@ public interface IUnitAction
 
 public interface IQueueable
 {
-    string Name { get; }
-    string Description { get; }
+
     double QueueTime { get; }
     void Complete();
     //TODO Add Data Structure for costs
 
+}
+
+public interface IMenuItem
+{
+    Sprite Icon { get; }
+    string Name { get; }
+    string Description { get; }
+    int Priority { get; }
 }
 
 public enum Modifier

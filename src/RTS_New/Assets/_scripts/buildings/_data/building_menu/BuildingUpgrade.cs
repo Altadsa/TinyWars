@@ -6,6 +6,9 @@ public class BuildingUpgrade : Queueable
     [SerializeField] private BuildingData _newData;
     [SerializeField] private GameObject _complete;
     public GameObject Completed => _complete;
+
+    // If a building has more than 1 model upgrade, then place data in here.
+    [SerializeField] private BuildingUpgrade _nextUpgrade;
     
     public override void Complete(Building building)
     {

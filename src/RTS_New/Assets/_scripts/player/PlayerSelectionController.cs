@@ -43,11 +43,15 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
     [FormerlySerializedAs("cameraController")] [SerializeField] CameraController _cameraController;
     Camera _mCamera;
     public event Action<List<Entity>> SelectionUpdated;
-    public event Action<Entity> MenuUpdated;
-    
+
     private void Awake()
     {
         _mCamera = Camera.main;
+    }
+
+    private void OnDestroy()
+    {
+        SelectionUpdated = null;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -61,7 +65,7 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON))
+        if (Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON) && IsDeltaReal(eventData.delta) )
         {
             endMousePosition = _mCamera.ScreenToViewportPoint(Input.mousePosition);
             if (startMousePosition != endMousePosition)
@@ -78,7 +82,7 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
             return;
         }
         var selected = RaycastSelection(hitSelection.Value);
-        if (!selected || !Selectable.Contains(selected) || Selected.Contains(selected))
+        if (!selected || !Selectable.Contains(selected))
         {
             if (!selectMultiple)
                 DeselectAll();
@@ -100,7 +104,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
         {
             if (IsBuilding(selected))
             {
-                Debug.LogWarning("Selected Building");
                 DeselectAll();
                 Selected.Add(selected);
             }
@@ -124,7 +127,6 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
     protected override void UpdateSelection()
     {
         SelectionUpdated?.Invoke(Selected);
-        //MenuUpdated?.Invoke(Selected);
     }
     
     private void SelectArea(Rect area)
@@ -176,4 +178,9 @@ public abstract class SelectionController : MonoBehaviour, ISelectionController
         return new Rect(startMousePosition.x, startMousePosition.y, width, height);
     }
 
+    private bool IsDeltaReal(Vector2 delta)
+    {
+        return Math.Abs(delta.x) > 1 || Math.Abs(delta.y) > 1;
+    }
+    
 }
