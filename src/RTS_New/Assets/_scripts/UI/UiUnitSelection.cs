@@ -19,7 +19,7 @@ public class UiUnitSelection : MonoBehaviour
 
     private void SelectionUpdated(List<Entity> units)
     {
-        if (units.Count == 0) 
+        if (units == null) 
         {
             _selectionUI.SetActive(false);
             return;

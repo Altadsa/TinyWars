@@ -8,9 +8,11 @@
       <e p="Assets" t="Include">
         <e p="_scripts" t="Include">
           <e p="AxisInput.cs" t="Include" />
+          <e p="BuildingRallyPoint.cs" t="Include" />
           <e p="Buildings" t="Include">
             <e p="_data" t="Include">
               <e p="BuildingData.cs" t="Include" />
+              <e p="BuildingUpgrade.cs" t="Include" />
               <e p="BuildMenuData.cs" t="Include" />
               <e p="MenuData.cs" t="Include" />
               <e p="MenuDataUnit.cs" t="Include" />

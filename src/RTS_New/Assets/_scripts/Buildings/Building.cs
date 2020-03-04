@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -33,9 +34,9 @@ public class Building : Entity
 
     public ScriptableObject[] MenuItems => _constructed ? _buildingMenuItems : null;
 
-    public void SetRallyPoint()
+    public void SetRallyPoint(Vector3 pos)
     {
-        StartCoroutine(SelectRallyPoint());
+        RallyPoint = pos;
     }
     
     public void SetConstruction()
@@ -59,22 +60,5 @@ public class Building : Entity
     private void OnDestroy()
     {
         _pc.RemoveSelected(this);
-    }
-
-    IEnumerator SelectRallyPoint()
-    {
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1));
-
-        while (!Input.GetMouseButtonDown(0))
-        {
-            if (Input.GetMouseButtonDown(0))
-                yield break;
-            yield return new WaitForEndOfFrame();
-        }
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit);
-        RallyPoint = hit.point;
-        Debug.DrawLine(RallyPoint, Vector3.up*100, Color.blue, 100);
     }
 }

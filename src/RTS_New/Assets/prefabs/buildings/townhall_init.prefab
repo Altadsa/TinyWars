@@ -53,6 +53,7 @@ MonoBehaviour:
   _buildingMenuItems:
   - {fileID: 11400000, guid: 8bca7910efe990841a37e883e798f203, type: 2}
   - {fileID: 11400000, guid: 9f36ad4ab8eb6c9478c4ff04933620b6, type: 2}
+  - {fileID: 11400000, guid: 7b6edffcbf712d342ae30ffccd4d98c1, type: 2}
   _unitSpawn: {fileID: 5475102434578961940}
 --- !u!208 &1988211999206352586
 NavMeshObstacle:
@@ -196,15 +197,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5f43a47e4b64c14da6e0081f639fdd3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5f43a47e4b64c14da6e0081f639fdd3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5f43a47e4b64c14da6e0081f639fdd3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f43a47e4b64c14da6e0081f639fdd3, type: 3}
