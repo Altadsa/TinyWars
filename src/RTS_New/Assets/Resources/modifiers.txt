@@ -1,0 +1,8 @@
+PEASANT=Damage=4
+PEASANT=Armour=0
+PEASANT=AttackSpeed=2
+PEASANT=MoraleMax=0.5
+PEASANT=MoraleDecay=0.005
+PEASANT=MoveSpeed=5
+PEASANT=GatherSpeed=1
+PEASANT=BuildSpeed=25

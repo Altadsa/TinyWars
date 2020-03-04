@@ -15,7 +15,7 @@
                 <e p="BuildingUpgrade.cs" t="Include" />
                 <e p="MenuData.cs" t="Include" />
                 <e p="MenuDataUnit.cs" t="Include" />
-                <e p="MenuDataUpgrade.cs" t="Include" />
+                <e p="ModifierUpgrade.cs" t="Include" />
                 <e p="Queueable.cs" t="Include" />
               </e>
               <e p="BuildingData.cs" t="Include" />
@@ -65,6 +65,10 @@
             <e p="UnitMovement.cs" t="Include" />
             <e p="UnitType.cs" t="Include" />
           </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="modifiers.txt" t="Include" />
+          <e p="requirements.txt" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

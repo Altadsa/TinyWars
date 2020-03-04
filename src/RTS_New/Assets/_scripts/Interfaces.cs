@@ -41,13 +41,6 @@ public interface IPlayerControllable
     void Initialize(Player player);
 }
 
-public interface IUpgradeable
-{
-    Dictionary<Modifier,float> Modifiers { get; }
-
-    void UpdateModifiers();
-}
-
 public interface IUnitAction
 {
     int Priority { get; }
@@ -70,5 +63,8 @@ public enum Modifier
     Health,
     AttackSpeed,
     MoraleMax,
-    MoraleDecay
+    MoraleDecay,
+    MoveSpeed,
+    GatherSpeed,
+    BuildSpeed
 }

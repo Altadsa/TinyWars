@@ -4,14 +4,16 @@ using UnityEngine;
 using Units;
 
 [System.Serializable]
-public class Player : IUpgradeable
+public class Player
 {
     public Color Color { get; private set; }
     
     public Material EntityMaterial { get; private set; }
     public bool IsAi { get; private set; }
 
-    private PlayerModifiers _playerModifiers = new PlayerModifiers();
+    private PlayerModifiers _playerModifiers;
+
+    private Requirements _playerRequirements;
     
     public UnitModifiers GetUnitModifiers(UnitType unitType)
     {
@@ -27,38 +29,25 @@ public class Player : IUpgradeable
         Color = color;
         EntityMaterial = entityMaterial;
         IsAi = isAi;
-        Modifiers = startModifiers;
         _playerModifiers = new PlayerModifiers();
-    }
-
-    public void UpdateModifiers()
-    {
-        OnModifiersChanged?.Invoke(Modifiers);
+        _playerRequirements = new Requirements();
     }
 
     public void ChangeModifier(UnitType type, Modifier modifier, float value)
     {
         _playerModifiers.SetUnitModifier(type, modifier, value);
     }
-
-    readonly Dictionary<Modifier, float> startModifiers = new Dictionary<Modifier, float>()
-    {
-        {Modifier.Damage, 1f},
-        {Modifier.Armour, 1f},
-        {Modifier.AttackSpeed, 1f},
-        {Modifier.MoraleMax, 0.25f},
-        {Modifier.MoraleDecay, 1f}
-    };
 }
 
 public class UnitModifiers
 {
-    private Dictionary<Modifier, float> _uModifiers = new Dictionary<Modifier, float>()
-    {
-        {Modifier.Damage, 1},
-        {Modifier.Armour, 0}
-    };
+    private Dictionary<Modifier, float> _uModifiers;
 
+    public UnitModifiers(Dictionary<Modifier, float> newModifiers)
+    {
+        _uModifiers = newModifiers;
+    }
+    
     public float GetModifier(Modifier modifierKey)
     {
         try
@@ -78,7 +67,7 @@ public class UnitModifiers
     {
         Debug.LogFormat("Before setting new modifier {0}: {1}", modifier, _uModifiers[modifier]);
         _uModifiers[modifier] = value;
-        Debug.LogFormat("Before setting new modifier {0}: {1}", modifier, _uModifiers[modifier]);
+        Debug.LogFormat("After setting new modifier {0}: {1}", modifier, _uModifiers[modifier]);
         ModifiersChanged?.Invoke();
     }
 }

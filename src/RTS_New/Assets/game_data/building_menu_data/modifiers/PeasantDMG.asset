@@ -20,3 +20,4 @@ MonoBehaviour:
   _entityKey: 12
   _modifierKey: 0
   _value: 10
+  _nextUpgrade: {fileID: 0}

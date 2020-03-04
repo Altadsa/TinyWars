@@ -15,7 +15,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 08367032efe53ea438dd14a0db24bc0e, type: 3}
   _name: Keep
   _desc: 
-  _time: 10
+  _time: 5
   _priority: 2
   _newData: {fileID: 11400000, guid: c62cb07941cccd5409457447e85666d3, type: 2}
   _complete: {fileID: 100000, guid: 003306f67c7bed24b8be307fb52fb0ab, type: 3}

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/BuildingData")]
 public class BuildingData : ScriptableObject
@@ -22,12 +19,14 @@ public enum BuildingType
     ARCHERY,
     BARRACKS,
     BLACKSMITH,
+    CASTLE,
     CHAPEL,
     FARM,
     GRANARY,
-    HEADQUATERS,
     HOUSE,
+    KEEP,
     STABLES,
     TOWER,
+    TOWNHALL,
     WORKSHOP
 }

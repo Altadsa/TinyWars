@@ -1,0 +1,14 @@
+    ACADEMY=false
+    ARCHERY=false
+    BARRACKS=false
+    BLACKSMITH=false
+    CASTLE=false
+    CHAPEL=false
+    FARM=false
+    GRANARY=false
+    HOUSE=false
+    KEEP=false
+    STABLES=false
+    TOWER=false
+    TOWNHALL=false
+    WORKSHOP=false
