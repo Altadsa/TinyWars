@@ -12,6 +12,14 @@ public class BuildingUpgrade : Queueable
     
     public override void Complete(Building building)
     {
+        ReplaceBuildingModel(building);
+        if (_nextUpgrade)
+            building.ReplaceItem(this, _nextUpgrade);
+        building.SetNewData(_newData);
+    }
+
+    private void ReplaceBuildingModel(Building building)
+    {
         var player = building.Player;
         var oldModel = building.transform.GetChild(0);
         Destroy(oldModel.gameObject);

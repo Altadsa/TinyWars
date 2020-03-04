@@ -4,33 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
-public abstract class SelectionController : MonoBehaviour, ISelectionController
-{
-    // List of selectable entities
-    public List<Entity> Selectable { get; protected set; } = new List<Entity>();
-    //List of selected entities
-    public List<Entity> Selected { get; protected set; } = new List<Entity>();
-
-
-    
-    public void AddSelected(Entity entity)
-    {
-        Selectable.Add(entity);
-    }
-
-    public void RemoveSelected(Entity entity)
-    {
-        if (Selected.Contains(entity))
-        {
-            Selected.Remove(entity);
-        }
-        Selectable.Remove(entity);
-        UpdateSelection();
-    }
-
-    protected abstract void UpdateSelection();
-}
-
 /// <summary>
  ///  Handles Entity Selection for real players using mouse input
  /// </summary>

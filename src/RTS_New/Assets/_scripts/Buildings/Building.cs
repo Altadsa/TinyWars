@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections;
-using TMPro;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +9,8 @@ public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
     [SerializeField] private Queueable[] _buildingMenuItems;
+
+    public event Action BuildingDataUpdated;
     
     private bool _constructed = true;
 
@@ -34,6 +35,18 @@ public class Building : Entity
 
     public Queueable[] MenuItems => _constructed ? _buildingMenuItems : null;
 
+    public void ReplaceItem(Queueable oldItem, Queueable newItem)
+    {
+        var replaceIndex = Array.IndexOf(_buildingMenuItems, oldItem);
+        _buildingMenuItems[replaceIndex] = newItem;
+    }
+
+    public void SetNewData(BuildingData data)
+    {
+        _buildingData = data;
+        BuildingDataUpdated?.Invoke();
+    }
+    
     public void SetRallyPoint(Vector3 pos)
     {
         RallyPoint = pos;
@@ -59,6 +72,7 @@ public class Building : Entity
 
     private void OnDestroy()
     {
+        BuildingDataUpdated = null;
         _pc.RemoveSelected(this);
     }
 }

@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUpgrade.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUpgrade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRallyPoint.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRallyPoint.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/b7/65c0f07e/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Entity.cs" root0="FORCE_HIGHLIGHTING" />
@@ -77,7 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/PlayerActionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" />
@@ -121,13 +105,14 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
       </list>
     </option>
   </component>
@@ -163,10 +148,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="5456">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10312">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="5456" />
+      <option name="pid" value="10312" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -212,7 +197,7 @@
       <workItem from="1583220818663" duration="4731000" />
       <workItem from="1583253819586" duration="6123000" />
       <workItem from="1583308205862" duration="3395000" />
-      <workItem from="1583331265244" duration="5636000" />
+      <workItem from="1583331265244" duration="7325000" />
     </task>
     <servers />
   </component>
