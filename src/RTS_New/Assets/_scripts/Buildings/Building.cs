@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,7 +22,7 @@ public class Building : Entity
         GetComponent<NavMeshObstacle>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         RallyPoint = _unitSpawn.position;
-        Debug.DrawLine(RallyPoint, Vector3.up*100, Color.blue, 100);
+        GetComponent<BuildingQueue>().QueueChanged += UpdateBuildingData;
     }
 
     public override void Initialize(Player player)
@@ -70,6 +69,11 @@ public class Building : Entity
         return GetComponent<BuildingQueue>();
     }
 
+    private void UpdateBuildingData()
+    {
+        BuildingDataUpdated?.Invoke();
+    }
+    
     private void OnDestroy()
     {
         BuildingDataUpdated = null;

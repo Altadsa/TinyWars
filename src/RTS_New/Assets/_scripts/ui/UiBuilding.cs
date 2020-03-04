@@ -71,7 +71,8 @@ public class UiBuilding : MonoBehaviour
         if (menuItems == null) return;
         for (int i = 0; i < menuItems.Length; i++)
         {
-            SetButton(menuItems[i]);
+            if (menuItems[i] != null)
+                SetButton(menuItems[i]);
         }
 
     }
@@ -91,7 +92,14 @@ public class UiBuilding : MonoBehaviour
         if (action == null)
         {
             var qItem = item as Queueable;
-            Menubuttons[i].onClick.AddListener(delegate { _target.GetQueue().AddToQueue(qItem); });
+            Menubuttons[i].onClick.AddListener(delegate
+            {
+                _target.GetQueue().AddToQueue(qItem);
+                if (qItem is BuildingUpgrade || qItem is ModifierUpgrade)
+                {
+                    Menubuttons[i].gameObject.SetActive(false);
+                }
+            });
         }
         else
         {
@@ -124,17 +132,4 @@ public class UiBuilding : MonoBehaviour
         _target.SetRallyPoint(newPosHit);
     }
 
-}
-
-public class UiBuildingMenu
-{
-    private UiBuilding _uiBuilding;
-    private PlayerSelectionController _sc;
-    private GameObject _buildingMenuGo;
-    
-    public UiBuildingMenu(UiBuilding uiBuilding, PlayerSelectionController sc, GameObject buildingMenuGo)
-    {
-        
-    }
-    
 }

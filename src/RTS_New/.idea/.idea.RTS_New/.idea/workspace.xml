@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUpgrade.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,9 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Unit/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/UnitSelectionUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildMenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitActions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
@@ -94,7 +95,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
@@ -103,16 +103,20 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" />
       </list>
     </option>
   </component>
@@ -197,7 +201,7 @@
       <workItem from="1583220818663" duration="4731000" />
       <workItem from="1583253819586" duration="6123000" />
       <workItem from="1583308205862" duration="3395000" />
-      <workItem from="1583331265244" duration="7325000" />
+      <workItem from="1583331265244" duration="9423000" />
     </task>
     <servers />
   </component>

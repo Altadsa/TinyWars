@@ -13,8 +13,7 @@ public class BuildingUpgrade : Queueable
     public override void Complete(Building building)
     {
         ReplaceBuildingModel(building);
-        if (_nextUpgrade)
-            building.ReplaceItem(this, _nextUpgrade);
+        building.ReplaceItem(this, _nextUpgrade);
         building.SetNewData(_newData);
     }
 

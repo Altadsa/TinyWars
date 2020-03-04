@@ -55,15 +55,6 @@ public interface IUnitAction
     bool IsActionValid(RaycastHit actionTarget);
 }
 
-public interface IQueueable
-{
-
-    double QueueTime { get; }
-    void Complete();
-    //TODO Add Data Structure for costs
-
-}
-
 public interface IMenuItem
 {
     Sprite Icon { get; }
@@ -76,6 +67,7 @@ public enum Modifier
 {
     Damage,
     Armour,
+    Health,
     AttackSpeed,
     MoraleMax,
     MoraleDecay
