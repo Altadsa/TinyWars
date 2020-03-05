@@ -43,6 +43,7 @@
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerModifiers.cs" t="Include" />
             <e p="PlayerSelectionController.cs" t="Include" />
+            <e p="Requirements.cs" t="Include" />
             <e p="SelectionController.cs" t="Include" />
           </e>
           <e p="Setup" t="Include">

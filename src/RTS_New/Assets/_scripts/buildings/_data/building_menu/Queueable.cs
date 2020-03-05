@@ -16,6 +16,9 @@ public abstract class Queueable : ScriptableObject, IMenuItem
     [Tooltip("The index of the item i.e. where it will appear in the menu.")]
     [Range(0,15)]
     [SerializeField] private int _priority;
+
+    [Tooltip("The requirements that must be met by the player in order to add the item to the queue.")] [SerializeField]
+    private BuildingType[] _requirements;
     
     public Sprite Icon => _icon;
     public string Name => _name;
@@ -24,6 +27,7 @@ public abstract class Queueable : ScriptableObject, IMenuItem
 
     public int Priority => _priority;
 
+    public BuildingType[] Requirements => _requirements;
 
     public abstract void Complete(Building building);
 }

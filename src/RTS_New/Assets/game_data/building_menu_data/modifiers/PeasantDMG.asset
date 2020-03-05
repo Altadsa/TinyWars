@@ -17,6 +17,7 @@ MonoBehaviour:
   _desc: 
   _time: 10
   _priority: 1
+  _requirements: 09000000
   _entityKey: 12
   _modifierKey: 0
   _value: 10

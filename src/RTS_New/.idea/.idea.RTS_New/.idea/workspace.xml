@@ -4,13 +4,8 @@
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Castle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Castle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/prefabs/player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/BuildingMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scenes/Demo.unity" root0="FORCE_HIGHLIGHTING" />
@@ -69,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Unit/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
@@ -98,13 +93,11 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
@@ -115,11 +108,14 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/requirements.txt" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
       </list>
     </option>
   </component>
@@ -204,7 +200,8 @@
       <workItem from="1583220818663" duration="4731000" />
       <workItem from="1583253819586" duration="6123000" />
       <workItem from="1583308205862" duration="3395000" />
-      <workItem from="1583331265244" duration="13066000" />
+      <workItem from="1583331265244" duration="15150000" />
+      <workItem from="1583396946955" duration="291000" />
     </task>
     <servers />
   </component>
@@ -236,6 +233,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs</url>
+          <line>75</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" initialLine="75">
+            <startOffsets>
+              <option value="2617" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2638" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
