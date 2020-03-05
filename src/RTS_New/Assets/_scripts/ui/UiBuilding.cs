@@ -22,7 +22,7 @@ public class UiBuilding : MonoBehaviour
     
     // References needed to create the menu for buildings.
     [Header("****MENU****")]
-    public Button[] Menubuttons;
+    public UiBuildingMenuButton[] Menubuttons;
     
     // References needed to visualise the rally point.
     [Header("Rally Point Data")]

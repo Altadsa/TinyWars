@@ -13,7 +13,7 @@ public class UiTooltip : MonoBehaviour
     
     private const string REQ_TEXT = "Requirements:\n";
 
-    private void Start()
+    private void Awake()
     {
         FindObjectsOfType<UiBuildingMenuButton>().ToList().ForEach(b => b.TooltipUpdated += UpdateTooltip);
         _tooltipGo.SetActive(false);
@@ -21,14 +21,15 @@ public class UiTooltip : MonoBehaviour
 
     private void UpdateTooltip(MenuData data, bool setActive)
     {
+        Debug.Log("Update Tooltip");
         if (setActive == false)
         {
             _tooltipGo.SetActive(false);
             return;
         }
-
         _title.text = data.Name;
         _description.text = data.Description;
+        _tooltipGo.SetActive(true);
     }
     
 }

@@ -16,6 +16,7 @@ public class UiBuildingInfo
         _sc = sc;
         _buildingInfo = infoUi;
         _sc.SelectionUpdated += SelectionUpdated;
+        _buildingInfo.SetActive(false);
     }
     
     private void SelectionUpdated(List<Entity> entities)

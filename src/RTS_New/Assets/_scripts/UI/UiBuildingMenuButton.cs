@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Handles setup of menu buttons and tooltip data for a given menu item.
 /// </summary>
-public class UiBuildingMenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private BuildingMenuItem _data;
     private Button _menuButton;
@@ -14,10 +14,10 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerDownHandler, IPointer
 
     public event Action<BuildingMenuItem,bool> TooltipUpdated;
     
-    private void Start()
+    private void Awake()
     {
         _menuButton = GetComponent<Button>();
-        _buttonImage = GetComponentInChildren<Image>();
+        _buttonImage = GetComponent<Image>();
     }
 
     public void SetButtonData(BuildingMenuItem item, Building building)
@@ -47,14 +47,18 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerDownHandler, IPointer
         _buttonImage.sprite = item.Icon;
         gameObject.SetActive(true);
     }
-    
-    public void OnPointerDown(PointerEventData eventData)
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Mouse over " + _data.name);
         TooltipUpdated?.Invoke(_data, true);
     }
-
-    public void OnPointerUp(PointerEventData eventData)
+    
+    public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("Mouse exit " + _data.name);
         TooltipUpdated?.Invoke(_data,false);
     }
+
+
 }
