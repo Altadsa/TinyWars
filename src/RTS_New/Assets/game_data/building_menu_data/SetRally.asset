@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d762098021cf34fa31f8c3c57e9192, type: 3}
-  m_Name: SetRallyPoint
+  m_Script: {fileID: 11500000, guid: ed9eca018007485098f4c9be181f4e22, type: 3}
+  m_Name: SetRally
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 938d23c28c1969a4c8c89bf6814b68af, type: 3}
   _name: Set Rally Point
-  _description: Choose a new point for units created by this building to move to.
+  _description: 
   _priority: 11

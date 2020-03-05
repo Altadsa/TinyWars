@@ -13,10 +13,12 @@
             <e p="_data" t="Include">
               <e p="building_menu" t="Include">
                 <e p="BuildingUpgrade.cs" t="Include" />
+                <e p="DestroyBuilding.cs" t="Include" />
                 <e p="MenuData.cs" t="Include" />
                 <e p="MenuDataUnit.cs" t="Include" />
                 <e p="ModifierUpgrade.cs" t="Include" />
                 <e p="Queueable.cs" t="Include" />
+                <e p="SetBuildingRallyPoint.cs" t="Include" />
               </e>
               <e p="BuildingData.cs" t="Include" />
               <e p="BuildMenuData.cs" t="Include" />

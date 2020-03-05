@@ -4,8 +4,15 @@
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRallyPoint.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRallyPoint.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Castle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Castle.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/buildings/Keep.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +36,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/AudioManager.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/SetBuildingRallyPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,12 +69,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Unity Repos/RTS-Project/Assets/Buildings/Building.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f5/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/DestroyBuilding.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
@@ -98,15 +105,12 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/requirements.txt" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingData.cs" />
@@ -115,7 +119,12 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/DestroyBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/SetBuildingRallyPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
       </list>
     </option>
   </component>
@@ -201,7 +210,7 @@
       <workItem from="1583253819586" duration="6123000" />
       <workItem from="1583308205862" duration="3395000" />
       <workItem from="1583331265244" duration="15150000" />
-      <workItem from="1583396946955" duration="291000" />
+      <workItem from="1583396946955" duration="2720000" />
     </task>
     <servers />
   </component>

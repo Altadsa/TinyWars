@@ -54,6 +54,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8bca7910efe990841a37e883e798f203, type: 2}
   - {fileID: 11400000, guid: 9f36ad4ab8eb6c9478c4ff04933620b6, type: 2}
   - {fileID: 11400000, guid: 7b6edffcbf712d342ae30ffccd4d98c1, type: 2}
+  - {fileID: 11400000, guid: ac0c0487951bb44488aaf64c41ba1283, type: 2}
+  - {fileID: 11400000, guid: 19b905a88cbcf83458159eff872d7665, type: 2}
   _unitSpawn: {fileID: 5475102434578961940}
 --- !u!208 &1988211999206352586
 NavMeshObstacle:

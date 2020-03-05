@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,7 +8,7 @@ using UnityEngine.AI;
 public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
-    [SerializeField] private Queueable[] _buildingMenuItems;
+    [SerializeField] private BuildingMenuItem[] _buildingMenuItems;
 
     public event Action BuildingDataUpdated;
     
@@ -32,7 +33,7 @@ public class Building : Entity
         GetComponent<NavMeshObstacle>().enabled = true;
     }
 
-    public Queueable[] MenuItems => _constructed ? _buildingMenuItems : null;
+    public BuildingMenuItem[] MenuItems => _constructed ? _buildingMenuItems : null;
 
     public void ReplaceItem(Queueable oldItem, Queueable newItem)
     {
@@ -45,12 +46,12 @@ public class Building : Entity
         _buildingData = data;
         BuildingDataUpdated?.Invoke();
     }
-    
-    public void SetRallyPoint(Vector3 pos)
+
+    public void SetRally()
     {
-        RallyPoint = pos;
+        StartCoroutine(SetRallyPoint());
     }
-    
+
     public void SetConstruction()
     {
         gameObject.AddComponent<BuildingConstruction>();
@@ -78,5 +79,25 @@ public class Building : Entity
     {
         BuildingDataUpdated = null;
         _pc.RemoveSelected(this);
+    }
+    
+    IEnumerator SetRallyPoint()
+    {
+        var _rallyPoint = FindObjectOfType<BuildingRallyPoint>();
+        var _camera = FindObjectOfType<CameraController>();
+        Vector3 newPosHit = Vector3.zero;
+        while (!Input.GetMouseButtonDown(0))
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                _rallyPoint.RallyPointSet();
+                yield break;
+            }
+            newPosHit = _camera.Hit.Value.point;
+            _rallyPoint.SetRallyPoint(newPosHit);
+            yield return null;
+        }
+
+        RallyPoint = newPosHit;
     }
 }

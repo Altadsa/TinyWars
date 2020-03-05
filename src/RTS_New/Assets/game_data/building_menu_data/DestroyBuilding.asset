@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d762098021cf34fa31f8c3c57e9192, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ce0132f420f4734836531919252006b, type: 3}
   m_Name: DestroyBuilding
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 0adee48994682544fa65aa589830c7ee, type: 3}
-  _name: Destroy
-  _description: Destroy the Building
+  _name: Destroy Building
+  _description: 
   _priority: 15

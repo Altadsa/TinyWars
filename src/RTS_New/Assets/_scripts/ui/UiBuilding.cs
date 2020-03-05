@@ -66,8 +66,8 @@ public class UiBuilding : MonoBehaviour
         var menuItems = _target.MenuItems;
         HideMenuButtons();
         
-        SetButton(DestroyData, DestroySelectedBuilding);
-        SetButton(SetRallyPointData, delegate { StartCoroutine(SetRallyPoint()); });
+        //SetButton(DestroyData, DestroySelectedBuilding);
+        //SetButton(SetRallyPointData, delegate { StartCoroutine(SetRallyPoint()); });
         if (menuItems == null) return;
         for (int i = 0; i < menuItems.Length; i++)
         {
@@ -85,13 +85,13 @@ public class UiBuilding : MonoBehaviour
         }
     }
 
-    private void SetButton(IMenuItem item, Action action = null)
+    private void SetButton(BuildingMenuItem item)
     {
         var i = item.Priority;
         Menubuttons[i].onClick.RemoveAllListeners();
-        if (action == null)
+        var qItem = item as Queueable;
+        if (qItem)
         {
-            var qItem = item as Queueable;
             Menubuttons[i].onClick.AddListener(delegate
             {
                 _target.GetQueue().AddToQueue(qItem);
@@ -103,33 +103,29 @@ public class UiBuilding : MonoBehaviour
         }
         else
         {
-            Menubuttons[i].onClick.AddListener(delegate { action(); }); 
+            Menubuttons[i].onClick.AddListener(delegate { item.Complete(_target); });            
         }
+
+
         Menubuttons[i].GetComponent<Image>().sprite = item.Icon;
         Menubuttons[i].gameObject.SetActive(true);
     }
     
-    private void DestroySelectedBuilding()
-    {    
-        Destroy(_target.gameObject);
-        _target = null;
-    }
-
-    IEnumerator SetRallyPoint()
-    {
-        Vector3 newPosHit = Vector3.zero;
-        while (!Input.GetMouseButtonDown(0))
-        {
-            if (Input.GetMouseButtonDown(1))
-            {
-                _rallyPoint.RallyPointSet();
-                yield break;
-            }
-            newPosHit = _camera.Hit.Value.point;
-            _rallyPoint.SetRallyPoint(newPosHit);
-            yield return null;
-        }
-        _target.SetRallyPoint(newPosHit);
-    }
+//    IEnumerator SetRallyPoint()
+//    {
+//        Vector3 newPosHit = Vector3.zero;
+//        while (!Input.GetMouseButtonDown(0))
+//        {
+//            if (Input.GetMouseButtonDown(1))
+//            {
+//                _rallyPoint.RallyPointSet();
+//                yield break;
+//            }
+//            newPosHit = _camera.Hit.Value.point;
+//            _rallyPoint.SetRallyPoint(newPosHit);
+//            yield return null;
+//        }
+//        _target.SetRallyPoint(newPosHit);
+//    }
 
 }
