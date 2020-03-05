@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +201,7 @@
       <workItem from="1583308205862" duration="3395000" />
       <workItem from="1583331265244" duration="15150000" />
       <workItem from="1583396946955" duration="5064000" />
-      <workItem from="1583434942219" duration="6647000" />
+      <workItem from="1583434942219" duration="7662000" />
     </task>
     <servers />
   </component>
