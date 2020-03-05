@@ -33,8 +33,7 @@ public class QueueRts<T>
     /// <returns></returns>
     public T Peek()
     {
-        var queueLen = _queue.Count;
-        return _queue[queueLen - 1];
+        return _queue[0];
     }
     
     /// <summary>

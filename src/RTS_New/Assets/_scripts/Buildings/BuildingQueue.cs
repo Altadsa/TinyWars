@@ -15,11 +15,7 @@ public class BuildingQueue : MonoBehaviour
     public List<Queueable> Queue => _buildQueue.Queue;
 
     private QueueRts<Queueable> _buildQueue;
-    
-    // We need to keep the elapsed time of the queue global in the event that we remove a processing item from the queue
-    // and don't want to waste production time.
-    private double _elapsedTime = 0;
-    
+
     private void Awake()
     {
         _buildQueue = new QueueRts<Queueable>(5);
@@ -56,36 +52,44 @@ public class BuildingQueue : MonoBehaviour
         // Start the queue again if it isn't empty
         // Otherwise reset the elpased time
         if (!_buildQueue.IsEmpty())
-            StartCoroutine(ProcessQueue(_elapsedTime));
+            StartCoroutine(ProcessQueue());
         else
-        {
-            _elapsedTime = 0;
-            QueueProcessing?.Invoke(_elapsedTime);
-        }
+            QueueProcessing?.Invoke(0);
         QueueChanged?.Invoke();
     }
-    
 
+    /// <summary>
+    /// Checks for a Queueable item in the queue. To be used to check if upgrade items are in queue for ui.
+    /// </summary>
+    /// <param name="item">The item to check for membership.</param>
+    /// <returns></returns>
+    public bool IsUpgradeInQueue(Queueable item)
+    {
+        var queue = _buildQueue.Queue;
+        return queue.Contains(item);
+    }
+    
+    
+    
     // We only want to update the Queue once it has items in it.
-    IEnumerator ProcessQueue(double elapsedTime = 0)
+    IEnumerator ProcessQueue()
     {
         do
         {
-            _elapsedTime = elapsedTime;
+            float elapsedTime = 0;
             var item = _buildQueue.Peek();
             var queueTime = item.Time;
-            while (_elapsedTime < queueTime)
+            while (elapsedTime < queueTime)
             {
-                _elapsedTime += Time.deltaTime;
-                QueueProcessing?.Invoke(Math.Round(_elapsedTime/queueTime, 2));
+                elapsedTime += Time.deltaTime;
+                QueueProcessing?.Invoke(Math.Round(elapsedTime/queueTime, 2));
                 yield return new WaitForEndOfFrame();
             }
-            QueueProcessing?.Invoke(0);
             item.Complete(GetComponent<Building>());
-            
             _buildQueue.Dequeue();
             QueueChanged?.Invoke();
         } while (!_buildQueue.IsEmpty());
+        QueueProcessing?.Invoke(0);
     }
     
 }
