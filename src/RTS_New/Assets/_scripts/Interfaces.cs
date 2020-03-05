@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public interface IInput
@@ -8,13 +7,6 @@ public interface IInput
     float Vertical { get; }
 
     void ReadInput();
-}
-
-public interface ISelectable
-{
-    Transform Transform { get; }
-    void Select();
-    void Deselect();
 }
 
 public interface ISelectionController
@@ -34,13 +26,6 @@ public interface IActionController
     void AssignUnitActions(List<Entity> selected, RaycastHit actionTarget);
 }
 
-public interface IPlayerControllable
-{
-    Player Player { get; }
-
-    void Initialize(Player player);
-}
-
 public interface IUnitAction
 {
     int Priority { get; }
@@ -48,13 +33,6 @@ public interface IUnitAction
     bool IsActionValid(RaycastHit actionTarget);
 }
 
-public interface IMenuItem
-{
-    Sprite Icon { get; }
-    string Name { get; }
-    string Description { get; }
-    int Priority { get; }
-}
 
 public enum Modifier
 {
