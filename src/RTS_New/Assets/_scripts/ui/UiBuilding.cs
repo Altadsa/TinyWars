@@ -37,4 +37,10 @@ public class UiBuilding : MonoBehaviour
         _buildingInfoUi = new UiBuildingInfo(this, _sc, _buildingInfoGo);
         _buildingMenuUi = new UiBuildingMenu(Menubuttons, _sc, _buildingMenuGo, _rallyPoint);
     }
+
+    private void OnDestroy()
+    {
+        _buildingInfoUi = null;
+        _buildingMenuUi = null;
+    }
 }
