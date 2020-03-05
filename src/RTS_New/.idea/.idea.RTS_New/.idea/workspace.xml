@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Entity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,6 +54,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/BuildingUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/AudioManager.asset" root0="FORCE_HIGHLIGHTING" />
@@ -61,10 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/UnitSelectionUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiUnitSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
@@ -112,6 +113,10 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/ModifierUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiButtonTooltip.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" />
       </list>
     </option>
   </component>
@@ -198,7 +203,7 @@
       <workItem from="1583308205862" duration="3395000" />
       <workItem from="1583331265244" duration="15150000" />
       <workItem from="1583396946955" duration="5064000" />
-      <workItem from="1583434942219" duration="3284000" />
+      <workItem from="1583434942219" duration="5626000" />
     </task>
     <servers />
   </component>
