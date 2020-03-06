@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/modifiers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/modifiers.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/DestroyBuilding.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRally.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/SetRally.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/building_menu_data/units/Peasant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/building_menu_data/units/Peasant.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" />
@@ -84,13 +84,11 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/MenuDataUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
@@ -121,11 +119,14 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
       </list>
     </option>
   </component>
@@ -213,7 +214,8 @@
       <workItem from="1583331265244" duration="15150000" />
       <workItem from="1583396946955" duration="5064000" />
       <workItem from="1583434942219" duration="7884000" />
-      <workItem from="1583482035742" duration="6753000" />
+      <workItem from="1583482035742" duration="7149000" />
+      <workItem from="1583513221858" duration="1714000" />
     </task>
     <servers />
   </component>

@@ -34,6 +34,6 @@ public class Player
 
     public void ChangeModifier(UnitType type, Modifier modifier, float value)
     {
-        _playerModifiers.SetUnitModifier(type, modifier, value);
+        _playerModifiers.SetModifier(type, modifier, value);
     }
 }

@@ -1,0 +1,2 @@
+TOWNHALL=Health=750
+TOWNHALL=Armour=0

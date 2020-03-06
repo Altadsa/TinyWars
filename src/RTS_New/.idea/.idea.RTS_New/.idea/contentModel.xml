@@ -74,8 +74,9 @@
           </e>
         </e>
         <e p="Resources" t="Include">
-          <e p="modifiers.txt" t="Include" />
+          <e p="building_modifiers.txt" t="Include" />
           <e p="requirements.txt" t="Include" />
+          <e p="unit_modifiers.txt" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

@@ -7,11 +7,12 @@ using UnityEngine;
 public class PlayerModifiers
 {
     private Dictionary<UnitType, Modifiers> _uModifiers;
-    private Dictionary<BuildingType, Modifiers> _bModifiers = new Dictionary<BuildingType, Modifiers>();
+    private Dictionary<BuildingType, Modifiers> _bModifiers;
     
     public PlayerModifiers()
     {
-        _uModifiers = Initialise();
+        _uModifiers = InitialiseUnitModifiers();
+        _bModifiers = InitialiseBuildingModifiers();
     }
     
     /// <summary>
@@ -27,7 +28,7 @@ public class PlayerModifiers
         }
         catch (KeyNotFoundException e)
         {
-            Debug.LogError("No such Unit Type exists in Modifiers: " + unitType);
+            Debug.LogErrorFormat("{0}: No such Unit exists, or rather, I can't find it's modifiers.", unitType);
             throw;
         }
     }
@@ -56,15 +57,20 @@ public class PlayerModifiers
     /// <param name="type"></param>
     /// <param name="modifier"></param>
     /// <param name="value"></param>
-    public void SetUnitModifier(UnitType type, Modifier modifier, float value)
+    public void SetModifier(UnitType type, Modifier modifier, float value)
     {
         _uModifiers[type].SetModifier(modifier, value);
     }
 
-    private Dictionary<UnitType, Modifiers> Initialise()
+    public void SetModifier(BuildingType type, Modifier modifier, float value)
+    {
+        _bModifiers[type].SetModifier(modifier,value);
+    }
+
+    private Dictionary<UnitType, Modifiers> InitialiseUnitModifiers()
     {
         var initialValues = new Dictionary<UnitType, Modifiers>();
-        using (var sr = new StreamReader("Assets/Resources/modifiers.txt"))
+        using (var sr = new StreamReader("Assets/Resources/unit_modifiers.txt"))
         {
             string line = sr.ReadLine();
             Dictionary<Modifier,float> newModifiers = new Dictionary<Modifier, float>();
@@ -89,6 +95,41 @@ public class PlayerModifiers
                 lastType = unitKey;
             }
             initialValues[unitKey] = new Modifiers(newModifiers);
+        }
+
+        return initialValues;
+    }
+    
+    private Dictionary<BuildingType, Modifiers> InitialiseBuildingModifiers()
+    {
+        var initialValues = new Dictionary<BuildingType, Modifiers>();
+        using (var sr = new StreamReader("Assets/Resources/building_modifiers.txt"))
+        {
+            string line = sr.ReadLine();
+            Dictionary<Modifier,float> newModifiers = new Dictionary<Modifier, float>();
+            var buildingModVal = line.Split('=');
+            var buildingKey = (BuildingType) Enum.Parse(typeof(BuildingType), buildingModVal[0]);
+            var modKey = (Modifier) Enum.Parse(typeof(Modifier), buildingModVal[1]);
+            var modVal = float.Parse(buildingModVal[2]);
+            newModifiers[modKey] = modVal;
+            BuildingType lastType = buildingKey;
+            while ((line = sr.ReadLine()) != null)
+            {
+                buildingModVal = line.Split('=');
+                buildingKey = (BuildingType) Enum.Parse(typeof(BuildingType), buildingModVal[0]);
+                modKey = (Modifier) Enum.Parse(typeof(Modifier), buildingModVal[1]);
+                modVal = float.Parse(buildingModVal[2]);
+                if (buildingKey != lastType)
+                {
+                    initialValues[buildingKey] = new Modifiers(newModifiers);
+                    Debug.LogFormat("Found Modifier Data for {0}", buildingKey);
+                    newModifiers.Clear();
+                }
+                newModifiers[modKey] = modVal;
+                lastType = buildingKey;
+            }
+            initialValues[buildingKey] = new Modifiers(newModifiers);
+            Debug.LogFormat("Found Modifier Data for {0}", buildingKey);
         }
 
         return initialValues;

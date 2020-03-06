@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public abstract class Entity : MonoBehaviour
 
     protected SelectionController _pc;
     protected Dictionary<Modifier, float> _modifiers;
+
+    public event Action ModifiersUpdated;
     
     //Used to initialise the entity after it is instantiated in the game world.
     public virtual void Initialize(Player player)
@@ -26,9 +29,15 @@ public abstract class Entity : MonoBehaviour
         return player == Player;
     }
 
+    public float GetModifierValue(Modifier modifier)
+    {
+        return _modifiers[modifier];
+    }
+
     protected void UpdateModifiers(Dictionary<Modifier, float> newModifiers)
     {
         _modifiers = newModifiers;
+        ModifiersUpdated?.Invoke();
     }
     
 }

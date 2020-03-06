@@ -98,8 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a862b5e263f97488100a6839cc5e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cHealth: 100
-  Initialise: 1
+  _initialise: 1
 --- !u!114 &2786375182292372432
 MonoBehaviour:
   m_ObjectHideFlags: 0
