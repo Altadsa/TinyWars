@@ -57,8 +57,20 @@ public class Building : Entity
     /// <param name="data"></param>
     public void SetNewData(BuildingData data)
     {
-        _buildingData = data;
+        GetNewModifiers(data);
         BuildingDataUpdated?.Invoke();
+    }
+
+    private void GetNewModifiers(BuildingData data)
+    {
+        // Remove subscription to old modifier object.
+        var oldModifiers = Player.GetBuildingModifiers(_buildingData.BuildingType);
+        oldModifiers.ModifiersChanged -= UpdateModifiers;
+        _buildingData = data;
+        // Set new modifiers and subscribe to new modifier object.
+        var newModifiers = Player.GetBuildingModifiers(_buildingData.BuildingType);
+        _modifiers = newModifiers.EntityModifiers;
+        newModifiers.ModifiersChanged += UpdateModifiers;
     }
 
     public void SetRally()
