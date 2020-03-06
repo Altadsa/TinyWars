@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Modifiers
 {
-    private Dictionary<Modifier, float> _modifiers;
+    private Dictionary<Modifier, float> _modifiers = new Dictionary<Modifier, float>();
 
     // Idea is to invoke event, and entities that use this modifier will be notified such that they can keep their own data up-to-date.
     public event Action<Dictionary<Modifier, float>> ModifiersChanged;
     
     public Modifiers(Dictionary<Modifier, float> newModifiers)
     {
-        _modifiers = newModifiers;
+        foreach (var newModifier in newModifiers)
+        {
+            _modifiers[newModifier.Key] = newModifier.Value;
+        }
+        newModifiers.Clear();
     }
 
     public Dictionary<Modifier, float> EntityModifiers => _modifiers;

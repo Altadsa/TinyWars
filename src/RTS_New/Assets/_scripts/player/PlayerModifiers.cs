@@ -79,20 +79,20 @@ public class PlayerModifiers
             var modKey = (Modifier) Enum.Parse(typeof(Modifier), unitModVal[1]);
             var modVal = float.Parse(unitModVal[2]);
             newModifiers[modKey] = modVal;
-            UnitType lastType = unitKey;
+            UnitType lastKey = unitKey;
             while ((line = sr.ReadLine()) != null)
             {
                 unitModVal = line.Split('=');
                 unitKey = (UnitType) Enum.Parse(typeof(UnitType), unitModVal[0]);
                 modKey = (Modifier) Enum.Parse(typeof(Modifier), unitModVal[1]);
                 modVal = float.Parse(unitModVal[2]);
-                if (unitKey != lastType)
+                if (unitKey != lastKey)
                 {
-                    initialValues[unitKey] = new Modifiers(newModifiers);
+                    initialValues[lastKey] = new Modifiers(newModifiers);
                     newModifiers.Clear();
                 }
                 newModifiers[modKey] = modVal;
-                lastType = unitKey;
+                lastKey = unitKey;
             }
             initialValues[unitKey] = new Modifiers(newModifiers);
         }
@@ -105,28 +105,32 @@ public class PlayerModifiers
         var initialValues = new Dictionary<BuildingType, Modifiers>();
         using (var sr = new StreamReader("Assets/Resources/building_modifiers.txt"))
         {
-            string line = sr.ReadLine();
+
+            // Initialise new modifiers
             Dictionary<Modifier,float> newModifiers = new Dictionary<Modifier, float>();
+            // Read first line and get Entity Type, Modifier Type and value
+            string line = sr.ReadLine();          
             var buildingModVal = line.Split('=');
             var buildingKey = (BuildingType) Enum.Parse(typeof(BuildingType), buildingModVal[0]);
             var modKey = (Modifier) Enum.Parse(typeof(Modifier), buildingModVal[1]);
             var modVal = float.Parse(buildingModVal[2]);
+            
             newModifiers[modKey] = modVal;
-            BuildingType lastType = buildingKey;
+            BuildingType lastKey = buildingKey;
             while ((line = sr.ReadLine()) != null)
             {
                 buildingModVal = line.Split('=');
                 buildingKey = (BuildingType) Enum.Parse(typeof(BuildingType), buildingModVal[0]);
                 modKey = (Modifier) Enum.Parse(typeof(Modifier), buildingModVal[1]);
                 modVal = float.Parse(buildingModVal[2]);
-                if (buildingKey != lastType)
+                if (buildingKey != lastKey)
                 {
-                    initialValues[buildingKey] = new Modifiers(newModifiers);
-                    Debug.LogFormat("Found Modifier Data for {0}", buildingKey);
+                    initialValues[lastKey] = new Modifiers(newModifiers);
+                    Debug.LogFormat("Found Modifier Data for {0}", lastKey);
                     newModifiers.Clear();
                 }
                 newModifiers[modKey] = modVal;
-                lastType = buildingKey;
+                lastKey = buildingKey;
             }
             initialValues[buildingKey] = new Modifiers(newModifiers);
             Debug.LogFormat("Found Modifier Data for {0}", buildingKey);

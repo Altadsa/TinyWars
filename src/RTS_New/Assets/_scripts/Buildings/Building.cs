@@ -34,7 +34,7 @@ public class Building : Entity
         
         // Initialise Building Modifiers.
         var entityModifiers = player.GetBuildingModifiers(_buildingData.BuildingType);
-        _modifiers = entityModifiers.EntityModifiers;
+        UpdateModifiers(entityModifiers.EntityModifiers);
         entityModifiers.ModifiersChanged += UpdateModifiers;
     }
 
@@ -69,7 +69,7 @@ public class Building : Entity
         _buildingData = data;
         // Set new modifiers and subscribe to new modifier object.
         var newModifiers = Player.GetBuildingModifiers(_buildingData.BuildingType);
-        _modifiers = newModifiers.EntityModifiers;
+        UpdateModifiers(newModifiers.EntityModifiers);
         newModifiers.ModifiersChanged += UpdateModifiers;
     }
 

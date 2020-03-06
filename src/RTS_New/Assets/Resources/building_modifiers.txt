@@ -1,2 +1,4 @@
 TOWNHALL=Health=750
 TOWNHALL=Armour=0
+KEEP=Health=1000
+KEEP=Armour=0
