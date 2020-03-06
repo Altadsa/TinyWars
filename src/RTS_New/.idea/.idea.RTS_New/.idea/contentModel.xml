@@ -64,12 +64,12 @@
             <e p="UiUnitSelection.cs" t="Include" />
           </e>
           <e p="units" t="Include">
+            <e p="EntityType.cs" t="Include" />
             <e p="MoveAction.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
             <e p="UnitMovement.cs" t="Include" />
-            <e p="UnitType.cs" t="Include" />
           </e>
         </e>
         <e p="Resources" t="Include">

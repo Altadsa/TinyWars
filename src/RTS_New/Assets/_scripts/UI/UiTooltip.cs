@@ -22,9 +22,8 @@ public class UiTooltip : MonoBehaviour
         _tooltipRect = _tooltipGo.GetComponent<RectTransform>();
     }
 
-    private void UpdateTooltip(MenuData data, bool setActive)
+    private void UpdateTooltip(MenuData data, Vector3 newPos, bool setActive)
     {
-        Debug.Log("Update Tooltip");
         if (setActive == false)
         {
             _tooltipGo.SetActive(false);
@@ -33,7 +32,7 @@ public class UiTooltip : MonoBehaviour
         _title.text = data.Name;
         _description.text = data.Description;
         _tooltipGo.SetActive(true);
-        if (data is Queueable queuable)
+        if (data is Queueable queuable && queuable.Requirements.Length > 0)
         {
             _requirements.gameObject.SetActive(true);
             _requirements.text = REQ_TEXT;
@@ -49,10 +48,19 @@ public class UiTooltip : MonoBehaviour
         }
 
         var newSize = _tooltipRect.sizeDelta;
-        newSize.y = 10 + _title.GetComponent<RectTransform>().sizeDelta.y + _description.GetComponent<RectTransform>().sizeDelta.y;
+        newSize.y = 20 + _title.GetComponent<RectTransform>().sizeDelta.y + _description.GetComponent<RectTransform>().sizeDelta.y;
         if (_requirements.gameObject.activeInHierarchy)
-            newSize.y += _requirements.GetComponent<RectTransform>().sizeDelta.y;
+            newSize.y += _requirements.GetComponent<RectTransform>().sizeDelta.y + 5;
         _tooltipRect.sizeDelta = newSize;
+        _tooltipRect.position = SetNetPosition(newPos);
+    }
+    
+    private Vector3 SetNetPosition(Vector3 newPos)
+    {
+        var size = _tooltipRect.sizeDelta / 2;
+        newPos.x -= size.x/2;
+        newPos.y += size.y/2;
+        return newPos;
     }
     
 }

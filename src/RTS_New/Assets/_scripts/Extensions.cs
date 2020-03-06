@@ -4,11 +4,6 @@ using UnityEngine;
 
 public static class Extensions
 {
-    public static Camera MiniCam(this Camera cam)
-    {
-        return GameObject.FindGameObjectWithTag("minimap").GetComponent<Camera>();
-    }
-
     public static Vector3[] VieportBounds(this Camera camera)
     {
         var viewportBounds = new Vector3[4];
@@ -18,5 +13,4 @@ public static class Extensions
         viewportBounds[3] = camera.ViewportToWorldPoint(Vector3.right);
         return viewportBounds;
     }
-
 }

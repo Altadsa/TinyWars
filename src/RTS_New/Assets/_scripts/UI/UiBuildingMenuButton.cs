@@ -12,12 +12,15 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
     private Button _menuButton;
     private Image _buttonImage;
 
-    public event Action<BuildingMenuItem,bool> TooltipUpdated;
+    public event Action<BuildingMenuItem, Vector3,bool> TooltipUpdated;
+
+    private static Camera _mainCamera;
     
     private void Awake()
     {
         _menuButton = GetComponent<Button>();
         _buttonImage = GetComponent<Image>();
+        
     }
 
     public void SetButtonData(BuildingMenuItem item, Building building)
@@ -50,15 +53,12 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Mouse over " + _data.name);
-        TooltipUpdated?.Invoke(_data, true);
+        TooltipUpdated?.Invoke(_data, eventData.position, true);
     }
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Mouse exit " + _data.name);
-        TooltipUpdated?.Invoke(_data,false);
+        TooltipUpdated?.Invoke(_data, eventData.position,false);
     }
-
 
 }
