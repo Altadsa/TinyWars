@@ -8,7 +8,7 @@ public class Unit : Entity
     
     ISelectionController selectionController;
 
-    private UnitModifiers _modifiers;
+    private Modifiers _modifiers;
 
     [SerializeField] UnitActions unitActions;
     //[SerializeField] UnitHealth health;
@@ -23,13 +23,7 @@ public class Unit : Entity
     private void SetupModifiers()
     {
         _modifiers = FindObjectOfType<PlayerController>().Player.GetUnitModifiers(_data.Type);
-        _modifiers.ModifiersChanged += SetModifiers;
-        SetModifiers();
-    }
-    
-    private void SetModifiers()
-    {
-        //TODO Setup modifiers
+        _modifiers.ModifiersChanged += UpdateModifiers;
     }
 
     public void AssignAction(RaycastHit actionTarget)

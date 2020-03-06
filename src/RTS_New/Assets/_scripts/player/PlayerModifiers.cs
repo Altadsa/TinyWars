@@ -6,28 +6,46 @@ using UnityEngine;
 
 public class PlayerModifiers
 {
-    private Dictionary<UnitType, UnitModifiers> _pModifiers;
-
+    private Dictionary<UnitType, Modifiers> _uModifiers;
+    private Dictionary<BuildingType, Modifiers> _bModifiers = new Dictionary<BuildingType, Modifiers>();
+    
     public PlayerModifiers()
     {
-        _pModifiers = Initialise();
+        _uModifiers = Initialise();
     }
     
     /// <summary>
-    /// Retrives the modfiers for the given unit
+    /// Retrieves the modifiers for the given unit.
     /// </summary>
     /// <param name="unitType">The key to identify the modifiers to return</param>
     /// <returns></returns>
-    public UnitModifiers FetchModifiers(UnitType unitType)
+    public Modifiers FetchModifiers(UnitType unitType)
     {
         try
         {
-            //Debug.Log("Successfully retrieved Modifier Data for " + unitType);
-            return _pModifiers[unitType];
+            return _uModifiers[unitType];
         }
         catch (KeyNotFoundException e)
         {
             Debug.LogError("No such Unit Type exists in Modifiers: " + unitType);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Retrieves the modifiers for the given building.
+    /// </summary>
+    /// <param name="buildingType">The Building whose modifiers we want to retrieve.</param>
+    /// <returns></returns>
+    public Modifiers FetchModifiers(BuildingType buildingType)
+    {
+        try
+        {
+            return _bModifiers[buildingType];
+        }
+        catch (KeyNotFoundException e)
+        {
+            Debug.LogErrorFormat("{0}: No such Building exists, or rather, I can't find it's modifiers.", buildingType);
             throw;
         }
     }
@@ -40,12 +58,12 @@ public class PlayerModifiers
     /// <param name="value"></param>
     public void SetUnitModifier(UnitType type, Modifier modifier, float value)
     {
-        _pModifiers[type].SetModifier(modifier, value);
+        _uModifiers[type].SetModifier(modifier, value);
     }
 
-    private Dictionary<UnitType, UnitModifiers> Initialise()
+    private Dictionary<UnitType, Modifiers> Initialise()
     {
-        var initialValues = new Dictionary<UnitType, UnitModifiers>();
+        var initialValues = new Dictionary<UnitType, Modifiers>();
         using (var sr = new StreamReader("Assets/Resources/modifiers.txt"))
         {
             string line = sr.ReadLine();
@@ -64,13 +82,13 @@ public class PlayerModifiers
                 modVal = float.Parse(unitModVal[2]);
                 if (unitKey != lastType)
                 {
-                    initialValues[unitKey] = new UnitModifiers(newModifiers);
+                    initialValues[unitKey] = new Modifiers(newModifiers);
                     newModifiers.Clear();
                 }
                 newModifiers[modKey] = modVal;
                 lastType = unitKey;
             }
-            initialValues[unitKey] = new UnitModifiers(newModifiers);
+            initialValues[unitKey] = new Modifiers(newModifiers);
         }
 
         return initialValues;

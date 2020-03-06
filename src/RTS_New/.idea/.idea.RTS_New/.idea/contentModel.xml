@@ -40,6 +40,7 @@
           <e p="Extensions.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="player" t="Include">
+            <e p="Modifiers.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerActionController.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />

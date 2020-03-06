@@ -31,16 +31,30 @@ public class Building : Entity
         base.Initialize(player);
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
+        
+        // Initialise Building Modifiers.
+        var entityModifiers = player.GetBuildingModifiers(_buildingData.BuildingType);
+        _modifiers = entityModifiers.EntityModifiers;
+        entityModifiers.ModifiersChanged += UpdateModifiers;
     }
 
     public BuildingMenuItem[] MenuItems => _constructed ? _buildingMenuItems : null;
 
+    /// <summary>
+    /// Replaces a completed upgrade (modifier/building) with the next one (if it exists).
+    /// </summary>
+    /// <param name="oldItem">The item to replace</param>
+    /// <param name="newItem">The item to replace the oldItem with.</param>
     public void ReplaceItem(Queueable oldItem, Queueable newItem)
     {
         var replaceIndex = Array.IndexOf(_buildingMenuItems, oldItem);
         _buildingMenuItems[replaceIndex] = newItem;
     }
 
+    /// <summary>
+    /// Sets the new data for the building after upgrading it.
+    /// </summary>
+    /// <param name="data"></param>
     public void SetNewData(BuildingData data)
     {
         _buildingData = data;
