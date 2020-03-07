@@ -4,27 +4,12 @@
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/building_modifiers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/building_modifiers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/animation/Infantry/infantry_04_attack_A.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/animation/Infantry/infantry_04_attack_A.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/Stables.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/Stables.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/TowerA.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/TowerA.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/TowerB.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/TowerB.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/TowerC.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/TowerC.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/TownHall.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/TownHall.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/Workshop.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/Workshop.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/house.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/house.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/peasant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/peasant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scenes/Demo.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/game_data/building_menu_data/modifiers/PeasantDMG.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/7d/989b53dd/String.cs" root0="SKIP_HIGHLIGHTING" />
@@ -96,7 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitSelection.cs" />
@@ -140,13 +125,14 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
       </list>
     </option>
   </component>
@@ -238,7 +224,7 @@
       <workItem from="1583513221858" duration="1714000" />
       <workItem from="1583527806394" duration="3571000" />
       <workItem from="1583575047981" duration="1162000" />
-      <workItem from="1583612520273" duration="3768000" />
+      <workItem from="1583612520273" duration="5401000" />
     </task>
     <servers />
   </component>
@@ -271,27 +257,14 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs</url>
-          <line>28</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" initialLine="28">
-            <startOffsets>
-              <option value="673" />
-            </startOffsets>
-            <endOffsets>
-              <option value="674" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs</url>
-          <line>16</line>
+          <line>19</line>
           <properties documentPath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" initialLine="14">
             <startOffsets>
-              <option value="360" />
+              <option value="391" />
             </startOffsets>
             <endOffsets>
-              <option value="395" />
+              <option value="426" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />

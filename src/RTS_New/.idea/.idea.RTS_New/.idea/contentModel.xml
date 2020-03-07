@@ -70,6 +70,7 @@
             <e p="MoveAction.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
+            <e p="UnitAnimator.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
             <e p="UnitMovement.cs" t="Include" />
           </e>

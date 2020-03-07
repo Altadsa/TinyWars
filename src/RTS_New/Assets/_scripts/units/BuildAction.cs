@@ -8,7 +8,7 @@ public class BuildAction : MonoBehaviour, IUnitAction
 
     private Unit _unit;
     
-    private float _efficiency = 75;
+    private float _efficiency = 25;
     private float _speed;
     
     public int Priority { get; } = 1;
@@ -41,13 +41,16 @@ public class BuildAction : MonoBehaviour, IUnitAction
     {
         var dst = building.transform.position;
         _agent.SetDestination(dst);
+        GetComponent<UnitActions>().SetState(UnitState.MOVE);
         yield return new WaitUntil(() => !_agent.hasPath);
         var buildingHealth = building.Health;
+        GetComponent<UnitActions>().SetState(UnitState.ACT);
         while (!buildingHealth.HealthFull)
         {
             buildingHealth.Repair(_efficiency);
-            yield return new WaitForSeconds(_efficiency);
+            yield return new WaitForSeconds(_speed);
         }
+        GetComponent<UnitActions>().SetState(UnitState.IDLE);
     }
     
 }

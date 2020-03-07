@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,15 @@ public class MoveAction : MonoBehaviour, IUnitAction
     public int Priority { get; } = 3;
     public bool IsActionValid(RaycastHit actionTarget)
     {
-        return agent.SetDestination(actionTarget.point);
+        StartCoroutine(Move(actionTarget.point));
+        return true;
+    }
+
+    IEnumerator Move(Vector3 position)
+    {
+        GetComponent<UnitActions>().SetState(UnitState.MOVE);
+        agent.SetDestination(position);
+        yield return new WaitUntil(() => !agent.hasPath);
+        GetComponent<UnitActions>().SetState(UnitState.IDLE);
     }
 }
