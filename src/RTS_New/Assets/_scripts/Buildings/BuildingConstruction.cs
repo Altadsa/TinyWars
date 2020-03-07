@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BuildingConstruction : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class BuildingConstruction : MonoBehaviour
             var model = transform.GetChild(i);
             var meshRenderer = model.GetComponent<MeshRenderer>();
             meshRenderer.material = player.EntityMaterial;
+            if (i != 0)
+                model.gameObject.SetActive(false);
         }
     }
 
@@ -33,7 +36,7 @@ public class BuildingConstruction : MonoBehaviour
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(true);
             GetComponent<BuildingHealth>().HealthChanged -= ConstructionProgress;
-            gameObject.AddComponent<BuildingQueue>();
+            gameObject.GetComponent<Building>().Queue.enabled = true;
             Destroy(this);
         }
     }

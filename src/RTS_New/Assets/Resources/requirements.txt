@@ -9,6 +9,5 @@
     HOUSE=false
     KEEP=false
     STABLES=false
-    TOWER=false
     TOWNHALL=false
     WORKSHOP=false

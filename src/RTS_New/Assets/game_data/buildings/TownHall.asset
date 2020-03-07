@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e64e981af5d0864494523fca5ff33f8, type: 3}
   m_Name: TownHall
   m_EditorClassIdentifier: 
-  _buildingType: 12
+  _buildingType: 15
   _name: Town Hall
   _icon: {fileID: 21300000, guid: fd3cd116077079d4c9b80d827d2e0d66, type: 3}

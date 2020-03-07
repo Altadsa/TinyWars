@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(BuildingHealth))]
 [RequireComponent(typeof(NavMeshObstacle))]
 public class Building : Entity
 {
@@ -11,6 +10,7 @@ public class Building : Entity
     [SerializeField] private BuildingMenuItem[] _buildingMenuItems;
 
     public BuildingHealth Health { get; private set; }
+    public BuildingQueue Queue { get; private set; }
     public event Action BuildingDataUpdated;
     
     private bool _constructed = true;
@@ -24,8 +24,11 @@ public class Building : Entity
         GetComponent<NavMeshObstacle>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         RallyPoint = _unitSpawn.position;
-        GetComponent<BuildingQueue>().QueueChanged += UpdateBuildingData;
-        Health = GetComponent<BuildingHealth>();
+        Queue = GetComponent<BuildingQueue>();
+        Queue.QueueChanged += UpdateBuildingData;
+        if (GetComponent<BuildingConstruction>())
+            Queue.enabled = false;
+
     }
 
     public override void Initialize(Player player)
@@ -33,11 +36,13 @@ public class Building : Entity
         base.Initialize(player);
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
-        
         // Initialise Building Modifiers.
         var entityModifiers = player.GetBuildingModifiers(_buildingData.BuildingType);
         UpdateModifiers(entityModifiers.EntityModifiers);
         entityModifiers.ModifiersChanged += UpdateModifiers;
+        if (!GetComponent<BuildingHealth>())
+            gameObject.AddComponent<BuildingHealth>();
+        Health = GetComponent<BuildingHealth>();
     }
 
     public BuildingMenuItem[] MenuItems => _constructed ? _buildingMenuItems : null;

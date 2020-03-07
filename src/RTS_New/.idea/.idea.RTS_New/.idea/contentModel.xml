@@ -65,6 +65,7 @@
             <e p="UiUnitSelection.cs" t="Include" />
           </e>
           <e p="units" t="Include">
+            <e p="BuildAction.cs" t="Include" />
             <e p="EntityType.cs" t="Include" />
             <e p="MoveAction.cs" t="Include" />
             <e p="Unit.cs" t="Include" />

@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class UnitActions : MonoBehaviour
 {
-    private IUnitAction[] actions;
+    private List<IUnitAction> actions;
 
     private void Start()
     {
-        actions = GetComponents<IUnitAction>();
+        actions = GetComponents<IUnitAction>().ToList();
         //wDebug.Log(actions.Length);
     }
 

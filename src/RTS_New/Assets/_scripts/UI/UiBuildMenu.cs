@@ -20,21 +20,12 @@ public class UiBuildMenu : MonoBehaviour
 
     [Header("Debug")] public BuildMenuData[] _menuData;
 
-    private Building[] _placementModels;
-
     private Camera _mCam;
     
     private void Awake()
     {
         _mCam = Camera.main;
-        _placementModels = new Building[_menuData.Length];
-        for (int i = 0; i < _placementModels.Length; i++)
-        {
-            var building = _menuData[i].Building;
-            var buildingInstance = Instantiate(building);
-            _placementModels[i] = buildingInstance;
-            _placementModels[i].gameObject.SetActive(false);
-        }
+
     }
 
     private void OnEnable()

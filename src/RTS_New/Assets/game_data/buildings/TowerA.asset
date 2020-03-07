@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e64e981af5d0864494523fca5ff33f8, type: 3}
   m_Name: TowerA
   m_EditorClassIdentifier: 
-  _buildingType: 11
+  _buildingType: 12
   _name: Lookout Tower
   _icon: {fileID: 21300000, guid: 6f469c6cd87f0114e82fabad93a26b6c, type: 3}

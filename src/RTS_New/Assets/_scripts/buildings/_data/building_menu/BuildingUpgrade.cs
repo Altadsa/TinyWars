@@ -20,7 +20,7 @@ public class BuildingUpgrade : Queueable
     private void ReplaceBuildingModel(Building building)
     {
         var player = building.Player;
-        var oldModel = building.transform.GetChild(0);
+        var oldModel = building.transform.GetComponentInChildren<MeshRenderer>();
         Destroy(oldModel.gameObject);
         var newModel = Instantiate(_complete, building.transform);
         newModel.GetComponent<MeshRenderer>().material = player.EntityMaterial;

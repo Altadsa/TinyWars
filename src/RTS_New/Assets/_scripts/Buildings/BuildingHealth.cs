@@ -18,6 +18,8 @@ public class BuildingHealth : MonoBehaviour
 
     public float CurrentHealth => _currentHealth;
 
+    public bool HealthFull => _currentHealth >= _maxHealth;
+    
     void Start()
     {
         _maxHealth = GetComponent<Building>().GetModifierValue(Modifier.Health);
@@ -46,6 +48,12 @@ public class BuildingHealth : MonoBehaviour
         
         EntityDestroyed?.Invoke();
         Destroy(gameObject, 1f);
+    }
+
+    public void Repair(float amount)
+    {
+        _currentHealth = Mathf.Clamp(_currentHealth + amount, 0f, _maxHealth);
+        HealthChanged?.Invoke(_currentHealth,_maxHealth);
     }
     
 }

@@ -25,8 +25,11 @@ public enum BuildingType
     GRANARY,
     HOUSE,
     KEEP,
+    LUMBERMILL,
     STABLES,
-    TOWER,
+    TOWERA,
+    TOWERB,
+    TOWERC,
     TOWNHALL,
     WORKSHOP
 }

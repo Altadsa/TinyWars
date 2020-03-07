@@ -12,7 +12,6 @@ public class Unit : Entity
 
     [SerializeField] UnitActions unitActions;
     //[SerializeField] UnitHealth health;
-    [SerializeField] GameObject selectionIndicator;
 
     public override void Initialize(Player player)
     {
@@ -22,8 +21,9 @@ public class Unit : Entity
 
     private void SetupModifiers()
     {
-        _modifiers = FindObjectOfType<PlayerController>().Player.GetUnitModifiers(_data.Type);
-        _modifiers.ModifiersChanged += UpdateModifiers;
+        var entityModifiers = Player.GetUnitModifiers(_data.Type);
+        UpdateModifiers(entityModifiers.EntityModifiers);
+        entityModifiers.ModifiersChanged += UpdateModifiers;
     }
 
     public void AssignAction(RaycastHit actionTarget)
