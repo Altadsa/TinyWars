@@ -10,6 +10,7 @@ public class Building : Entity
     [SerializeField] private BuildingData _buildingData;
     [SerializeField] private BuildingMenuItem[] _buildingMenuItems;
 
+    public BuildingHealth Health { get; private set; }
     public event Action BuildingDataUpdated;
     
     private bool _constructed = true;
@@ -24,6 +25,7 @@ public class Building : Entity
         GetComponent<BoxCollider>().enabled = false;
         RallyPoint = _unitSpawn.position;
         GetComponent<BuildingQueue>().QueueChanged += UpdateBuildingData;
+        Health = GetComponent<BuildingHealth>();
     }
 
     public override void Initialize(Player player)

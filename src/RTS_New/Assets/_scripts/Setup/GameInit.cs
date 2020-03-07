@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameInit : MonoBehaviour
 {
@@ -12,6 +8,7 @@ public class GameInit : MonoBehaviour
     public Building StartBuilding;
     public PlayerController PlayerPrefab;
 
+    
     private Player[] _players;
 
     //public Dictionary<Color, Texture> entityTextures;

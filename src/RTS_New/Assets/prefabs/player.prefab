@@ -4354,6 +4354,7 @@ MonoBehaviour:
   _buildingMenuGo: {fileID: 861222884420233657}
   Icon: {fileID: 5692290820082875134}
   Health: {fileID: 6492927271193714191}
+  HealthText: {fileID: 438114967093562154}
   ProgressBar: {fileID: 664226188339713488}
   QueueButtons:
   - {fileID: 1774876118228995409}
@@ -9554,7 +9555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.070354216, g: 0.4811321, b: 0.070354216, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

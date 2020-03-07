@@ -15,7 +15,9 @@ public class BuildingHealth : MonoBehaviour
     [SerializeField] bool _initialise = false;
     public event Action<float,float> HealthChanged;
     public event Action EntityDestroyed;
-    
+
+    public float CurrentHealth => _currentHealth;
+
     void Start()
     {
         _maxHealth = GetComponent<Building>().GetModifierValue(Modifier.Health);
@@ -30,6 +32,8 @@ public class BuildingHealth : MonoBehaviour
     private void SetMaxHealth()
     {
         _maxHealth = GetComponent<Building>().GetModifierValue(Modifier.Health);
+        _currentHealth = _maxHealth;
+        HealthChanged?.Invoke(_currentHealth,_maxHealth);
     }
 
     public void TakeDamage(float dmg)

@@ -55,8 +55,13 @@ public class UiBuildingInfo
     {
         var data = _target.BuildingData;
         _uiBuilding.Icon.sprite = data.Icon;
-        _target.GetComponent<BuildingHealth>().HealthChanged += UpdateBuildingHealth;
         
+        // Set health info
+        _target.Health.HealthChanged += UpdateBuildingHealth;
+        var currentH = _target.Health.CurrentHealth;
+        UpdateBuildingHealth(currentH, _target.GetModifierValue(Modifier.Health));
+        
+        // Set queue info
         var queue = _target.GetQueue();
         if (!queue) return;
         var buildingQueue = queue.Queue;
@@ -86,6 +91,7 @@ public class UiBuildingInfo
     private void UpdateBuildingHealth(float current, float max)
     {
         _uiBuilding.Health.fillAmount = (float)Math.Round(current / max, 2);
+        _uiBuilding.HealthText.text = $"{current}/{max}";
     }
 
     private void UpdateQueue()

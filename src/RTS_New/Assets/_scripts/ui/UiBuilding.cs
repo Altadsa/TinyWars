@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class UiBuilding : MonoBehaviour
 
     public Image Health;
 
+    public TMP_Text HealthText;
+    
     [Header("Queue Info")] 
     public Image ProgressBar;
     public Button[] QueueButtons;

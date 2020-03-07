@@ -34,6 +34,10 @@ public abstract class Entity : MonoBehaviour
         return _modifiers[modifier];
     }
 
+    /// <summary>
+    /// Updates the entity's modifiers and notifies any objects that need modifier data.
+    /// </summary>
+    /// <param name="newModifiers"></param>
     protected void UpdateModifiers(Dictionary<Modifier, float> newModifiers)
     {
         _modifiers = newModifiers;
