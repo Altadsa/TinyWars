@@ -5,8 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     
-    public RaycastHit? Hit => _cameraRaycast.RaycastForHit();
+    public RaycastHit? Hit => _blockRaycast ? null : _cameraRaycast.RaycastForHit();
 
+    private bool _blockRaycast = false;
+    
     IInput _input;
     CameraRaycast _cameraRaycast;
     CameraMovement _cameraMovement;
@@ -24,6 +26,11 @@ public class CameraController : MonoBehaviour
     {
         _cameraMovement.MoveCamera();
         _cameraZoom.ZoomCamera();
+    }
+
+    public void BlockRaycast(bool block)
+    {
+        _blockRaycast = block;
     }
     
 }

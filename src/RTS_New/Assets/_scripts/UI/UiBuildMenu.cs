@@ -59,6 +59,7 @@ public class UiBuildMenu : MonoBehaviour
 
     private IEnumerator SelectBuilding(BuildMenuData data)
     {
+        FindObjectOfType<CameraController>().BlockRaycast(true);
         //World pos represents the position we want to place the building at.
         Vector3 worldPos = Vector3.zero;
         var building = Instantiate(data.Building);
@@ -97,6 +98,7 @@ public class UiBuildMenu : MonoBehaviour
         _buildArea.Hide(true);
         building.Initialize(_controller.Player);
         building.SetConstruction();
+        FindObjectOfType<CameraController>().BlockRaycast(false);
     }
 
     private int _structuresLayer = 1 << 9;

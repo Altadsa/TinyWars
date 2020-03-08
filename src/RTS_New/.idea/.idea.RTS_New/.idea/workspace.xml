@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
-    </list>
+    <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/QueueRts.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
@@ -126,6 +122,7 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildMenu.cs" />
       </list>
     </option>
@@ -220,7 +217,7 @@
       <workItem from="1583575047981" duration="1162000" />
       <workItem from="1583612520273" duration="5998000" />
       <workItem from="1583659502855" duration="1285000" />
-      <workItem from="1583689449439" duration="2307000" />
+      <workItem from="1583689449439" duration="2751000" />
     </task>
     <servers />
   </component>
