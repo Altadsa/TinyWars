@@ -62,28 +62,10 @@ public class UiBuildingInfo
         UpdateBuildingHealth(currentH, _target.GetModifierValue(Modifier.Health));
         
         // Set queue info
+        ProcessQueue(0);
         var queue = _target.GetQueue();
         if (!queue) return;
-        var buildingQueue = queue.Queue;
-        for (int i = 0; i < _uiBuilding.QueueButtons.Length; i++)
-        {
-            if (i < buildingQueue.Count)
-            {
-                var itemIcon = buildingQueue[i].Icon;
-                var index = i;
-                _uiBuilding.QueueButtons[i].onClick.RemoveAllListeners();
-                _uiBuilding.QueueButtons[i].GetComponent<Image>().sprite = itemIcon; 
-                _uiBuilding.QueueButtons[i].onClick.AddListener(delegate
-                {
-                    queue.RemoveFromQueue(index);
-                });
-                _uiBuilding.QueueButtons[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                _uiBuilding.QueueButtons[i].gameObject.SetActive(false);
-            }
-        }
+        SetQueueButtons(queue, queue.Queue);
         queue.QueueChanged += UpdateQueue;
         queue.QueueProcessing += ProcessQueue;
     }
@@ -99,6 +81,11 @@ public class UiBuildingInfo
         var queue = _target.GetQueue();
         if (!queue) return;
         var buildingQueue = queue.Queue;
+        SetQueueButtons(queue,buildingQueue);
+    }
+
+    private void SetQueueButtons(BuildingQueue queue, List<Queueable> buildingQueue)
+    {
         for (int i = 0; i < _uiBuilding.QueueButtons.Length; i++)
         {
             if (i < buildingQueue.Count)

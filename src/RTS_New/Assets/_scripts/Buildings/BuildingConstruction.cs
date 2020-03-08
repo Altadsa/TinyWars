@@ -4,11 +4,13 @@ using UnityEngine.UIElements;
 
 public class BuildingConstruction : MonoBehaviour
 {
+    private const int MODEL_STATES = 3;
+    
     private void Start()
     {
         GetComponent<BuildingHealth>().HealthChanged += ConstructionProgress;
         var player = GetComponent<Building>().Player;
-        for (int i = 0; i < transform.childCount-1; i++)
+        for (int i = 0; i < MODEL_STATES; i++)
         {
             var model = transform.GetChild(i);
             var meshRenderer = model.GetComponent<MeshRenderer>();

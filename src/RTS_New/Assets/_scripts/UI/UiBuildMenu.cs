@@ -95,8 +95,8 @@ public class UiBuildMenu : MonoBehaviour
         }
         
         _buildArea.Hide(true);
-        building.SetConstruction();
         building.Initialize(_controller.Player);
+        building.SetConstruction();
     }
 
     private int _structuresLayer = 1 << 9;
