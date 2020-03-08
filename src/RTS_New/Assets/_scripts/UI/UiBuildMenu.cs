@@ -17,7 +17,9 @@ public class UiBuildMenu : MonoBehaviour
     [SerializeField] private BuildArea _buildArea;
     [FormerlySerializedAs("_meunButtons")] 
     [SerializeField] private Button[] _menuButtons;
+    [SerializeField] private CameraController _cameraController;
 
+    
     [Header("Debug")] public BuildMenuData[] _menuData;
 
     private Camera _mCam;
@@ -25,7 +27,6 @@ public class UiBuildMenu : MonoBehaviour
     private void Awake()
     {
         _mCam = Camera.main;
-
     }
 
     private void OnEnable()
@@ -59,7 +60,8 @@ public class UiBuildMenu : MonoBehaviour
 
     private IEnumerator SelectBuilding(BuildMenuData data)
     {
-        FindObjectOfType<CameraController>().BlockRaycast(true);
+        // Block camera controller from raycasting while we place the building.
+        _cameraController.BlockRaycast(true);
         //World pos represents the position we want to place the building at.
         Vector3 worldPos = Vector3.zero;
         var building = Instantiate(data.Building);
@@ -74,6 +76,7 @@ public class UiBuildMenu : MonoBehaviour
             _buildArea.SetColor(placementValid);
             if (Input.GetMouseButtonDown(1))
             {
+                _cameraController.BlockRaycast(false);
                 Destroy(building.gameObject);
                 _buildArea.Hide(true);
                 yield break;
@@ -98,7 +101,8 @@ public class UiBuildMenu : MonoBehaviour
         _buildArea.Hide(true);
         building.Initialize(_controller.Player);
         building.SetConstruction();
-        FindObjectOfType<CameraController>().BlockRaycast(false);
+        // Restore camera controller raycasting ability.
+        _cameraController.BlockRaycast(false);
     }
 
     private int _structuresLayer = 1 << 9;

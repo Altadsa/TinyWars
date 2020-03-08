@@ -128,7 +128,6 @@ public class Building : Entity
             _rallyPoint.SetRallyPoint(newPosHit);
             yield return null;
         }
-
         RallyPoint = newPosHit;
     }
 }

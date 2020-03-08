@@ -2571,6 +2571,7 @@ MonoBehaviour:
   - {fileID: 5913149747662187495}
   - {fileID: 869822111064397596}
   - {fileID: 6371551456097741393}
+  _cameraController: {fileID: 525903319877800113}
   _menuData:
   - {fileID: 11400000, guid: 8821dc225bf6349479e53f155ffc411b, type: 2}
   - {fileID: 11400000, guid: 05ccc45bc34b32b47b022f5484a95d70, type: 2}

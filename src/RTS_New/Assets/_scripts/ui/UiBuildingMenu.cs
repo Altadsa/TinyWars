@@ -12,7 +12,6 @@ public class UiBuildingMenu
     private UiBuildingMenuButton[] _menubuttons;
 
     private BuildingRallyPoint _rallyPoint;
-    
     public UiBuildingMenu(UiBuildingMenuButton[] menuButtons, PlayerSelectionController sc, GameObject buildingMenuGo, 
         BuildingRallyPoint rallyPointPrefab)
     {
@@ -58,34 +57,4 @@ public class UiBuildingMenu
         }
     }
 
-//    private void SetButton(BuildingMenuItem item)
-//    {
-//        var i = item.Priority;
-//        Menubuttons[i].onClick.RemoveAllListeners();
-//        var qItem = item as Queueable;
-//        if (qItem)
-//        {
-//            var isUpgrade = qItem is BuildingUpgrade || qItem is ModifierUpgrade;
-//            if (isUpgrade)
-//                isUpgrade =  _target.GetQueue().IsUpgradeInQueue(qItem);
-//            if (isUpgrade) return;
-//            Menubuttons[i].onClick.AddListener(delegate
-//            {
-//                _target.GetQueue().AddToQueue(qItem);
-//                if (isUpgrade)
-//                {
-//                    Menubuttons[i].gameObject.SetActive(false);
-//                }
-//            });
-//        }
-//        else
-//        {
-//            Menubuttons[i].onClick.AddListener(delegate { item.Complete(_target); });            
-//        }
-//
-//
-//        Menubuttons[i].GetComponent<Image>().sprite = item.Icon;
-//        Menubuttons[i].gameObject.SetActive(true);
-//    }
-    
 }
