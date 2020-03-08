@@ -41,12 +41,13 @@ public class BuildAction : MonoBehaviour, IUnitAction
     {
         var dst = building.transform.position;
         _agent.SetDestination(dst);
+        yield return new WaitUntil(() => _agent.hasPath);
         GetComponent<UnitActions>().SetState(UnitState.MOVE);
-        yield return new WaitUntil(() => !_agent.hasPath);
+        yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
         var buildingHealth = building.Health;
-        GetComponent<UnitActions>().SetState(UnitState.ACT);
         while (!buildingHealth.HealthFull)
         {
+            GetComponent<UnitActions>().SetState(UnitState.ACT);
             buildingHealth.Repair(_efficiency);
             yield return new WaitForSeconds(_speed);
         }

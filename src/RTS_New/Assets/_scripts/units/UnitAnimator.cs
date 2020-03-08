@@ -17,11 +17,13 @@ public class UnitAnimator : MonoBehaviour
         {
             case UnitState.IDLE:
                 _controller.SetTrigger("idle");
+                Debug.Log("Idle");
                 break;
             case UnitState.MOVE:
                 _controller.SetTrigger("move");
                 break;
             case UnitState.ACT:
+                Debug.Log("action");
                 _controller.SetTrigger("action");
                 break;
         }

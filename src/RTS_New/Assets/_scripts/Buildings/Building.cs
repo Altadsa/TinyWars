@@ -12,8 +12,6 @@ public class Building : Entity
     public BuildingHealth Health { get; private set; }
     public BuildingQueue Queue { get; private set; }
     public event Action BuildingDataUpdated;
-    
-    private bool _constructed = true;
 
     [SerializeField] private Transform _unitSpawn;
     public Transform UnitSpawn => _unitSpawn;
@@ -45,7 +43,7 @@ public class Building : Entity
         Health = GetComponent<BuildingHealth>();
     }
 
-    public BuildingMenuItem[] MenuItems => _constructed ? _buildingMenuItems : null;
+    public BuildingMenuItem[] MenuItems => Queue.enabled ? _buildingMenuItems : null;
 
     /// <summary>
     /// Replaces a completed upgrade (modifier/building) with the next one (if it exists).
@@ -99,8 +97,7 @@ public class Building : Entity
 
     public BuildingQueue GetQueue()
     {
-        if (!_constructed) return null;
-        return GetComponent<BuildingQueue>();
+        return !Queue.enabled ? null : Queue;
     }
 
     private void UpdateBuildingData()
@@ -111,7 +108,8 @@ public class Building : Entity
     private void OnDestroy()
     {
         BuildingDataUpdated = null;
-        _pc.RemoveSelected(this);
+        if (_pc)
+            _pc.RemoveSelected(this);
     }
     
     IEnumerator SetRallyPoint()

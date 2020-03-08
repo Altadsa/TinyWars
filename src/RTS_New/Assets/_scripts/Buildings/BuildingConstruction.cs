@@ -8,7 +8,7 @@ public class BuildingConstruction : MonoBehaviour
     {
         GetComponent<BuildingHealth>().HealthChanged += ConstructionProgress;
         var player = GetComponent<Building>().Player;
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount-1; i++)
         {
             var model = transform.GetChild(i);
             var meshRenderer = model.GetComponent<MeshRenderer>();
