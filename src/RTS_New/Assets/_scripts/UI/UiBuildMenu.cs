@@ -88,7 +88,7 @@ public class UiBuildMenu : MonoBehaviour
                     canPlace = true;
                 else
                 {
-                    Debug.LogWarning("Cant place building due to obstruction!", this);
+                    FindObjectOfType<UiMessageSystem>().BuildingPlacementMessage();
                 }
             }
             yield return null;

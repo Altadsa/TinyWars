@@ -59,6 +59,7 @@
             <e p="UiBuildingMenu.cs" t="Include" />
             <e p="UiBuildingMenuButton.cs" t="Include" />
             <e p="UiBuildMenu.cs" t="Include" />
+            <e p="UiMessageSystem.cs" t="Include" />
             <e p="UiMinimap.cs" t="Include" />
             <e p="UiSelectionBox.cs" t="Include" />
             <e p="UiTooltip.cs" t="Include" />
