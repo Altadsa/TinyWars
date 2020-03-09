@@ -6,16 +6,17 @@ public class Unit : Entity
     [SerializeField] private UnitData _data;
     public UnitData Data => _data;
     
-    ISelectionController selectionController;
+    ISelectionController _selectionController;
 
     private Modifiers _modifiers;
 
-    [SerializeField] UnitActions unitActions;
+    UnitActions _unitActions;
     //[SerializeField] UnitHealth health;
 
     public override void Initialize(Player player)
     {
         base.Initialize(player);
+        _unitActions = GetComponent<UnitActions>();
         SetupModifiers();
     }
 
@@ -28,6 +29,6 @@ public class Unit : Entity
 
     public void AssignAction(RaycastHit actionTarget)
     {
-        unitActions.DetermineAction(actionTarget);
+        _unitActions.DetermineAction(actionTarget);
     }
 }

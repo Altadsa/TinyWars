@@ -37,6 +37,7 @@
             <e p="CameraZoom.cs" t="Include" />
           </e>
           <e p="Entity.cs" t="Include" />
+          <e p="EntityHealth.cs" t="Include" />
           <e p="Extensions.cs" t="Include" />
           <e p="Interfaces.cs" t="Include" />
           <e p="player" t="Include">
@@ -73,7 +74,7 @@
             <e p="UnitActions.cs" t="Include" />
             <e p="UnitAnimator.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
-            <e p="UnitMovement.cs" t="Include" />
+            <e p="UnitHealth.cs" t="Include" />
           </e>
         </e>
         <e p="Resources" t="Include">
