@@ -9,6 +9,7 @@ public class UnitCombat : MonoBehaviour, IUnitAction
 
     private Unit _unit;
 
+    private float _baseDamage;
     private float _damage;
     private float _speed;
     
@@ -17,6 +18,7 @@ public class UnitCombat : MonoBehaviour, IUnitAction
     private void Start()
     {
         _unit = GetComponent<Unit>();
+        _baseDamage = _unit.Data.Damage;
         _damage = _unit.GetModifierValue(Modifier.Damage);
         _speed = _unit.GetModifierValue(Modifier.AttackSpeed);
         _unit.ModifiersUpdated += UpdateModifiers;
@@ -57,7 +59,7 @@ public class UnitCombat : MonoBehaviour, IUnitAction
         while (true)
         {
             GetComponent<UnitActions>().SetState(UnitState.ACT);
-            health.TakeDamage(_damage);
+            health.TakeDamage(_baseDamage*_damage);
             yield return new WaitForSeconds(_speed);
         }
     }

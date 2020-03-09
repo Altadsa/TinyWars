@@ -26,6 +26,14 @@ public class UnitAnimator : MonoBehaviour
                 Debug.Log("action");
                 _controller.SetTrigger("action");
                 break;
+            case UnitState.DMG:
+                Debug.Log("damage");
+                _controller.SetTrigger("dmg");
+                break;
+            case UnitState.DIE:
+                Debug.Log("die");
+                _controller.SetTrigger("die");
+                break;
         }
     }
 }

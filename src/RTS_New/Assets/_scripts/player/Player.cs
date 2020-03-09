@@ -32,8 +32,19 @@ public class Player
         _playerRequirements = new Requirements();
     }
 
+    /// <summary>
+    /// Called by the Unit upgrades to change the value of a given modifier.
+    /// </summary>
+    /// <param name="type">The Unit receiving the new modifier</param>
+    /// <param name="modifier">The Modifier to be changed.</param>
+    /// <param name="value">The new values of the Modifier</param>
     public void ChangeModifier(UnitType type, Modifier modifier, float value)
     {
         _playerModifiers.SetModifier(type, modifier, value);
+    }
+
+    public bool RequirementsMet(BuildingType[] requirements)
+    {
+        return _playerRequirements.RequirementsMet(requirements);
     }
 }

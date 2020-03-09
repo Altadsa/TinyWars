@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7592d411393f9ed49b8e1e856bdef9e1, type: 3}
-  m_Name: Peasant
+  m_Script: {fileID: 11500000, guid: 5a51f24778f415d4cac210c295e32b03, type: 3}
+  m_Name: Barracks
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 5d826be2d8538ae4990945d3b512c082, type: 3}
-  _type: 12
-  _name: Peasant
-  _baseHealth: 32
-  _baseArmour: 0
-  _baseDamage: 6
+  _icon: {fileID: 21300000, guid: ff3e8b4f5e8a0984a8b4b1543530497c, type: 3}
+  _buildingPrefab: {fileID: 4602336477293120865, guid: 1635fbf57b7200547bc15e4006dcb072,
+    type: 3}

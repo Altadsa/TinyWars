@@ -11,6 +11,22 @@ public class Requirements
         _playerRequirements = Initialise();
     }
 
+    public void SetRequirementMet(BuildingType requirement)
+    {
+        _playerRequirements[requirement] = true;
+    }
+    
+    public bool RequirementsMet(BuildingType[] requirements)
+    {
+        foreach (var buildingType in requirements)
+        {
+            if (!_playerRequirements[buildingType])
+                return false;
+        }
+
+        return true;
+    }
+    
     private Dictionary<BuildingType, bool> Initialise()
     {
         var _initialRequirements = new Dictionary<BuildingType, bool>();

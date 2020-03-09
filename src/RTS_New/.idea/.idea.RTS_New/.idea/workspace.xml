@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/models/buildings/construction/Barracks_0.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/models/buildings/construction/Barracks_0.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/models/buildings/construction/Barracks_1.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/models/buildings/construction/Barracks_1.FBX.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/AiSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/AiSelectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/units/peasant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/units/peasant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art_assets/unit_ground.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/unit_ground.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/unit_data/Peasant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/unit_data/Peasant.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,18 +90,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiButtonTooltip.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/ModifierUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/Queueable.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/EntityType.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuilding.cs" />
@@ -112,7 +113,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
@@ -124,7 +124,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" />
@@ -134,9 +133,14 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
       </list>
     </option>
   </component>
@@ -232,7 +236,9 @@
       <workItem from="1583659502855" duration="1285000" />
       <workItem from="1583689449439" duration="4059000" />
       <workItem from="1583739473009" duration="5488000" />
-      <workItem from="1583762171521" duration="595000" />
+      <workItem from="1583762171521" duration="786000" />
+      <workItem from="1583762985125" duration="1196000" />
+      <workItem from="1583780011498" duration="647000" />
     </task>
     <servers />
   </component>
@@ -266,13 +272,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs</url>
-          <line>32</line>
+          <line>34</line>
           <properties documentPath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" initialLine="32">
             <startOffsets>
-              <option value="798" />
+              <option value="870" />
             </startOffsets>
             <endOffsets>
-              <option value="818" />
+              <option value="890" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />

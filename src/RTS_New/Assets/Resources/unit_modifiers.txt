@@ -1,4 +1,4 @@
-PEASANT=Damage=4
+PEASANT=Damage=1
 PEASANT=Armour=0
 PEASANT=AttackSpeed=2
 PEASANT=MoraleMax=0.5
@@ -6,3 +6,7 @@ PEASANT=MoraleDecay=0.005
 PEASANT=MoveSpeed=5
 PEASANT=GatherSpeed=1
 PEASANT=BuildSpeed=1
+SWORDSMAN=Damage=1
+SWORDSMAN=Armour=0
+SWORDSMAN=AttackSpeed=1.25
+SWORDSMAN=MoveSpeed=4

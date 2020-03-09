@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7ef67b4c1445e7a883f601f32cd6fe, type: 3}
+  m_Name: Swordsman
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: ddbf4ee4778d44c42b59941bcf9d80aa, type: 3}
+  _name: Swordsman
+  _description: Basic melee unit. Balanced speed and attack.
+  _priority: 0
+  _time: 5
+  _requirements: 
+  _unitPrefab: {fileID: 5578788018173318945, guid: ea5eec5812cf6b5409d491089d3a8a77,
+    type: 3}

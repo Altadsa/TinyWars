@@ -3,7 +3,7 @@
 /// <summary>
 /// Data object used for buildings to instantiate units.
 /// </summary>
-[CreateAssetMenu(fileName = "Data/Menu Data (Unit)")]
+[CreateAssetMenu(menuName = "Data/Menu Data (Unit)")]
 public class MenuDataUnit : Queueable
 {
     [SerializeField] private Unit _unitPrefab;

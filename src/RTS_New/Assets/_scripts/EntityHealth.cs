@@ -26,8 +26,9 @@ public abstract class EntityHealth : MonoBehaviour
     protected void CheckHealth()
     {
         if (_currentHealth > 0) return;
+        GetComponent<UnitActions>().SetState(UnitState.DIE);
         EntityDestroyed?.Invoke();
-        Destroy(gameObject,1f);
+        Destroy(gameObject,2f);
     }
     
     public abstract void TakeDamage(float dmg);
