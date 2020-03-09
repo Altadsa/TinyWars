@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     {
         if (Input.GetMouseButtonDown(RIGHT_MOUSE_BUTTON) && hasSelection)
         {
+            if (!cameraController) return;
             if (cameraController.Hit != null)
             {
                 ActionController.AssignUnitActions(SelectionController.Selected, cameraController.Hit.Value);

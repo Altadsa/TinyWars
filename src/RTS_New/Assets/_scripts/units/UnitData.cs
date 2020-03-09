@@ -13,7 +13,8 @@ public class UnitData : ScriptableObject
     [SerializeField] private float _baseHealth;
     [SerializeField] private float _baseArmour;
     [SerializeField] private float _baseDamage;
-
+    
+    
     public Sprite Icon => _icon;
     public UnitType Type => _type;
     public string Name => _name;

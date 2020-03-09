@@ -34,6 +34,7 @@ public class UnitCombat : MonoBehaviour, IUnitAction
         var gameObj = actionTarget.collider.gameObject;
         var entity = gameObj.GetComponent<Entity>();
         if (!entity || entity.IsAllied(_unit.Player)) return false;
+        Debug.Log("Entering Combat");
         var entityHealth = entity.Health;
         StartCoroutine(TargetEntity(entityHealth, entity));
         return true;
