@@ -135,7 +135,7 @@ using UnityEngine.Serialization;
     private Entity RaycastSelection(RaycastHit hitSelection)
     {
         GameObject objectHit = hitSelection.collider.gameObject;
-        Entity selection = objectHit.GetComponentInParent<Entity>();
+        Entity selection = objectHit.GetComponent<Entity>();
         return selection;
     }
 

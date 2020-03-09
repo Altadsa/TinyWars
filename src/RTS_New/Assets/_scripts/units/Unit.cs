@@ -5,7 +5,7 @@ public class Unit : Entity
 {
     [SerializeField] private UnitData _data;
     public UnitData Data => _data;
-    
+
     ISelectionController _selectionController;
 
     private Modifiers _modifiers;
@@ -17,6 +17,7 @@ public class Unit : Entity
     {
         base.Initialize(player);
         _unitActions = GetComponent<UnitActions>();
+        Health = GetComponent<UnitHealth>();
         SetupModifiers();
     }
 

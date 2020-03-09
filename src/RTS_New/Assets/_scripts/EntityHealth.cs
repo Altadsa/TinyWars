@@ -25,7 +25,7 @@ public abstract class EntityHealth : MonoBehaviour
 
     protected void CheckHealth()
     {
-        if (Math.Abs(_currentHealth - Mathf.Epsilon) > 0) return;
+        if (_currentHealth > 0) return;
         EntityDestroyed?.Invoke();
         Destroy(gameObject,1f);
     }

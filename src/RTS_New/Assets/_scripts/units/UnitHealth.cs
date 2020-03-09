@@ -20,7 +20,7 @@ public class UnitHealth : EntityHealth
     public override void TakeDamage(float dmg)
     {
         var rDmg = dmg * (1 - 0.01f * _armourValue);
-        _currentHealth = Mathf.Clamp(_currentHealth-rDmg, 0f, _maxHealth);
+        _currentHealth = Mathf.Clamp(_currentHealth-rDmg, 0, _maxHealth);
         UpdateHealth();
         CheckHealth();   
     }

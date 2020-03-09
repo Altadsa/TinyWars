@@ -31,8 +31,9 @@ public class BuildAction : MonoBehaviour, IUnitAction
         StopAllCoroutines();
         var go = actionTarget.collider.gameObject;
         var building = go.GetComponent<Building>();
+        if (!building) return false;
         var allied = building.IsAllied(_unit.Player);
-        if (!building || !allied) return false;
+        if (!allied) return false;
         StartCoroutine(Build(building));
         return true;
 

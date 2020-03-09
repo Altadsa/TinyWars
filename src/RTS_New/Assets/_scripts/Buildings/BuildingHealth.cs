@@ -6,10 +6,6 @@ public class BuildingHealth : EntityHealth
     
     [Tooltip("Initialise the building with Max Health?")]
     [SerializeField] bool _initialise = false;
-
-    public float CurrentHealth => _currentHealth;
-
-    public bool HealthFull => _currentHealth >= _maxHealth;
     
     void Start()
     {
