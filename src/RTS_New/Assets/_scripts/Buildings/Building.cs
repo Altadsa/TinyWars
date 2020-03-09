@@ -24,9 +24,6 @@ public class Building : Entity
         RallyPoint = _unitSpawn.position;
         Queue = GetComponent<BuildingQueue>();
         Queue.QueueChanged += UpdateBuildingData;
-        if (GetComponent<BuildingConstruction>())
-            Queue.enabled = false;
-
     }
 
     public override void Initialize(Player player)
@@ -86,6 +83,7 @@ public class Building : Entity
     public void SetConstruction()
     {
         gameObject.AddComponent<BuildingConstruction>();
+        Queue.enabled = false;
     }
 
     public Vector3 GetSize()

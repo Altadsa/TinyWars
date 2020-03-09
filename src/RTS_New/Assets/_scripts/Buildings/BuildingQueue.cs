@@ -21,6 +21,11 @@ public class BuildingQueue : MonoBehaviour
         _buildQueue = new QueueRts<Queueable>(5);
     }
 
+    private void OnEnable()
+    {
+        QueueChanged?.Invoke();
+    }
+
     /// <summary>
     /// Add an item to the Building's Production Queue if there is space.
     /// </summary>

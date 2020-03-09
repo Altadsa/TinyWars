@@ -64,8 +64,8 @@ public class UiBuildingInfo
         // Set queue info
         ProcessQueue(0);
         var queue = _target.GetQueue();
+        SetQueueButtons(queue, null); 
         if (!queue) return;
-        SetQueueButtons(queue, queue.Queue);
         queue.QueueChanged += UpdateQueue;
         queue.QueueProcessing += ProcessQueue;
     }
@@ -84,11 +84,11 @@ public class UiBuildingInfo
         SetQueueButtons(queue,buildingQueue);
     }
 
-    private void SetQueueButtons(BuildingQueue queue, List<Queueable> buildingQueue)
+    private void SetQueueButtons(BuildingQueue queue, List<Queueable> buildingQueue = null)
     {
         for (int i = 0; i < _uiBuilding.QueueButtons.Length; i++)
         {
-            if (i < buildingQueue.Count)
+            if (buildingQueue != null && i < buildingQueue.Count)
             {
                 var index = i;
                 var itemIcon = buildingQueue[i].Icon;

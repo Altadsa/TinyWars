@@ -33,7 +33,7 @@ public class BuildingConstruction : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
         }
-        else if (progress == 1f)
+        else if (progress >= 1)
         {
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(true);
