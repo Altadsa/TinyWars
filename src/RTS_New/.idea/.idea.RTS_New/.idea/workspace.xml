@@ -4,12 +4,9 @@
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/peasant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/peasant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiBuildMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
@@ -82,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/DestroyBuilding.cs" />
@@ -103,7 +100,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingInfo.cs" />
@@ -116,7 +112,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
@@ -125,7 +120,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
@@ -133,6 +127,10 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
       </list>
     </option>
   </component>
@@ -168,10 +166,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="28616">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10964">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="28616" />
+      <option name="pid" value="10964" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -227,7 +225,7 @@
       <workItem from="1583612520273" duration="5998000" />
       <workItem from="1583659502855" duration="1285000" />
       <workItem from="1583689449439" duration="4059000" />
-      <workItem from="1583739473009" duration="1942000" />
+      <workItem from="1583739473009" duration="3121000" />
     </task>
     <servers />
   </component>

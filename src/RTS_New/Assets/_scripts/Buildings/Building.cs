@@ -8,8 +8,7 @@ public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
     [SerializeField] private BuildingMenuItem[] _buildingMenuItems;
-
-    public BuildingHealth Health { get; private set; }
+    
     public BuildingQueue Queue { get; private set; }
     public event Action BuildingDataUpdated;
 

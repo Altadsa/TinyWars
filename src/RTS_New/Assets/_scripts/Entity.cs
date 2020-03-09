@@ -7,6 +7,8 @@ public abstract class Entity : MonoBehaviour
 {
     public Player Player { get; private set; }
 
+    public EntityHealth Health { get; protected set; }
+    
     protected SelectionController _pc;
     protected Dictionary<Modifier, float> _modifiers;
 

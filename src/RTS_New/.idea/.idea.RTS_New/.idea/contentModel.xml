@@ -73,6 +73,7 @@
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />
             <e p="UnitAnimator.cs" t="Include" />
+            <e p="UnitCombat.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
             <e p="UnitHealth.cs" t="Include" />
           </e>

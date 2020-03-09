@@ -44,7 +44,7 @@ public class BuildAction : MonoBehaviour, IUnitAction
         yield return new WaitUntil(() => _agent.hasPath);
         GetComponent<UnitActions>().SetState(UnitState.MOVE);
         yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
-        var buildingHealth = building.Health;
+        var buildingHealth = building.Health as BuildingHealth;
         while (!buildingHealth.HealthFull)
         {
             GetComponent<UnitActions>().SetState(UnitState.ACT);
