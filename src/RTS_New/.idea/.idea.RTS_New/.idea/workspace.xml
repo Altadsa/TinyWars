@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiButtonTooltip.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/ModifierUpgrade.cs" />
@@ -110,7 +110,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/SelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" />
@@ -121,7 +120,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
@@ -129,6 +127,9 @@
         <option value="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
       </list>
     </option>
   </component>
@@ -164,10 +165,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10416">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="19092">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10416" />
+      <option name="pid" value="19092" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -227,7 +228,8 @@
       <workItem from="1583762171521" duration="786000" />
       <workItem from="1583762985125" duration="1196000" />
       <workItem from="1583780011498" duration="1329000" />
-      <workItem from="1583834859627" duration="259000" />
+      <workItem from="1583834859627" duration="1075000" />
+      <workItem from="1583865859862" duration="914000" />
     </task>
     <servers />
   </component>
@@ -259,6 +261,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs</url>
+          <line>5</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" initialLine="5">
+            <startOffsets>
+              <option value="117" />
+            </startOffsets>
+            <endOffsets>
+              <option value="118" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

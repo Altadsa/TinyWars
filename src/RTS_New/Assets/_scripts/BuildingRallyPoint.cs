@@ -4,7 +4,7 @@ public class BuildingRallyPoint : MonoBehaviour
 {
     public void SetRallyPoint(Vector3 pos)
     {
-        if (!gameObject.activeInHierarchy)
+        if (gameObject && !gameObject.activeInHierarchy)
         {
             gameObject.SetActive(true);
         }
@@ -14,6 +14,7 @@ public class BuildingRallyPoint : MonoBehaviour
 
     public void RallyPointSet()
     {
-        gameObject.SetActive(false);
+        if(gameObject)
+            gameObject.SetActive(false);
     }
 }

@@ -20,7 +20,6 @@ public class Building : Entity
     {
         GetComponent<NavMeshObstacle>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
-        RallyPoint = _unitSpawn.position;
         Queue = GetComponent<BuildingQueue>();
         Queue.QueueChanged += UpdateBuildingData;
     }
@@ -30,6 +29,7 @@ public class Building : Entity
         base.Initialize(player);
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
+        RallyPoint = transform.position + transform.right * 3;
         // Initialise Building Modifiers.
         var entityModifiers = player.GetBuildingModifiers(_buildingData.BuildingType);
         UpdateModifiers(entityModifiers.EntityModifiers);
