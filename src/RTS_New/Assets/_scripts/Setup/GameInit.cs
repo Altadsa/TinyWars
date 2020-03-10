@@ -49,7 +49,7 @@ public class GameInit : MonoBehaviour
                 newUnit.Initialize(player);                
             }
 
-            var newBuilding = Instantiate(StartBuilding, start, Quaternion.identity);
+            var newBuilding = Instantiate(StartBuilding, start, StartBuilding.transform.rotation);
             newBuilding.Initialize(player);
             newBuilding.GetComponentInChildren<MeshRenderer>().material = player.EntityMaterial;
         }
