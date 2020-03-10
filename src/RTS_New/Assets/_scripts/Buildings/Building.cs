@@ -12,8 +12,8 @@ public class Building : Entity
     public BuildingQueue Queue { get; private set; }
     public event Action BuildingDataUpdated;
 
-    [SerializeField] private Transform _unitSpawn;
-    public Transform UnitSpawn => _unitSpawn;
+    private Vector3 _unitSpawn;
+    public Vector3 UnitSpawn => _unitSpawn;
     public Vector3 RallyPoint { get; private set; }
     
     private void Awake()
@@ -29,7 +29,8 @@ public class Building : Entity
         base.Initialize(player);
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
-        RallyPoint = transform.position + transform.right * 3;
+        _unitSpawn = transform.position + transform.right * 3;
+        RallyPoint = _unitSpawn;
         // Initialise Building Modifiers.
         var entityModifiers = player.GetBuildingModifiers(_buildingData.BuildingType);
         UpdateModifiers(entityModifiers.EntityModifiers);
