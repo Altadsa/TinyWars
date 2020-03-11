@@ -30,11 +30,11 @@ public class UnitCombat : MonoBehaviour, IUnitAction
         _speed = _unit.GetModifierValue(Modifier.AttackSpeed);
     }
 
-    public bool IsActionValid(RaycastHit actionTarget)
+    public bool IsActionValid(GameObject targetGo, Vector3 targetPos)
     {
         StopAllCoroutines();
-        var gameObj = actionTarget.collider.gameObject;
-        var entity = gameObj.GetComponent<Entity>();
+        if (!targetGo) return false;
+        var entity = targetGo.GetComponent<Entity>();
         if (!entity || entity.IsAllied(_unit.Player)) return false;
         Debug.Log("Entering Combat");
         var entityHealth = entity.Health;
@@ -44,21 +44,22 @@ public class UnitCombat : MonoBehaviour, IUnitAction
 
     private void TargetDestroyed()
     {
-        StopAllCoroutines();
         GetComponent<UnitActions>().SetState(UnitState.IDLE);
+        StopAllCoroutines();
     }
     
     IEnumerator TargetEntity(EntityHealth health, Entity entity)
     {
+        GetComponent<UnitActions>().SetState(UnitState.IDLE);
         health.EntityDestroyed += TargetDestroyed;
         var tarPos = entity.transform.position;
         _agent.SetDestination(tarPos);
         yield return new WaitUntil(() => _agent.hasPath);
         GetComponent<UnitActions>().SetState(UnitState.MOVE);
         yield return new WaitUntil(() => _agent.remainingDistance <= _agent.stoppingDistance);
-        while (true)
+        GetComponent<UnitActions>().SetState(UnitState.ACT);
+        while (health)
         {
-            GetComponent<UnitActions>().SetState(UnitState.ACT);
             health.TakeDamage(_baseDamage*_damage);
             yield return new WaitForSeconds(_speed);
         }

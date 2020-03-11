@@ -28,8 +28,8 @@ public class Unit : Entity
         entityModifiers.ModifiersChanged += UpdateModifiers;
     }
 
-    public void AssignAction(RaycastHit actionTarget)
+    public void AssignAction(GameObject targetGo, Vector3 targetPos)
     {
-        _unitActions.DetermineAction(actionTarget);
+        _unitActions.DetermineAction(targetGo, targetPos);
     }
 }

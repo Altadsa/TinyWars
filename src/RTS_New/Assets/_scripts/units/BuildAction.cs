@@ -25,23 +25,23 @@ public class BuildAction : MonoBehaviour, IUnitAction
         _speed = _unit.GetModifierValue(Modifier.BuildSpeed);
     }
 
-    public bool IsActionValid(RaycastHit actionTarget)
+    public bool IsActionValid(GameObject targetGo, Vector3 targetPos)
     {
         
         StopAllCoroutines();
-        var go = actionTarget.collider.gameObject;
-        var building = go.GetComponent<Building>();
+        if (!targetGo) return false;
+        var building = targetGo.GetComponent<Building>();
         if (!building) return false;
         var allied = building.IsAllied(_unit.Player);
         if (!allied) return false;
-        StartCoroutine(Build(building));
+        StartCoroutine(Build(building, targetPos));
         return true;
 
     }
 
-    IEnumerator Build(Building building)
+    IEnumerator Build(Building building, Vector3 position)
     {
-        var dst = building.transform.position;
+        var dst = position;
         _agent.SetDestination(dst);
         yield return new WaitUntil(() => _agent.hasPath);
         GetComponent<UnitActions>().SetState(UnitState.MOVE);

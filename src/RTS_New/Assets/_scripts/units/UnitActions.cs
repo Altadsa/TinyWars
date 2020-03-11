@@ -8,18 +8,18 @@ public class UnitActions : MonoBehaviour
 
     public event Action<UnitState> StateUpdated;
     
-    private List<IUnitAction> actions;
+    private IUnitAction[] _actions;
 
-    private void Start()
+    private void Awake()
     {
-        actions = GetComponents<IUnitAction>().ToList();
+        _actions = GetComponents<IUnitAction>();
     }
 
-    public void DetermineAction(RaycastHit actionTarget)
+    public void DetermineAction(GameObject targetGo, Vector3 targetPos)
     {
-        foreach (var unitAction in actions)
+        foreach (var unitAction in _actions)
         {
-            if (unitAction.IsActionValid(actionTarget)) return;
+            if (unitAction.IsActionValid(targetGo, targetPos)) return;
         }
     }
 

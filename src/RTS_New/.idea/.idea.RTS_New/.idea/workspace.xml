@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art_assets/unit_ground.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/unit_ground.controller" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,15 +88,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/ModifierUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/EntityType.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuilding.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Setup/GameInit.cs" />
@@ -97,8 +104,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
@@ -115,20 +120,25 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/AiSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
       </list>
     </option>
   </component>
@@ -164,10 +174,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="19092">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="9908">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19092" />
+      <option name="pid" value="9908" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -228,7 +238,8 @@
       <workItem from="1583762985125" duration="1196000" />
       <workItem from="1583780011498" duration="1329000" />
       <workItem from="1583834859627" duration="1075000" />
-      <workItem from="1583865859862" duration="1238000" />
+      <workItem from="1583865859862" duration="3435000" />
+      <workItem from="1583913302018" duration="1010000" />
     </task>
     <servers />
   </component>
@@ -260,6 +271,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs</url>
+          <line>19</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" initialLine="19">
+            <startOffsets>
+              <option value="395" />
+            </startOffsets>
+            <endOffsets>
+              <option value="431" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

@@ -126,14 +126,12 @@ public class PlayerModifiers
                 if (buildingKey != lastKey)
                 {
                     initialValues[lastKey] = new Modifiers(newModifiers);
-                    Debug.LogFormat("Found Modifier Data for {0}", lastKey);
                     newModifiers.Clear();
                 }
                 newModifiers[modKey] = modVal;
                 lastKey = buildingKey;
             }
             initialValues[buildingKey] = new Modifiers(newModifiers);
-            Debug.LogFormat("Found Modifier Data for {0}", buildingKey);
         }
 
         return initialValues;

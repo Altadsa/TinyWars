@@ -30,7 +30,7 @@ public interface IUnitAction
 {
     int Priority { get; }
 
-    bool IsActionValid(RaycastHit actionTarget);
+    bool IsActionValid(GameObject targetGo, Vector3 targetPos);
 }
 
 
