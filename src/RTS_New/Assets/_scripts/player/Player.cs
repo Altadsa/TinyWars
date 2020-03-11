@@ -10,7 +10,7 @@ public class Player
     public bool IsAi { get; private set; }
 
     private PlayerModifiers _playerModifiers;
-
+    private PlayerResources _playerResources;
     private Requirements _playerRequirements;
     
     public Modifiers GetUnitModifiers(UnitType unitType)
@@ -32,6 +32,11 @@ public class Player
         _playerRequirements = new Requirements();
     }
 
+    public bool CanAfford(ResourceCost cost)
+    {
+        return _playerResources.CanAffordCost(cost);
+    }
+    
     /// <summary>
     /// Called by the Unit upgrades to change the value of a given modifier.
     /// </summary>
@@ -52,4 +57,60 @@ public class Player
     {
         _playerRequirements.SetRequirementMet(buildingType);
     }
+}
+
+public class PlayerResources
+{
+    private int _gold;
+    private int _lumber;
+    private int _iron;
+    private int _food;
+    
+    public PlayerResources()
+    {
+        
+    }
+
+    public bool CanAffordCost(ResourceCost cost)
+    {
+        var enoughGold = _gold >= cost.Gold;
+        var enoughLumber = _lumber >= cost.Lumber;
+        var enoughIron = _iron >= cost.Iron;
+        var enoughFood = _food >= cost.Lumber;
+        return enoughGold && enoughLumber && enoughIron && enoughFood;
+    }
+
+    public void DeductResourceCost(ResourceCost cost)
+    {
+        _gold -= cost.Gold;
+        _lumber -= cost.Lumber;
+        _iron -= cost.Iron;
+        _food += cost.Food;
+    }
+    
+}
+
+public struct ResourceCost
+{
+    
+    public int Gold { get; private set; }
+    public int Lumber { get; private set; }
+    public int Iron { get; private set; }
+    public int Food { get; private set; }
+    
+    public ResourceCost(int g, int l, int i, int f)
+    {
+        Gold = g;
+        Lumber = l;
+        Iron = i;
+        Food = f;
+    }
+}
+
+public enum ResourceType
+{
+    Gold,
+    Lumber,
+    Iron,
+    Food
 }
