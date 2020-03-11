@@ -15,6 +15,8 @@ public class BuildingUpgrade : Queueable
         ReplaceBuildingModel(building);
         building.ReplaceItem(this, _nextUpgrade);
         building.SetNewData(_newData);
+        var player = building.Player;
+        player.SetRequirementMet(_newData.BuildingType);
     }
 
     private void ReplaceBuildingModel(Building building)

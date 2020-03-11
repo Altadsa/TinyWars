@@ -27,20 +27,33 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
     {
         _data = item;
         _menuButton.onClick.RemoveAllListeners();
-        if (item is Queueable)
+        if (item is Queueable queueable)
         {
-            var isUpgrade = item is BuildingUpgrade || item is ModifierUpgrade;
-            if (isUpgrade)
-                isUpgrade =  building.GetQueue().IsUpgradeInQueue((Queueable) item);
-            if (isUpgrade) return;
-            _menuButton.onClick.AddListener(delegate
+            var isAvailable = building.Player.RequirementsMet(queueable.Requirements);
+            // If requirements aren't met, the we add the message to the button onclick.
+            if (!isAvailable)
             {
-                building.GetQueue().AddToQueue((Queueable) item);
-                if (isUpgrade)
+                _menuButton.onClick.AddListener(delegate
                 {
-                    _menuButton.gameObject.SetActive(false);
-                }
-            });
+                    FindObjectOfType<UiMessageSystem>().RequirementMessage(building.Player, queueable.Requirements);
+                });
+            }
+            else
+            {
+                var isUpgrade = queueable is BuildingUpgrade || queueable is ModifierUpgrade;
+                if (isUpgrade)
+                    isUpgrade =  building.GetQueue().IsUpgradeInQueue(queueable);
+                if (isUpgrade) return;
+                _menuButton.onClick.AddListener(delegate
+                {
+                    building.GetQueue().AddToQueue((Queueable) item);
+                    if (isUpgrade)
+                    {
+                        _menuButton.gameObject.SetActive(false);
+                    }
+                });
+            }
+
         }
         else
         {

@@ -27,6 +27,7 @@ public class Building : Entity
     public override void Initialize(Player player)
     {
         base.Initialize(player);
+        player.SetRequirementMet(_buildingData.BuildingType);
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
         _unitSpawn = transform.position + transform.right * 3;

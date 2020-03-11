@@ -47,4 +47,9 @@ public class Player
     {
         return _playerRequirements.RequirementsMet(requirements);
     }
+
+    public void SetRequirementMet(BuildingType buildingType)
+    {
+        _playerRequirements.SetRequirementMet(buildingType);
+    }
 }

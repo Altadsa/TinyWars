@@ -19,6 +19,21 @@ public class UiMessageSystem : MonoBehaviour
         StartCoroutine(ShowMessage());
     }
 
+    public void RequirementMessage(Player player, BuildingType[] requirements)
+    {
+        string reqMessage = "";
+        foreach (var buildingType in requirements)
+        {
+            if (!player.RequirementsMet(requirements))
+            {
+                reqMessage += $"\t- {buildingType}\n";
+            }
+        }
+
+        _messageText.text = BUILD_REQUIREMENTS + reqMessage;
+        StartCoroutine(ShowMessage());
+    }
+
     IEnumerator ShowMessage()
     {
         _messageText.alpha = 1;

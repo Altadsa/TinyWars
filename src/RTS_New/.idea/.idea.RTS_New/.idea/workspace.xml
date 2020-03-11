@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/art_assets/unit_ground.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/unit_ground.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/ModifierUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/Queueable.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/EntityType.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
@@ -106,7 +98,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/camera/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
@@ -123,22 +114,25 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" />
         <option value="$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/EntityHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerModifiers.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/MenuDataUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/BuildAction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingMenuButton.cs" />
       </list>
     </option>
   </component>
@@ -239,7 +233,7 @@
       <workItem from="1583780011498" duration="1329000" />
       <workItem from="1583834859627" duration="1075000" />
       <workItem from="1583865859862" duration="3435000" />
-      <workItem from="1583913302018" duration="1010000" />
+      <workItem from="1583913302018" duration="2738000" />
     </task>
     <servers />
   </component>

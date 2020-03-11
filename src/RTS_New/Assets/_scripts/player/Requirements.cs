@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
 
 public class Requirements
 {
@@ -14,6 +15,7 @@ public class Requirements
     public void SetRequirementMet(BuildingType requirement)
     {
         _playerRequirements[requirement] = true;
+        Debug.LogFormat("Requirement Met: {0}", requirement);
     }
     
     public bool RequirementsMet(BuildingType[] requirements)
