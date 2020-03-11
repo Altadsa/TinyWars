@@ -22,6 +22,11 @@ public abstract class EntityHealth : MonoBehaviour
     {
         HealthChanged?.Invoke(_currentHealth,_maxHealth);   
     }
+    
+    protected void CreateHealthUi()
+    {
+        GetComponent<UiEntityHealthBar>().Init();
+    }
 
     protected void CheckHealth()
     {

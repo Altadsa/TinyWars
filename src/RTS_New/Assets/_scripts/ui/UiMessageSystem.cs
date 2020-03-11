@@ -8,8 +8,8 @@ public class UiMessageSystem : MonoBehaviour
     [SerializeField] private TMP_Text _messageText;
     
     private const string RESOURCE_REQUIREMENTS = "You are missing the following resources:\n";
-    private const string BUILD_REQUIREMENTS = "You must meet the following Requirements to build ";
-    private const string PLACEMENT_WARNING = "Invalid Building placement. Choose somewhere else";
+    private const string BUILD_REQUIREMENTS = "You must meet the following Requirements to build:\n";
+    private const string PLACEMENT_WARNING = "Invalid Building placement. Choose somewhere else.";
 
     private const float MESSAGE_DURATION = 5;
 

@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art_assets/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/units/peasant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/units/peasant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/units/swordsman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/units/swordsman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/units/unit (ground) .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/units/unit (ground) .prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/UnitCombat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/ui/UiEntityHealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/ModifierUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/UnitActions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -82,8 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/EntityType.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiTooltip.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" />
@@ -112,7 +114,6 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/player/AiSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/unit_modifiers.txt" />
         <option value="$PROJECT_DIR$/Assets/_scripts/setup/GameInit.cs" />
@@ -131,8 +132,11 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/Requirements.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingMenuButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiMessageSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiUnitHealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiEntityHealthBar.cs" />
       </list>
     </option>
   </component>
@@ -233,7 +237,8 @@
       <workItem from="1583780011498" duration="1329000" />
       <workItem from="1583834859627" duration="1075000" />
       <workItem from="1583865859862" duration="3435000" />
-      <workItem from="1583913302018" duration="2738000" />
+      <workItem from="1583913302018" duration="3620000" />
+      <workItem from="1583955631585" duration="2677000" />
     </task>
     <servers />
   </component>

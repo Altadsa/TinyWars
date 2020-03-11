@@ -10,8 +10,12 @@ public class UnitHealth : EntityHealth
         GetComponent<Unit>().ModifiersUpdated += UpdateModifiers;
         _currentHealth = _maxHealth;
         UpdateHealth();
+        CreateHealthUi();
     }
 
+    // Due to engine execution order, we have to initialise the unit health ui after creating unit health.
+
+    
     private void UpdateModifiers()
     {
         _armourValue = (int)GetComponent<Unit>().GetModifierValue(Modifier.Armour);

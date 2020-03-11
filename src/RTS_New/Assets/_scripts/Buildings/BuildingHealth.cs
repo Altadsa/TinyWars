@@ -16,6 +16,7 @@ public class BuildingHealth : EntityHealth
         else
             _currentHealth = _maxHealth;
         UpdateHealth();
+        CreateHealthUi();
     }
 
     private void SetMaxHealth()
