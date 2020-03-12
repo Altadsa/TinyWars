@@ -34,6 +34,13 @@ public class UiMessageSystem : MonoBehaviour
         StartCoroutine(ShowMessage());
     }
 
+    public void CostMessage(ResourceCost cost)
+    {
+        _messageText.text = RESOURCE_REQUIREMENTS;
+        _messageText.text += cost.ToString();
+        StartCoroutine(ShowMessage());
+    }
+    
     IEnumerator ShowMessage()
     {
         _messageText.alpha = 1;

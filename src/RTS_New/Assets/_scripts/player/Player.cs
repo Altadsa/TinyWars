@@ -29,6 +29,7 @@ public class Player
         EntityMaterial = entityMaterial;
         IsAi = isAi;
         _playerModifiers = new PlayerModifiers();
+        _playerResources = new PlayerResources();
         _playerRequirements = new Requirements();
     }
 
@@ -68,7 +69,10 @@ public class PlayerResources
     
     public PlayerResources()
     {
-        
+        _gold = 100;
+        _lumber = 100;
+        _iron = 100;
+        _food = 100;
     }
 
     public bool CanAffordCost(ResourceCost cost)
@@ -104,6 +108,11 @@ public struct ResourceCost
         Lumber = l;
         Iron = i;
         Food = f;
+    }
+
+    public override string ToString()
+    {
+        return $"\n\tGold: {Gold}\n\tLumber: {Lumber}\n\tIron: {Iron}\n\tFood: {Food}";
     }
 }
 

@@ -33,6 +33,11 @@ public interface IUnitAction
     bool IsActionValid(GameObject targetGo, Vector3 targetPos);
 }
 
+public interface IResourceCost
+{
+    ResourceCost Cost { get; }
+}
+
 
 public enum Modifier
 {

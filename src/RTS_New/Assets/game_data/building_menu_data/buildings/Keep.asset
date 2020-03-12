@@ -18,6 +18,10 @@ MonoBehaviour:
   _priority: 2
   _time: 5
   _requirements: 02000000
+  _goldCost: 240
+  _lumberCost: 100
+  _ironCost: 0
+  _foodCost: 0
   _newData: {fileID: 11400000, guid: c62cb07941cccd5409457447e85666d3, type: 2}
   _complete: {fileID: 100000, guid: 003306f67c7bed24b8be307fb52fb0ab, type: 3}
   _nextUpgrade: {fileID: 11400000, guid: fc82afe3772308644bd489add18f1e20, type: 2}

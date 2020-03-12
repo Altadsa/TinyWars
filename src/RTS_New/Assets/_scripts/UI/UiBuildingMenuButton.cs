@@ -29,16 +29,17 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
         _menuButton.onClick.RemoveAllListeners();
         if (item is Queueable queueable)
         {
-            var isAvailable = building.Player.RequirementsMet(queueable.Requirements);
+            var player = building.Player;
+            var isAvailable = player.RequirementsMet(queueable.Requirements);
             // If requirements aren't met, the we add the message to the button onclick.
             if (!isAvailable)
             {
                 _menuButton.onClick.AddListener(delegate
                 {
-                    FindObjectOfType<UiMessageSystem>().RequirementMessage(building.Player, queueable.Requirements);
+                    FindObjectOfType<UiMessageSystem>().RequirementMessage(player, queueable.Requirements);
                 });
             }
-            else
+            else 
             {
                 var isUpgrade = queueable is BuildingUpgrade || queueable is ModifierUpgrade;
                 if (isUpgrade)
@@ -46,10 +47,17 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                 if (isUpgrade) return;
                 _menuButton.onClick.AddListener(delegate
                 {
-                    building.GetQueue().AddToQueue((Queueable) item);
-                    if (isUpgrade)
+                    if (!player.CanAfford(queueable.Cost))
                     {
-                        _menuButton.gameObject.SetActive(false);
+                        FindObjectOfType<UiMessageSystem>().CostMessage(queueable.Cost);
+                    }
+                    else
+                    {
+                        building.GetQueue().AddToQueue((Queueable) item);
+                        if (isUpgrade)
+                        {
+                            _menuButton.gameObject.SetActive(false);
+                        }
                     }
                 });
             }
