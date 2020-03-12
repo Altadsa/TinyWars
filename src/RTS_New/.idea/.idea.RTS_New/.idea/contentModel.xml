@@ -64,6 +64,7 @@
             <e p="UiEntityHealthBar.cs" t="Include" />
             <e p="UiMessageSystem.cs" t="Include" />
             <e p="UiMinimap.cs" t="Include" />
+            <e p="UiPlayerResources.cs" t="Include" />
             <e p="UiSelectionBox.cs" t="Include" />
             <e p="UiTooltip.cs" t="Include" />
             <e p="UiUnitSelection.cs" t="Include" />

@@ -21,7 +21,7 @@ public abstract class Queueable : BuildingMenuItem, IResourceCost
     [SerializeField] private int _ironCost;
     [SerializeField] private int _foodCost;
     
-    public ResourceCost Cost => new ResourceCost(_goldCost, 
+    public ResourceData Data => new ResourceData(_goldCost, 
         _lumberCost,
         _ironCost,
         _foodCost);

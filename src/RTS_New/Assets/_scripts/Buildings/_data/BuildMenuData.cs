@@ -15,7 +15,7 @@ public class BuildMenuData : MenuData, IResourceCost
     [SerializeField] private int _foodCost;
 
     public Building Building => _buildingPrefab;
-    public ResourceCost Cost => new ResourceCost(_goldCost, 
+    public ResourceData Data => new ResourceData(_goldCost, 
         _lumberCost,
         _ironCost,
         _foodCost);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Units;
 
 [System.Serializable]
@@ -9,6 +10,8 @@ public class Player
     public Material EntityMaterial { get; private set; }
     public bool IsAi { get; private set; }
 
+    public event Action<ResourceData> ResourcesUpdated;
+    
     private PlayerModifiers _playerModifiers;
     private PlayerResources _playerResources;
     private Requirements _playerRequirements;
@@ -22,6 +25,8 @@ public class Player
     {
         return _playerModifiers.FetchModifiers(buildingType);
     }
+
+    public ResourceData PlayerResources => _playerResources.Data;
     
     public Player(Color color, Material entityMaterial, bool isAi)
     {
@@ -33,9 +38,9 @@ public class Player
         _playerRequirements = new Requirements();
     }
 
-    public bool CanAfford(ResourceCost cost)
+    public bool CanAfford(ResourceData data)
     {
-        return _playerResources.CanAffordCost(cost);
+        return _playerResources.CanAffordCost(data);
     }
     
     /// <summary>
@@ -75,7 +80,9 @@ public class PlayerResources
         _food = 100;
     }
 
-    public bool CanAffordCost(ResourceCost cost)
+    public ResourceData Data => new ResourceData(_gold,_lumber,_iron,_food);
+    
+    public bool CanAffordCost(ResourceData cost)
     {
         var enoughGold = _gold >= cost.Gold;
         var enoughLumber = _lumber >= cost.Lumber;
@@ -84,7 +91,7 @@ public class PlayerResources
         return enoughGold && enoughLumber && enoughIron && enoughFood;
     }
 
-    public void DeductResourceCost(ResourceCost cost)
+    public void DeductResourceCost(ResourceData cost)
     {
         _gold -= cost.Gold;
         _lumber -= cost.Lumber;
@@ -94,7 +101,7 @@ public class PlayerResources
     
 }
 
-public struct ResourceCost
+public struct ResourceData
 {
     
     public int Gold { get; private set; }
@@ -102,7 +109,7 @@ public struct ResourceCost
     public int Iron { get; private set; }
     public int Food { get; private set; }
     
-    public ResourceCost(int g, int l, int i, int f)
+    public ResourceData(int g, int l, int i, int f)
     {
         Gold = g;
         Lumber = l;

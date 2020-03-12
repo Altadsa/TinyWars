@@ -35,7 +35,7 @@ public interface IUnitAction
 
 public interface IResourceCost
 {
-    ResourceCost Cost { get; }
+    ResourceData Data { get; }
 }
 
 

@@ -47,9 +47,9 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                 if (isUpgrade) return;
                 _menuButton.onClick.AddListener(delegate
                 {
-                    if (!player.CanAfford(queueable.Cost))
+                    if (!player.CanAfford(queueable.Data))
                     {
-                        FindObjectOfType<UiMessageSystem>().CostMessage(queueable.Cost);
+                        FindObjectOfType<UiMessageSystem>().CostMessage(queueable.Data);
                     }
                     else
                     {

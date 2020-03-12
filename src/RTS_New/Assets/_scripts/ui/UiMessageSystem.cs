@@ -34,10 +34,10 @@ public class UiMessageSystem : MonoBehaviour
         StartCoroutine(ShowMessage());
     }
 
-    public void CostMessage(ResourceCost cost)
+    public void CostMessage(ResourceData data)
     {
         _messageText.text = RESOURCE_REQUIREMENTS;
-        _messageText.text += cost.ToString();
+        _messageText.text += data.ToString();
         StartCoroutine(ShowMessage());
     }
     
