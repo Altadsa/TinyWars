@@ -15,10 +15,13 @@ public class BuildingQueue : MonoBehaviour
     public List<Queueable> Queue => _buildQueue.Queue;
 
     private QueueRts<Queueable> _buildQueue;
-
+    private Building _building;
+    
+    
     private void Awake()
     {
         _buildQueue = new QueueRts<Queueable>(5);
+        _building = GetComponent<Building>();
     }
 
     private void OnEnable()
@@ -52,7 +55,11 @@ public class BuildingQueue : MonoBehaviour
     {
         // Halt Queue production while we remove the item
         StopAllCoroutines();
-        _buildQueue.RemoveFromQueue(index);
+        
+        var removedItem = _buildQueue.RemoveFromQueue(index);
+        var player = _building.Player;
+        
+        player.RefundResources(removedItem.Data);
         
         // Start the queue again if it isn't empty
         // Otherwise reset the elpased time
@@ -90,7 +97,7 @@ public class BuildingQueue : MonoBehaviour
                 QueueProcessing?.Invoke(Math.Round(elapsedTime/queueTime, 2));
                 yield return new WaitForEndOfFrame();
             }
-            item.Complete(GetComponent<Building>());
+            item.Complete(_building);
             _buildQueue.Dequeue();
             QueueChanged?.Invoke();
         } while (!_buildQueue.IsEmpty());

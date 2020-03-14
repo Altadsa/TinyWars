@@ -18,5 +18,9 @@ MonoBehaviour:
   _priority: 0
   _time: 2
   _requirements: 
+  _goldCost: 100
+  _lumberCost: 0
+  _ironCost: 0
+  _foodCost: 0
   _unitPrefab: {fileID: 1629727984278909781, guid: eb343a77c6ae0dd499a6fdbd6ff2dca0,
     type: 3}

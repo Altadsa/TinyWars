@@ -64,8 +64,10 @@ public class QueueRts<T>
     /// Special function to remove any item from the Queue.
     /// </summary>
     /// <param name="index">The index of the item to be removed.</param>
-    public void RemoveFromQueue(int index)
+    public T RemoveFromQueue(int index)
     {
+        var item = _queue[index];
         _queue.RemoveAt(index);
+        return item;
     }
 }

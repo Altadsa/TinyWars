@@ -63,6 +63,19 @@ public class Player
     {
         _playerRequirements.SetRequirementMet(buildingType);
     }
+
+    public void DeductResources(ResourceData queueableData)
+    {
+        _playerResources.DeductResourceCost(queueableData);
+        ResourcesUpdated?.Invoke(_playerResources.Data);
+    }
+
+    public void RefundResources(ResourceData data)
+    {
+        _playerResources.RefundResourceCost(data);
+        ResourcesUpdated?.Invoke(_playerResources.Data);
+    }
+    
 }
 
 public class PlayerResources
@@ -97,6 +110,14 @@ public class PlayerResources
         _lumber -= cost.Lumber;
         _iron -= cost.Iron;
         _food += cost.Food;
+    }
+
+    public void RefundResourceCost(ResourceData cost)
+    {
+        _gold += cost.Gold;
+        _lumber += cost.Lumber;
+        _iron += cost.Iron;
+        _food -= cost.Food;
     }
     
 }

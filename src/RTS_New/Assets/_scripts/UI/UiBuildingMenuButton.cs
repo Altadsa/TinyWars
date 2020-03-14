@@ -53,6 +53,7 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                     }
                     else
                     {
+                        player.DeductResources(queueable.Data);
                         building.GetQueue().AddToQueue((Queueable) item);
                         if (isUpgrade)
                         {
