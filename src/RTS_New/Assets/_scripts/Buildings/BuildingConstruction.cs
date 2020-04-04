@@ -38,7 +38,7 @@ public class BuildingConstruction : MonoBehaviour
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(true);
             GetComponent<BuildingHealth>().HealthChanged -= ConstructionProgress;
-            gameObject.GetComponent<Building>().Queue.enabled = true;
+            gameObject.GetComponent<Building>().SetConstruction(true);
             Destroy(this);
         }
     }

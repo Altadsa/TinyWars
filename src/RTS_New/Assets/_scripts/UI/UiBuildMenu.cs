@@ -100,7 +100,7 @@ public class UiBuildMenu : MonoBehaviour
         
         _buildArea.Hide(true);
         building.Initialize(_controller.Player);
-        building.SetConstruction();
+        building.SetConstruction(false);
         // Restore camera controller raycasting ability.
         _cameraController.BlockRaycast(false);
     }

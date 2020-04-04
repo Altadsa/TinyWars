@@ -11,6 +11,12 @@ public class BuildingData : ScriptableObject
     [SerializeField] private int _lumberCost;
     [SerializeField] private int _ironCost;
 
+    [Tooltip("How much the players max food capacity will increase")]
+    [SerializeField] private int _foodProvided;
+    
+    /// <summary>
+    /// Resource cost of the Building.
+    /// </summary>
     public ResourceData Data => new ResourceData
         (_goldCost,
         _lumberCost,
@@ -21,6 +27,7 @@ public class BuildingData : ScriptableObject
     public string Name => _name;
     public Sprite Icon => _icon;
 
+    public int FoodProvided => _foodProvided;
 }
 
 public enum BuildingType

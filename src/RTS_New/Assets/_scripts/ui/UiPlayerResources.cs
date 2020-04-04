@@ -13,18 +13,19 @@ public class UiPlayerResources : MonoBehaviour
     [SerializeField] private TMP_Text _ironText;
     [SerializeField] private TMP_Text _foodText;
 
+    //TODO Fix
     private void Start()
     {
         var player = _controller.Player;
-        UpdateResources(player.PlayerResources);
+        UpdateResources(player.PlayerResources, player.MaxFood);
         player.ResourcesUpdated += UpdateResources;
     }
 
-    private void UpdateResources(ResourceData data)
+    private void UpdateResources(ResourceData data, int maxFood)
     {
         _goldText.text = data.Gold.ToString();
         _lumberText.text = data.Lumber.ToString();
         _ironText.text = data.Iron.ToString();
-        _foodText.text = data.Food.ToString();
+        _foodText.text = $"{data.Food.ToString()}/{maxFood}";
     }
 }

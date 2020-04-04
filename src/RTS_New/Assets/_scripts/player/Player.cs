@@ -10,7 +10,7 @@ public class Player
     public Material EntityMaterial { get; private set; }
     public bool IsAi { get; private set; }
 
-    public event Action<ResourceData> ResourcesUpdated;
+    public event Action<ResourceData,int> ResourcesUpdated;
     
     private PlayerModifiers _playerModifiers;
     private PlayerResources _playerResources;
@@ -27,7 +27,7 @@ public class Player
     }
 
     public ResourceData PlayerResources => _playerResources.Data;
-    
+    public int MaxFood => _playerResources.MaxFood;
     public Player(Color color, Material entityMaterial, bool isAi)
     {
         Color = color;
@@ -67,13 +67,25 @@ public class Player
     public void DeductResources(ResourceData queueableData)
     {
         _playerResources.DeductResourceCost(queueableData);
-        ResourcesUpdated?.Invoke(_playerResources.Data);
+        ResourcesUpdated?.Invoke(_playerResources.Data, MaxFood);
     }
 
     public void RefundResources(ResourceData data)
     {
         _playerResources.RefundResourceCost(data);
-        ResourcesUpdated?.Invoke(_playerResources.Data);
+        ResourcesUpdated?.Invoke(_playerResources.Data, MaxFood);
+    }
+
+    public void ChangeMaxFood(int amount)
+    {
+        _playerResources.ChangeFoodCapacity(amount);
+        ResourcesUpdated?.Invoke(_playerResources.Data, MaxFood);
+    }
+
+    public void ChangeFoodUsage(int amount)
+    {
+        _playerResources.ChangeFoodUsage(amount);
+        ResourcesUpdated?.Invoke(_playerResources.Data, MaxFood);
     }
     
 }
@@ -93,10 +105,12 @@ public class PlayerResources
         _lumber = 100;
         _iron = 100;
         _food = 0;
-        _maxFood = 0;
+        _maxFood = 24;
     }
 
     public ResourceData Data => new ResourceData(_gold,_lumber,_iron,_food);
+
+    public int MaxFood => _maxFood;
     
     public bool CanAffordCost(ResourceData cost)
     {

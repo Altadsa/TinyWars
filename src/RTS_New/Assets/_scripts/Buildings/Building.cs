@@ -81,10 +81,18 @@ public class Building : Entity
         StartCoroutine(SetRallyPoint());
     }
 
-    public void SetConstruction()
+    public void SetConstruction(bool constructed)
     {
-        gameObject.AddComponent<BuildingConstruction>();
-        Queue.enabled = false;
+        if (!constructed)
+        {
+            gameObject.AddComponent<BuildingConstruction>();
+            Queue.enabled = false;
+        }
+        else
+        {
+            Queue.enabled = true;
+            Player.ChangeMaxFood(_buildingData.FoodProvided);
+        }
     }
 
     public Vector3 GetSize()
