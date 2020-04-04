@@ -84,13 +84,16 @@ public class PlayerResources
     private int _lumber;
     private int _iron;
     private int _food;
+
+    private int _maxFood;
     
     public PlayerResources()
     {
         _gold = 100;
         _lumber = 100;
         _iron = 100;
-        _food = 100;
+        _food = 0;
+        _maxFood = 0;
     }
 
     public ResourceData Data => new ResourceData(_gold,_lumber,_iron,_food);
@@ -100,7 +103,7 @@ public class PlayerResources
         var enoughGold = _gold >= cost.Gold;
         var enoughLumber = _lumber >= cost.Lumber;
         var enoughIron = _iron >= cost.Iron;
-        var enoughFood = _food >= cost.Lumber;
+        var enoughFood = _food + cost.Food <= _maxFood;
         return enoughGold && enoughLumber && enoughIron && enoughFood;
     }
 
@@ -118,6 +121,16 @@ public class PlayerResources
         _lumber += cost.Lumber;
         _iron += cost.Iron;
         _food -= cost.Food;
+    }
+
+    public void ChangeFoodCapacity(int change)
+    {
+        _maxFood += change;
+    }
+
+    public void ChangeFoodUsage(int change)
+    {
+        _food += change;
     }
     
 }
