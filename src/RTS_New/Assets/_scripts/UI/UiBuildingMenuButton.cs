@@ -43,7 +43,7 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
             {
                 var isUpgrade = queueable is BuildingUpgrade || queueable is ModifierUpgrade;
                 if (isUpgrade)
-                    isUpgrade =  building.GetQueue().IsUpgradeInQueue(queueable);
+                    isUpgrade =  building.Queue.IsUpgradeInQueue(queueable);
                 if (isUpgrade) return;
                 _menuButton.onClick.AddListener(delegate
                 {
@@ -54,7 +54,7 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                     else
                     {
                         player.DeductResources(queueable.Data);
-                        building.GetQueue().AddToQueue((Queueable) item);
+                        building.Queue.AddToQueue((Queueable) item);
                         if (isUpgrade)
                         {
                             _menuButton.gameObject.SetActive(false);

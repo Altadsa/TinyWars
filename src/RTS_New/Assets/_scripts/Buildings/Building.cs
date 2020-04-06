@@ -8,8 +8,8 @@ public class Building : Entity
 {
     [SerializeField] private BuildingData _buildingData;
     [SerializeField] private BuildingMenuItem[] _buildingMenuItems;
-    
-    public BuildingQueue Queue { get; private set; }
+
+    private BuildingQueue _queue;
     public event Action BuildingDataUpdated;
 
     private Vector3 _unitSpawn;
@@ -20,29 +20,42 @@ public class Building : Entity
     {
         GetComponent<NavMeshObstacle>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
-        Queue = GetComponent<BuildingQueue>();
-        Queue.QueueChanged += UpdateBuildingData;
+        _queue = GetComponent<BuildingQueue>();
+        _queue.QueueChanged += UpdateBuildingData;
     }
 
     public override void Initialize(Player player)
     {
         base.Initialize(player);
         player.SetRequirementMet(_buildingData.BuildingType);
+        
+        // setup components
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
+        if (!GetComponent<BuildingHealth>())
+            gameObject.AddComponent<BuildingHealth>();
+        Health = GetComponent<BuildingHealth>();       
+        
+        // set spawn points
         _unitSpawn = transform.position + transform.right * 3;
         RallyPoint = _unitSpawn;
+        
         // Initialise Building Modifiers.
         var entityModifiers = player.GetBuildingModifiers(_buildingData.BuildingType);
         UpdateModifiers(entityModifiers.EntityModifiers);
         entityModifiers.ModifiersChanged += UpdateModifiers;
-        if (!GetComponent<BuildingHealth>())
-            gameObject.AddComponent<BuildingHealth>();
-        Health = GetComponent<BuildingHealth>();
+
     }
 
-    public BuildingMenuItem[] MenuItems => Queue.enabled ? _buildingMenuItems : null;
+    public BuildingMenuItem[] MenuItems => _queue.enabled ? _buildingMenuItems : null;
 
+    public Vector3 Size => GetComponentInChildren<BoxCollider>().size;
+    
+    public BuildingData BuildingData => _buildingData;
+
+    public BuildingQueue Queue => !_queue.enabled ? null : _queue;
+    
+    
     /// <summary>
     /// Replaces a completed upgrade (modifier/building) with the next one (if it exists).
     /// </summary>
@@ -58,7 +71,7 @@ public class Building : Entity
     /// Sets the new data for the building after upgrading it.
     /// </summary>
     /// <param name="data"></param>
-    public void SetNewData(BuildingData data)
+    public void SetBuildingData(BuildingData data)
     {
         GetNewModifiers(data);
         BuildingDataUpdated?.Invoke();
@@ -83,30 +96,17 @@ public class Building : Entity
 
     public void SetConstruction(bool constructed)
     {
+        _queue.enabled = constructed;
         if (!constructed)
         {
             gameObject.AddComponent<BuildingConstruction>();
-            Queue.enabled = false;
         }
         else
         {
-            Queue.enabled = true;
             Player.ChangeMaxFood(_buildingData.FoodProvided);
         }
     }
-
-    public Vector3 GetSize()
-    {
-        return GetComponentInChildren<BoxCollider>().size;
-    }
-
-    public BuildingData BuildingData => _buildingData;
-
-    public BuildingQueue GetQueue()
-    {
-        return !Queue.enabled ? null : Queue;
-    }
-
+    
     private void UpdateBuildingData()
     {
         BuildingDataUpdated?.Invoke();

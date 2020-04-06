@@ -63,7 +63,7 @@ public class UiBuildingInfo
         
         // Set queue info
         ProcessQueue(0);
-        var queue = _target.GetQueue();
+        var queue = _target.Queue;
         SetQueueButtons(queue, null); 
         if (!queue) return;
         queue.QueueChanged += UpdateQueue;
@@ -78,7 +78,7 @@ public class UiBuildingInfo
 
     private void UpdateQueue()
     {
-        var queue = _target.GetQueue();
+        var queue = _target.Queue;
         if (!queue) return;
         var buildingQueue = queue.Queue;
         SetQueueButtons(queue,buildingQueue);

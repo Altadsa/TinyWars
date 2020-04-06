@@ -101,9 +101,9 @@ public class PlayerResources
     
     public PlayerResources()
     {
-        _gold = 100;
-        _lumber = 100;
-        _iron = 100;
+        _gold = 1000;
+        _lumber = 1000;
+        _iron = 1000;
         _food = 0;
         _maxFood = 24;
     }

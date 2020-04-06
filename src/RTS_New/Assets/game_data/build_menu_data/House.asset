@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: a570c2caa2a81bc47b857daff187ae0c, type: 3}
+  _name: 
+  _description: 
+  _priority: 0
   _buildingPrefab: {fileID: 5321121232333414465, guid: 6201ead705493ea4289f23d8a771f289,
     type: 3}
+  _goldCost: 60
+  _lumberCost: 0
+  _ironCost: 0
+  _foodProvided: 8

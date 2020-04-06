@@ -21,7 +21,7 @@ public class UiBuildMenu : MonoBehaviour
 
     
     [Header("Debug")] public BuildMenuData[] _menuData;
-
+    private Player _player;
     private Camera _mCam;
     
     private void Awake()
@@ -40,10 +40,20 @@ public class UiBuildMenu : MonoBehaviour
                 _menuButtons[i].onClick.RemoveAllListeners();
                 _menuButtons[i].GetComponent<Image>().sprite = _menuData[i].Icon;
                 var building = _menuData[i];
+                var buildingCost = building.Data;
+
                 _menuButtons[i].onClick.AddListener(delegate
                 {
                     StopAllCoroutines();
-                    StartCoroutine(SelectBuilding(building));
+                    if (_controller.Player.CanAfford(buildingCost))
+                    {
+                        _controller.Player.DeductResources(buildingCost);
+                        StartCoroutine(SelectBuilding(building));
+                    }
+                    else
+                    {
+                        FindObjectOfType<UiMessageSystem>().CostMessage(buildingCost);                        
+                    }
                 });
                 _menuButtons[i].gameObject.SetActive(true);
             }
@@ -65,7 +75,7 @@ public class UiBuildMenu : MonoBehaviour
         //World pos represents the position we want to place the building at.
         Vector3 worldPos = Vector3.zero;
         var building = Instantiate(data.Building);
-        var size = building.GetSize();
+        var size = building.Size;
         //Set Build Area active and adjust size to that of selected building
         _buildArea.Hide(false);
         _buildArea.SetSize(size);
