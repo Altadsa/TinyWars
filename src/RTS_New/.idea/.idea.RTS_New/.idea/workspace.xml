@@ -4,19 +4,11 @@
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildMenuData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildMenuData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildingData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/buildings/_data/building_menu/BuildingUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/build_menu_data/House.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/build_menu_data/House.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/build_menu_data/Keep.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/build_menu_data/Keep.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/game_data/buildings/House.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/buildings/House.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,9 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuilding.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
@@ -145,6 +134,9 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" />
       </list>
     </option>
   </component>
@@ -255,7 +247,7 @@
       <workItem from="1586029763356" duration="1590000" />
       <workItem from="1586090876015" duration="1907000" />
       <workItem from="1586158692471" duration="1328000" />
-      <workItem from="1586179566501" duration="441000" />
+      <workItem from="1586179566501" duration="1285000" />
     </task>
     <servers />
   </component>

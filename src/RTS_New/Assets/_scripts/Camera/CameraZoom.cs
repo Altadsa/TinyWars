@@ -16,22 +16,27 @@ public class CameraZoom
     public CameraZoom(Transform controllerTransform)
     {
         controller = controllerTransform;
-        _minZoom = MIN_ZOOM_DISTANCE + controller.position.y;
-        _maxZoom = MAX_ZOOM_DISTANCE + controller.position.y;
-        controller.position = new Vector3(controller.position.x, controller.position.y + MIN_ZOOM_DISTANCE,
-            controller.position.z - MIN_ZOOM_DISTANCE);
+        var oldPos = controller.position;
+        _minZoom = MIN_ZOOM_DISTANCE + oldPos.y;
+        _maxZoom = MAX_ZOOM_DISTANCE + oldPos.y;
+        controller.position = new Vector3(oldPos.x, oldPos.y + MIN_ZOOM_DISTANCE,
+            oldPos.z - MIN_ZOOM_DISTANCE);
         mCam = Camera.main;
     }
 
-    public void ZoomCamera()
+    public bool ZoomCamera()
     {
         _zoomDelta = Input.mouseScrollDelta.y;
+        if (Mathf.Abs(_zoomDelta) <= 0.0f)
+            return false;
         _controllerY = controller.position.y;
         bool canZoom = _controllerY >= _minZoom && _controllerY <= _maxZoom;
         if (canZoom)
         {
             controller.position = ClampedZoomPosition();
         }
+
+        return true;
     }
 
     Vector3 ClampedZoomPosition()

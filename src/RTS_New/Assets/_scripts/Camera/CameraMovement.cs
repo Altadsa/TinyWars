@@ -12,9 +12,10 @@ public class CameraMovement
         _input = controlInput;
     }
 
-    public void MoveCamera()
+    public bool MoveCamera()
     {
-        _input.ReadInput();
+        var input = _input.ReadInput();
         _controller.position += InputDirection;
+        return input;
     }
 }

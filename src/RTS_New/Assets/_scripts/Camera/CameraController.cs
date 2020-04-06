@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class CameraController : MonoBehaviour
     
     public RaycastHit? Hit => _blockRaycast ? null : _cameraRaycast.RaycastForHit();
 
+    public event Action CameraMoved;
+    
     private bool _blockRaycast = false;
     
     IInput _input;
@@ -24,8 +27,10 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        _cameraMovement.MoveCamera();
-        _cameraZoom.ZoomCamera();
+        if (_cameraMovement.MoveCamera() || _cameraZoom.ZoomCamera())
+        {
+            CameraMoved?.Invoke();
+        }
     }
 
     public void BlockRaycast(bool block)

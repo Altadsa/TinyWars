@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -15,6 +17,7 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
     {
         _mCamera = Camera.main;
         _miniCam = GameObject.FindGameObjectWithTag("minimap").GetComponent<Camera>();
+        FindObjectOfType<CameraController>().CameraMoved += UpdateCameraPosition;
         // Set the dimensions and start of the minimap
         SetMapValues();
     }
@@ -46,13 +49,37 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
         return hit.point;
     }
 
-    private Vector3[] ViewportBounds(Camera camera)
+    private List<Vector3> _viewportCoords;
+    
+    private void UpdateCameraPosition()
     {
-        var viewportBounds = new Vector3[4];
-        viewportBounds[0] = camera.ViewportToWorldPoint(Vector3.zero);
-        viewportBounds[1] = camera.ViewportToWorldPoint(Vector3.up);
-        viewportBounds[2] = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        viewportBounds[3] = camera.ViewportToWorldPoint(Vector3.right);
+        _viewportCoords = new List<Vector3>();
+        var cameraBounds = ViewportBounds(_mCamera);
+        foreach (var cameraBound in cameraBounds)
+        {
+            RaycastHit hit;
+            Physics.Raycast(cameraBound, out hit);
+            _viewportCoords.Add(hit.point);
+        }
+    }
+    
+    private Ray[] ViewportBounds(Camera camera)
+    {
+        var viewportBounds = new Ray[4];
+        viewportBounds[0] = camera.ViewportPointToRay(Vector3.zero);
+        viewportBounds[1] = camera.ViewportPointToRay(Vector3.up);
+        viewportBounds[2] = camera.ViewportPointToRay(new Vector3(1, 1, 0));
+        viewportBounds[3] = camera.ViewportPointToRay(Vector3.right);
         return viewportBounds;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_viewportCoords == null) return;
+        Gizmos.color = Color.blue;
+        foreach (var viewportCoord in _viewportCoords)
+        {
+            Gizmos.DrawSphere(viewportCoord, 1);
+        }
     }
 }

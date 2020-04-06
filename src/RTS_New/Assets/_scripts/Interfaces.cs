@@ -6,7 +6,7 @@ public interface IInput
     float Horizontal { get; }
     float Vertical { get; }
 
-    void ReadInput();
+    bool ReadInput();
 }
 
 public interface ISelectionController
