@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/AxisInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Camera/CameraZoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Surface Shader Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Surface Shader Scene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/art_assets/minimap_texture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/art_assets/minimap_texture.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/ui/UiBuildingInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/buildings/BuildingConstruction.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitData.cs" />
@@ -136,6 +134,7 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Camera/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DebugOverlay.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" />
       </list>
     </option>
@@ -172,10 +171,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="26352">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="9396">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26352" />
+      <option name="pid" value="9396" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -247,7 +246,11 @@
       <workItem from="1586029763356" duration="1590000" />
       <workItem from="1586090876015" duration="1907000" />
       <workItem from="1586158692471" duration="1328000" />
-      <workItem from="1586179566501" duration="1285000" />
+      <workItem from="1586179566501" duration="2006000" />
+      <workItem from="1586262890740" duration="3551000" />
+      <workItem from="1586267518525" duration="1329000" />
+      <workItem from="1586343814260" duration="5980000" />
+      <workItem from="1586363814917" duration="2154000" />
     </task>
     <servers />
   </component>
