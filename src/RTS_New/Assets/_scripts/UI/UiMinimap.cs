@@ -82,7 +82,7 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
         var lowerWidth = Mathf.Abs(_worldCoors[0].x - _worldCoors[3].x);
         
         _viewport.transform.position = _worldCoors[0] + new Vector3(lowerWidth/2,0,0);
-        _viewport.rectTransform.sizeDelta = new Vector2(upperWidth, height*2);
+        _viewport.rectTransform.sizeDelta = new Vector2(upperWidth, height*2) * 10;
         
 //        Debug.LogFormat("Upper W: {0} \n Lower W: {1} \n Height: {2} \n", upperWidth, lowerWidth, Math.Round(height, 2));
     }
