@@ -49,5 +49,6 @@ public enum Modifier
     MoraleDecay,
     MoveSpeed,
     GatherSpeed,
-    BuildSpeed
+    BuildSpeed,
+    ResourceCapacity
 }

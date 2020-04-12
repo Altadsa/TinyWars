@@ -6,6 +6,7 @@ PEASANT=MoraleDecay=0.005
 PEASANT=MoveSpeed=5
 PEASANT=GatherSpeed=1
 PEASANT=BuildSpeed=1
+PEASANT=ResourceCapacity=10
 SWORDSMAN=Damage=1
 SWORDSMAN=Armour=0
 SWORDSMAN=AttackSpeed=1.25
