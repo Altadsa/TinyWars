@@ -34,7 +34,7 @@ public class Building : Entity
     public override void Initialize(Player player)
     {
         base.Initialize(player);
-        player.SetRequirementMet(_buildingData.BuildingType);
+
         
         // setup components
         GetComponent<MeshCollider>().enabled = true;
@@ -112,6 +112,7 @@ public class Building : Entity
         else
         {
             Player.ChangeMaxFood(_buildingData.FoodProvided);
+            Player.SetRequirementMet(_buildingData.BuildingType);
         }
     }
     

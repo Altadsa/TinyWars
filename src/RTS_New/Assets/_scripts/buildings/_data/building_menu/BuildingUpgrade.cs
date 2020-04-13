@@ -5,7 +5,6 @@ public class BuildingUpgrade : Queueable
 {
     [SerializeField] private BuildingData _newData;
     [SerializeField] private GameObject _complete;
-    public GameObject Completed => _complete;
 
     // If a building has more than 1 model upgrade, then place data in here.
     [SerializeField] private BuildingUpgrade _nextUpgrade;
@@ -23,8 +22,10 @@ public class BuildingUpgrade : Queueable
     {
         var player = building.Player;
         var oldModel = building.transform.GetComponentInChildren<MeshRenderer>();
-        Destroy(oldModel.gameObject);
         var newModel = Instantiate(_complete, building.transform);
+        newModel.transform.rotation =  oldModel.transform.rotation;
+        Destroy(oldModel.gameObject);
+        
         newModel.GetComponent<MeshRenderer>().material = player.EntityMaterial;
     }
 }
