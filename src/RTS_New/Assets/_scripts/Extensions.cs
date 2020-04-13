@@ -13,4 +13,12 @@ public static class Extensions
         viewportBounds[3] = camera.ViewportToWorldPoint(Vector3.right);
         return viewportBounds;
     }
+
+    public static Vector3 SwapYZ(this Vector3 vector3)
+    {
+        var tmp = vector3.y;
+        vector3.y = vector3.z;
+        vector3.z = tmp;
+        return vector3;
+    }
 }

@@ -118,10 +118,13 @@ public class UiBuildMenu : MonoBehaviour
     private int _structuresLayer = 1 << 9;
     private bool IsPlacementValid(Building building)
     {
-        var collider = building.GetComponent<BoxCollider>();
         var centre = building.transform.position;
+        var size = building.Size;
+        var tmp = size.y;
+        size.y = size.z;
+        size.z = tmp;
         //Get a list of overlapping colliders. We use the structures layer for selection
-        var overlapCount = Physics.OverlapBox(centre + collider.center, collider.size / 2,
+        var overlapCount = Physics.OverlapBox(centre, size / 2,
             building.transform.rotation,
             _structuresLayer);
         for (int i = 0; i < overlapCount.Length; i++)

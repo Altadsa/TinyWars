@@ -3,24 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="fd653bed-6e16-4ecb-9893-32db8ca6e8e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RTS_New/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/LightingData.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_dir.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/Lightmap-0_comp_light.exr.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scenes/Demo/ReflectionProbe-0.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scenes/Demo/ReflectionProbe-0.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_scripts/UI/UiMinimap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/game_data/build_menu_data/Blacksmith.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/game_data/build_menu_data/Blacksmith.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/blacksmith.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/blacksmith.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/prefabs/buildings/townhall_init.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/buildings/townhall_init.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefabs/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/player.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +82,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/Queueable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/BuildMenuData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Interfaces.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_scripts/DebugColliders.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/ModifierUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/4e/a9ea38ac/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/PlayerActionController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -93,6 +90,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Resource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/player/Modifiers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Buildings/_data/building_menu/MenuDataUnit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/cd/c1fb656c/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/game_data/build_menu_data/Blacksmith.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/BuildingRallyPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_scripts/units/MoveAction.cs" root0="FORCE_HIGHLIGHTING" />
@@ -103,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/AiSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/player/PlayerSelectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/units/UnitAnimator.cs" />
@@ -151,9 +149,10 @@
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildingQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildingMenuButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/BuildArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/DebugColliders.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/_scripts/UI/UiBuildMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/_scripts/Buildings/Building.cs" />
       </list>
     </option>
   </component>
@@ -275,7 +274,8 @@
       <workItem from="1586520265893" duration="308000" />
       <workItem from="1586596386020" duration="669000" />
       <workItem from="1586690531002" duration="6818000" />
-      <workItem from="1586780396800" duration="2114000" />
+      <workItem from="1586780396800" duration="2337000" />
+      <workItem from="1586807439144" duration="1639000" />
     </task>
     <servers />
   </component>

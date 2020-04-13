@@ -18,8 +18,15 @@ public class Building : Entity
     
     private void Awake()
     {
-        GetComponent<NavMeshObstacle>().enabled = false;
-        GetComponent<BoxCollider>().enabled = false;
+        // Disable NavMeshObstacle until initialised
+        var navMeshObstacle = GetComponent<NavMeshObstacle>();
+        navMeshObstacle.enabled = false;
+
+        var meshCollider = GetComponent<MeshCollider>(); 
+        Size = meshCollider.bounds.size;
+        //Size = Size.SwapYZ();
+        meshCollider.enabled = false;
+        
         _queue = GetComponent<BuildingQueue>();
         _queue.QueueChanged += UpdateBuildingData;
     }
@@ -30,7 +37,7 @@ public class Building : Entity
         player.SetRequirementMet(_buildingData.BuildingType);
         
         // setup components
-        GetComponent<BoxCollider>().enabled = true;
+        GetComponent<MeshCollider>().enabled = true;
         GetComponent<NavMeshObstacle>().enabled = true;
         if (!GetComponent<BuildingHealth>())
             gameObject.AddComponent<BuildingHealth>();
@@ -49,8 +56,9 @@ public class Building : Entity
 
     public BuildingMenuItem[] MenuItems => _queue.enabled ? _buildingMenuItems : null;
 
-    public Vector3 Size => GetComponentInChildren<BoxCollider>().size;
-    
+    // for setting visual bb during placement.
+    public Vector3 Size { get; private set; }
+
     public BuildingData BuildingData => _buildingData;
 
     public BuildingQueue Queue => !_queue.enabled ? null : _queue;
