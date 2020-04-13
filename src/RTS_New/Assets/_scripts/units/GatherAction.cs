@@ -66,13 +66,13 @@ public class GatherAction : MonoBehaviour, IUnitAction
         yield return new WaitUntil(() => _agent.hasPath);
         GetComponent<UnitActions>().SetState(UnitState.MOVE);
         yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
-        var resourceType = _currentResource.Type;
-        var resourceWeight = 0;
-        while (resourceWeight < _resourceCapacity)
+        var currentCarryWeight = 0;
+        var resourceWeight = _currentResource.Weight;
+        while (currentCarryWeight + resourceWeight <= _resourceCapacity)
         {
             yield return new WaitForSeconds(_gatherSpeed);
             GetComponent<UnitActions>().SetState(UnitState.ACT);
-            resourceWeight += _currentResource.Weight;
+            currentCarryWeight += resourceWeight;
             _resourceCount += _currentResource.Gather();
         }
 

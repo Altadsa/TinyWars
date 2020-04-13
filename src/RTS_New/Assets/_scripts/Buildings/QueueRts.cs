@@ -49,15 +49,16 @@ public class QueueRts<T>
     /// Add an item to the Queue, if there is space.
     /// </summary>
     /// <param name="item">The item to be added.</param>
-    public void Enequeue(T item)
+    public bool Enequeue(T item)
     {
         var queueLen = _queue.Count;
         if (queueLen == _maxLength)
         {
             Debug.LogWarning("Queue at max capacity.");
-            return;
+            return false;
         }
         _queue.Insert(queueLen, item);
+        return true;
     }
 
     /// <summary>

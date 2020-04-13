@@ -33,18 +33,20 @@ public class BuildingQueue : MonoBehaviour
     /// Add an item to the Building's Production Queue if there is space.
     /// </summary>
     /// <param name="item">The item to be added.</param>
-    public void AddToQueue(Queueable item)
+    public bool AddToQueue(Queueable item)
     {
+        bool result;
         //If Queue is empty, we want to start processing it once we add an item.
         if (_buildQueue.IsEmpty())
         {
-            _buildQueue.Enequeue(item);
+            result = _buildQueue.Enequeue(item);
             StartCoroutine(ProcessQueue());
         }
         else
         //Otherwise, it is already processing items, so just add another.
-            _buildQueue.Enequeue(item);
+            result = _buildQueue.Enequeue(item);
         QueueChanged?.Invoke();
+        return result;
     }
 
     /// <summary>

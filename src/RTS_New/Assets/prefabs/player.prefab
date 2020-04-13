@@ -1969,12 +1969,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e01b439ea3256d43932cf6df9cc513d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugTex: {fileID: -3374318052782410899, guid: 3426ad32b81423b46ba41293b006223e,
-    type: 2}
   _player: {fileID: 525903319877800118}
   _overlay: {fileID: 9210242399989265080}
   _viewport: {fileID: 5278816003931642236}
-  _mapTexture: {fileID: 8400000, guid: 4f26f25dc5242ec4d8a47ada2f573ac2, type: 2}
+  _mCamera: {fileID: 0}
 --- !u!1 &1259062851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2579,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8821dc225bf6349479e53f155ffc411b, type: 2}
   - {fileID: 11400000, guid: 05ccc45bc34b32b47b022f5484a95d70, type: 2}
   - {fileID: 11400000, guid: 7d68da5e6c9aebd4aaf76d08271378a9, type: 2}
+  - {fileID: 11400000, guid: 5f5bd46b5fe4b7d4cb6d1804d922be20, type: 2}
 --- !u!1 &1671703148
 GameObject:
   m_ObjectHideFlags: 0
@@ -17168,8 +17167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 525903319877800112}
   _goldText: {fileID: 6632846322614881695}
-  _lumberText: {fileID: 1373083817344832266}
-  _ironText: {fileID: 324272140978146972}
+  _lumberText: {fileID: 324272140978146972}
+  _ironText: {fileID: 1373083817344832266}
   _foodText: {fileID: 2812039789241286088}
 --- !u!1 &8114868003045092731
 GameObject:

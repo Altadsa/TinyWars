@@ -53,8 +53,10 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                     }
                     else
                     {
-                        player.DeductResources(queueable.Data);
-                        building.Queue.AddToQueue((Queueable) item);
+                        var addedToQueue = building.Queue.AddToQueue(queueable); 
+                        if (addedToQueue)
+                            player.DeductResources(queueable.Data);
+                        
                         if (isUpgrade)
                         {
                             _menuButton.gameObject.SetActive(false);
