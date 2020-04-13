@@ -47,10 +47,12 @@
             <e p="PlayerActionController.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerModifiers.cs" t="Include" />
+            <e p="PlayerResources.cs" t="Include" />
             <e p="PlayerSelectionController.cs" t="Include" />
             <e p="Requirements.cs" t="Include" />
             <e p="SelectionController.cs" t="Include" />
           </e>
+          <e p="Resource.cs" t="Include" />
           <e p="Setup" t="Include">
             <e p="GameInit.cs" t="Include" />
           </e>
@@ -72,6 +74,7 @@
           <e p="units" t="Include">
             <e p="BuildAction.cs" t="Include" />
             <e p="EntityType.cs" t="Include" />
+            <e p="GatherAction.cs" t="Include" />
             <e p="MoveAction.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitActions.cs" t="Include" />

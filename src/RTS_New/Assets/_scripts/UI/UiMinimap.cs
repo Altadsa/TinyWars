@@ -6,27 +6,24 @@ using UnityEngine.UI;
 
 public class UiMinimap : MonoBehaviour, IPointerDownHandler
 {
-    public Texture2D DebugTex;
-    
+
     [SerializeField] Transform _player;
     [SerializeField] private Canvas _overlay;
     [SerializeField] private Image _viewport;
-    private Camera _mCamera;
-    private Camera _miniCam;
+    [SerializeField] private Camera _mCamera;
+    
+    private Camera _mapCam;
     private Vector3 _mapStart, _mapDim;
-
-    public RenderTexture _mapTexture;
-
-    private Rect _mapRec;
+    
+    
+    private List<Vector3> _vpWorldCords = new List<Vector3>();
     
     private void Start()
     {
         _mCamera = Camera.main;
-        _miniCam = GameObject.FindGameObjectWithTag("minimap").GetComponent<Camera>();
-        _overlay.worldCamera = _miniCam;
+        _mapCam = GameObject.FindGameObjectWithTag("minimap").GetComponent<Camera>();
+        _overlay.worldCamera = _mapCam;
         
-        //_mapTexture = (RenderTexture) GetComponentInChildren<RawImage>().texture;
-        _mapRec = GetComponentInChildren<RawImage>().gameObject.GetComponent<RectTransform>().rect;
         FindObjectOfType<CameraController>().CameraMoved += UpdateCameraPosition;
         // Set the dimensions and start of the minimap
         SetMapValues();
@@ -53,41 +50,45 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
     // Camera will only show the game world.
     private Vector3 GetMapWorldCoords(Vector3 viewpointPos)
     {
-        Ray newRay = _miniCam.ViewportPointToRay(viewpointPos);
+        Ray newRay = _mapCam.ViewportPointToRay(viewpointPos);
         RaycastHit hit;
         Physics.Raycast(newRay, out hit);
         return hit.point;
     }
-
-    private List<Vector3> _viewportCoords = new List<Vector3>();
-    private List<Vector3> _worldCoors = new List<Vector3>();
+    
+    
     
     private void UpdateCameraPosition()
     {
-        _worldCoors.Clear();
+        _vpWorldCords.Clear();
         // first we update the cameras viewport world bounds
-        _viewportCoords.Clear();
         var cameraBounds = ViewportBounds(_mCamera);
         foreach (var cameraBound in cameraBounds)
         {
             RaycastHit hit;
             Physics.Raycast(cameraBound, out hit);
-            _worldCoors.Add(hit.point);
-            var viewpointCoord = _miniCam.WorldToViewportPoint(hit.point);
-            _viewportCoords.Add(viewpointCoord);
+            _vpWorldCords.Add(hit.point);
         }
 
-        var upperWidth = Mathf.Abs(_worldCoors[1].x - _worldCoors[2].x);
-        var height = Mathf.Abs(_worldCoors[1].z - _worldCoors[0].z);
-        var lowerWidth = Mathf.Abs(_worldCoors[0].x - _worldCoors[3].x);
+        var upperWidth = Mathf.Abs(_vpWorldCords[1].x - _vpWorldCords[2].x);
+        var height = Mathf.Abs(_vpWorldCords[1].z - _vpWorldCords[0].z);
+        var lowerWidth = Mathf.Abs(_vpWorldCords[0].x - _vpWorldCords[3].x);
         
-        _viewport.transform.position = _worldCoors[0] + new Vector3(lowerWidth/2,0,0);
-        _viewport.rectTransform.sizeDelta = new Vector2(upperWidth, height*2) * 10;
+        // set the new position of the viewport image
+        var newVpPos = _vpWorldCords[0];
+        newVpPos.x += lowerWidth / 2;
+        _viewport.transform.position = newVpPos;
         
-//        Debug.LogFormat("Upper W: {0} \n Lower W: {1} \n Height: {2} \n", upperWidth, lowerWidth, Math.Round(height, 2));
+        // set the size of the viewport image
+        _viewport.rectTransform.sizeDelta = new Vector2(upperWidth, height*1.6f) * 10;
+        
     }
 
-
+    /// <summary>
+    /// Returns rays originating from the viewport corners of the Camera
+    /// </summary>
+    /// <param name="camera">The Camera to get viewport coords from.</param>
+    /// <returns></returns>
     private Ray[] ViewportBounds(Camera camera)
     {
         var viewportBounds = new Ray[4];
@@ -97,14 +98,5 @@ public class UiMinimap : MonoBehaviour, IPointerDownHandler
         viewportBounds[3] = camera.ViewportPointToRay(Vector3.right);
         return viewportBounds;
     }
-
-    private void OnDrawGizmos()
-    {
-        if (_worldCoors == null) return;
-        Gizmos.color = Color.red;
-        foreach (var viewportCoord in _worldCoors)
-        {
-            Gizmos.DrawSphere(viewportCoord, 3);
-        }
-    }
+    
 }
