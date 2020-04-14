@@ -21,4 +21,10 @@ public static class Extensions
         vector3.z = tmp;
         return vector3;
     }
+
+    public static float DistanceToPoint(this Entity entity, Vector3 point)
+    {
+        var bPosition = entity.transform.position;
+        return Mathf.Abs((bPosition - point).magnitude);
+    }
 }

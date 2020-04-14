@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class GatherAction : UnitAction
 {
@@ -13,12 +14,25 @@ public class GatherAction : UnitAction
 
     private Player _player;
 
+    private SelectionController _sc;
+    
     private ResourceType _resourceType;
+
+    private Resource _currentResource;
+
+    private Building _dropOffBuilding;
+
+    private static readonly BuildingType[] GoldDrop = {BuildingType.KEEP, BuildingType.TOWNHALL, BuildingType.CASTLE};
+    private static readonly BuildingType[] IronDrop = {BuildingType.BLACKSMITH};
+    private static readonly BuildingType[] LumberDrop = {BuildingType.LUMBERMILL};
 
     protected override void Start()
     {
         base.Start();
         _player = _unit.Player;
+        _sc = FindObjectsOfType<PlayerController>()
+            .FirstOrDefault(p => p.Player == _player)
+            .SelectionController;
         _gatherSpeed = _unit.GetModifierValue(Modifier.GatherSpeed);
         _resourceCapacity = (int)_unit.GetModifierValue(Modifier.ResourceCapacity);
         _unit.ModifiersUpdated += UpdateModifiers;
@@ -45,12 +59,36 @@ public class GatherAction : UnitAction
         _currentResource = resource;
         _resourceType = _currentResource.Type;
         _currentResource.OnResourceDepleted += TargetResourceDepleted;
+        _dropOffBuilding = FindClosestToResource();
         StartCoroutine(Gather());
         return true;
 
     }
 
-    private Resource _currentResource;
+    private Building FindClosestToResource()
+    {
+        var buildingType = ResolveResourceBuilding();
+        var resourcePoint = _currentResource.transform.position;
+        var viableBuildings = _sc.Selectable.FindAll(e => e is Building building
+                                                          && buildingType.Contains(building.BuildingData.BuildingType));
+        var closest = viableBuildings.OrderBy(e => e.DistanceToPoint(resourcePoint)).First();
+        return closest as Building;
+    }
+
+    private BuildingType[] ResolveResourceBuilding()
+    {
+        switch (_resourceType)
+        {
+            case ResourceType.Gold:
+                return GoldDrop;
+            case ResourceType.Iron:
+                return IronDrop;
+            case ResourceType.Lumber:
+                return LumberDrop;
+            default:
+                return GoldDrop;
+        }
+    }
     
     IEnumerator Gather()
     {
@@ -58,7 +96,7 @@ public class GatherAction : UnitAction
         var dst = _currentResource.transform.position;
         _agent.SetDestination(dst);
         yield return new WaitUntil(() => _agent.hasPath);
-        yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
+        yield return new WaitUntil(() => !_agent.hasPath);
         var currentCarryWeight = 0;
         var resourceWeight = _currentResource.Weight;
         _unitActions.SetState(UnitState.ACT);
@@ -75,9 +113,7 @@ public class GatherAction : UnitAction
 
     IEnumerator StoreResource()
     {
-        var returnBuilding = FindObjectsOfType<Building>().FirstOrDefault
-            (b => b.BuildingData.BuildingType == BuildingType.TOWNHALL && b.Player == _player);
-        var dst = returnBuilding.transform.position;
+        var dst = _dropOffBuilding.transform.position;
         _unitActions.SetState(UnitState.MOVE);
         _agent.SetDestination(dst);
         yield return new WaitUntil(() => _agent.hasPath);
