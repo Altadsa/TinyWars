@@ -21,6 +21,7 @@ public class MoveAction : MonoBehaviour, IUnitAction
     {
         GetComponent<UnitActions>().SetState(UnitState.MOVE);
         agent.SetDestination(targetPos);
+        yield return new WaitUntil(() => agent.hasPath);
         yield return new WaitUntil(() => agent.remainingDistance < agent.stoppingDistance);
         GetComponent<UnitActions>().SetState(UnitState.IDLE);
     }

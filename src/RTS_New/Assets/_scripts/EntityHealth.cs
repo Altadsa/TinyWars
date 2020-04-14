@@ -28,12 +28,10 @@ public abstract class EntityHealth : MonoBehaviour
         GetComponent<UiEntityHealthBar>().Init();
     }
 
-    protected void CheckHealth()
+    protected virtual void CheckHealth()
     {
         if (_currentHealth > 0) return;
-        GetComponent<UnitActions>().SetState(UnitState.DIE);
         EntityDestroyed?.Invoke();
-        Destroy(gameObject);
     }
     
     public abstract void TakeDamage(float dmg);

@@ -61,17 +61,18 @@ public class GatherAction : MonoBehaviour, IUnitAction
     
     IEnumerator Gather()
     {
+        GetComponent<UnitActions>().SetState(UnitState.MOVE);
         var dst = _currentResource.transform.position;
         _agent.SetDestination(dst);
         yield return new WaitUntil(() => _agent.hasPath);
-        GetComponent<UnitActions>().SetState(UnitState.MOVE);
         yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
         var currentCarryWeight = 0;
         var resourceWeight = _currentResource.Weight;
+        GetComponent<UnitActions>().SetState(UnitState.ACT);
         while (currentCarryWeight + resourceWeight <= _resourceCapacity)
         {
             yield return new WaitForSeconds(_gatherSpeed);
-            GetComponent<UnitActions>().SetState(UnitState.ACT);
+            
             currentCarryWeight += resourceWeight;
             _resourceCount += _currentResource.Gather();
         }
@@ -84,10 +85,11 @@ public class GatherAction : MonoBehaviour, IUnitAction
         var returnBuilding = FindObjectsOfType<Building>().FirstOrDefault
             (b => b.BuildingData.BuildingType == BuildingType.TOWNHALL && b.Player == _player);
         var dst = returnBuilding.transform.position;
+        GetComponent<UnitActions>().SetState(UnitState.MOVE);
         _agent.SetDestination(dst);
         yield return new WaitUntil(() => _agent.hasPath);
-        GetComponent<UnitActions>().SetState(UnitState.MOVE);
         yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
+        GetComponent<UnitActions>().SetState(UnitState.IDLE);
         _player.AddToResources(_resourceType, _resourceCount);
         _resourceCount = 0;
         if (_currentResource)

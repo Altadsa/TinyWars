@@ -41,15 +41,15 @@ public class BuildAction : MonoBehaviour, IUnitAction
  
      IEnumerator Build(Building building, Vector3 position)
      {
+         GetComponent<UnitActions>().SetState(UnitState.MOVE);
          var dst = position;
          _agent.SetDestination(dst);
          yield return new WaitUntil(() => _agent.hasPath);
-         GetComponent<UnitActions>().SetState(UnitState.MOVE);
          yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
          var buildingHealth = building.Health as BuildingHealth;
+         GetComponent<UnitActions>().SetState(UnitState.ACT);
          while (!buildingHealth.HealthFull)
          {
-             GetComponent<UnitActions>().SetState(UnitState.ACT);
              buildingHealth.Repair(_efficiency);
              yield return new WaitForSeconds(_speed);
          }

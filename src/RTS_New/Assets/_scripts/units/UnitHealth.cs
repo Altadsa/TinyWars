@@ -14,8 +14,13 @@ public class UnitHealth : EntityHealth
     }
 
     // Due to engine execution order, we have to initialise the unit health ui after creating unit health.
+    protected override void CheckHealth()
+    {
+        base.CheckHealth();
+        GetComponent<UnitActions>().SetState(UnitState.DIE);
+        Destroy(gameObject,1);
+    }
 
-    
     private void UpdateModifiers()
     {
         _armourValue = (int)GetComponent<Unit>().GetModifierValue(Modifier.Armour);

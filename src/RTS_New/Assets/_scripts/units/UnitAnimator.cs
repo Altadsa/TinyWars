@@ -13,28 +13,27 @@ public class UnitAnimator : MonoBehaviour
 
     private void UpdateAnimator(UnitState state)
     {
+        var triggerName = "";
         switch (state)
         {
             case UnitState.IDLE:
-                _controller.SetTrigger("idle");
-                Debug.Log("Idle");
+                triggerName = "idle";
                 break;
             case UnitState.MOVE:
-                _controller.SetTrigger("move");
+                triggerName = "move";
                 break;
             case UnitState.ACT:
-                Debug.Log("action");
-                _controller.SetTrigger("action");
+                triggerName = "action";
                 break;
             case UnitState.DMG:
-                Debug.Log("damage");
-                _controller.SetTrigger("dmg");
+                triggerName = "dmg";
                 break;
             case UnitState.DIE:
-                Debug.Log("die");
-                _controller.SetTrigger("die");
+                triggerName = "die";
                 break;
         }
+        Debug.Log($"Trigger Name: {triggerName}");
+        _controller.SetTrigger(triggerName);
     }
 }
 

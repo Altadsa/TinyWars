@@ -50,13 +50,12 @@ public class UnitCombat : MonoBehaviour, IUnitAction
     
     IEnumerator TargetEntity(EntityHealth health, Entity entity)
     {
-        GetComponent<UnitActions>().SetState(UnitState.IDLE);
         health.EntityDestroyed += TargetDestroyed;
         var tarPos = entity.transform.position;
+        GetComponent<UnitActions>().SetState(UnitState.MOVE);
         _agent.SetDestination(tarPos);
         yield return new WaitUntil(() => _agent.hasPath);
-        GetComponent<UnitActions>().SetState(UnitState.MOVE);
-        yield return new WaitUntil(() => _agent.remainingDistance <= _agent.stoppingDistance);
+        yield return new WaitUntil(() => !_agent.hasPath);
         GetComponent<UnitActions>().SetState(UnitState.ACT);
         while (health)
         {
