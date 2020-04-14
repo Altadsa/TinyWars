@@ -19,10 +19,12 @@ public class UnitActions : MonoBehaviour
 
     public void DetermineAction(GameObject targetGo, Vector3 targetPos)
     {
+        var hasValidAction = false;
         foreach (var unitAction in _actions)
         {
             unitAction.StopAction();
-            unitAction.IsActionValid(targetGo, targetPos);
+            if (!hasValidAction)
+                hasValidAction = unitAction.IsActionValid(targetGo, targetPos);
             //if (unitAction.IsActionValid(targetGo, targetPos)) return;
         }
     }
@@ -56,10 +58,10 @@ public abstract class UnitAction : MonoBehaviour
     protected IEnumerator MoveToPosition(Vector3 position)
     {
         _unitActions.SetState(UnitState.MOVE);
-        _agent.isStopped = false;
+        //_agent.isStopped = false;
         _agent.SetDestination(position);
         yield return new WaitUntil(() => _agent.hasPath);
-        yield return new WaitUntil(() => _agent.remainingDistance <= _agent.stoppingDistance);
-        _agent.isStopped = false;
+        yield return new WaitUntil(() => _agent.TotallyStopped());
+        //_agent.isStopped = false;
     }
 }

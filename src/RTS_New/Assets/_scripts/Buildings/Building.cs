@@ -124,9 +124,9 @@ public class Building : Entity
     private void OnDestroy()
     {
         BuildingDataUpdated = null;
+        if (!_pc) return;
         Player.ChangeMaxFood(-_buildingData.FoodProvided);
-        if (_pc)
-            _pc.RemoveSelected(this);
+        _pc.RemoveSelected(this);
     }
     
     IEnumerator SetRallyPoint()

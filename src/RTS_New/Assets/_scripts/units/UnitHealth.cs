@@ -2,12 +2,18 @@
 
 public class UnitHealth : EntityHealth
 {
+
+    private Unit _unit;
+    private UnitActions _unitActions;
     
     void Start()
     {
+        _unit = GetComponent<Unit>();
+        _unitActions = GetComponent<UnitActions>();
+        
         _maxHealth = GetComponent<Unit>().Data.Health;
         _armourValue = (int)GetComponent<Unit>().GetModifierValue(Modifier.Armour);
-        GetComponent<Unit>().ModifiersUpdated += UpdateModifiers;
+        _unit.ModifiersUpdated += UpdateModifiers;
         _currentHealth = _maxHealth;
         UpdateHealth();
         CreateHealthUi();
@@ -17,18 +23,22 @@ public class UnitHealth : EntityHealth
     protected override void CheckHealth()
     {
         base.CheckHealth();
-        GetComponent<UnitActions>().SetState(UnitState.DIE);
-        Destroy(gameObject,1);
+        if (_currentHealth > 0)
+        {
+            _unitActions.SetState(UnitState.DMG);
+            return;
+        }
+        _unitActions.SetState(UnitState.DIE);
+        Destroy(gameObject,2);
     }
 
     private void UpdateModifiers()
     {
-        _armourValue = (int)GetComponent<Unit>().GetModifierValue(Modifier.Armour);
+        _armourValue = (int)_unit.GetModifierValue(Modifier.Armour);
     }
 
     public override void TakeDamage(float dmg)
     {
-        GetComponent<UnitActions>().SetState(UnitState.DMG);
         var rDmg = dmg * (1 - 0.01f * _armourValue);
         _currentHealth = Mathf.Clamp(_currentHealth-rDmg, 0, _maxHealth);
         UpdateHealth();

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 public static class Extensions
 {
@@ -26,5 +28,21 @@ public static class Extensions
     {
         var bPosition = entity.transform.position;
         return Mathf.Abs((bPosition - point).magnitude);
+    }
+
+    public static bool TotallyStopped(this NavMeshAgent agent)
+    {
+        if (!agent.pathPending)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

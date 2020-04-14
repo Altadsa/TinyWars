@@ -57,7 +57,6 @@ public class CombatAction : UnitAction
             health.TakeDamage(Random.Range(dmg/2, dmg));
             yield return new WaitForSeconds(_speed);
         }
-        _unitActions.SetState(UnitState.IDLE);
     }
     
 }
