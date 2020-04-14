@@ -17,12 +17,9 @@ public class MoveAction : UnitAction
         return true;
     }
 
-    IEnumerator Move(Vector3 targetPos)
+    IEnumerator Move(Vector3 position)
     {
-        _unitActions.SetState(UnitState.MOVE);
-        agent.SetDestination(targetPos);
-        yield return new WaitUntil(() => agent.hasPath);
-        yield return new WaitUntil(() => agent.remainingDistance < agent.stoppingDistance);
+        yield return StartCoroutine(MoveToPosition(position));
         _unitActions.SetState(UnitState.IDLE);
     }
 }

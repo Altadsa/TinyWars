@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class CombatAction : UnitAction
 {
@@ -48,15 +49,15 @@ public class CombatAction : UnitAction
     {
         health.EntityDestroyed += TargetDestroyed;
         var tarPos = entity.transform.position;
-        _unitActions.SetState(UnitState.MOVE);
-        _agent.SetDestination(tarPos);
-        yield return new WaitUntil(() => _agent.hasPath);
-        yield return new WaitUntil(() => !_agent.hasPath);
+        yield return StartCoroutine(MoveToPosition(tarPos));
         _unitActions.SetState(UnitState.ACT);
         while (health)
         {
-            health.TakeDamage(_baseDamage*_damage);
+            var dmg = _baseDamage * _damage;
+            health.TakeDamage(Random.Range(dmg/2, dmg));
             yield return new WaitForSeconds(_speed);
         }
+        _unitActions.SetState(UnitState.IDLE);
     }
+    
 }

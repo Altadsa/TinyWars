@@ -92,11 +92,8 @@ public class GatherAction : UnitAction
     
     IEnumerator Gather()
     {
-        _unitActions.SetState(UnitState.MOVE);
         var dst = _currentResource.transform.position;
-        _agent.SetDestination(dst);
-        yield return new WaitUntil(() => _agent.hasPath);
-        yield return new WaitUntil(() => !_agent.hasPath);
+        yield return StartCoroutine(MoveToPosition(dst));
         var currentCarryWeight = 0;
         var resourceWeight = _currentResource.Weight;
         _unitActions.SetState(UnitState.ACT);
@@ -114,10 +111,7 @@ public class GatherAction : UnitAction
     IEnumerator StoreResource()
     {
         var dst = _dropOffBuilding.transform.position;
-        _unitActions.SetState(UnitState.MOVE);
-        _agent.SetDestination(dst);
-        yield return new WaitUntil(() => _agent.hasPath);
-        yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
+        yield return StartCoroutine(MoveToPosition(dst));
         _unitActions.SetState(UnitState.IDLE);
         _player.AddToResources(_resourceType, _resourceCount);
         _resourceCount = 0;

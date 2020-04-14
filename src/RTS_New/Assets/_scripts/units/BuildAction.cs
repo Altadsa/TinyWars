@@ -35,11 +35,8 @@ public class BuildAction : UnitAction
  
      IEnumerator Build(Building building, Vector3 position)
      {
-         _unitActions.SetState(UnitState.MOVE);
          var dst = position;
-         _agent.SetDestination(dst);
-         yield return new WaitUntil(() => _agent.hasPath);
-         yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
+         yield return StartCoroutine(MoveToPosition(dst));
          var buildingHealth = building.Health as BuildingHealth;
          _unitActions.SetState(UnitState.ACT);
          while (!buildingHealth.HealthFull)
