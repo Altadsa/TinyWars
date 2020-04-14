@@ -10,6 +10,7 @@ public class CombatAction : UnitAction
     private float _baseDamage;
     private float _damage;
     private float _speed;
+    private float _range;
     
     public int Priority { get; } = 1;
 
@@ -19,6 +20,7 @@ public class CombatAction : UnitAction
         _baseDamage = _unit.Data.Damage;
         _damage = _unit.GetModifierValue(Modifier.Damage);
         _speed = _unit.GetModifierValue(Modifier.AttackSpeed);
+        _range = _unit.GetModifierValue(Modifier.Range);
         _unit.ModifiersUpdated += UpdateModifiers;
     }
 
@@ -26,6 +28,7 @@ public class CombatAction : UnitAction
     {
         _damage = _unit.GetModifierValue(Modifier.Damage);
         _speed = _unit.GetModifierValue(Modifier.AttackSpeed);
+        _range = _unit.GetModifierValue(Modifier.Range);
     }
 
     public override bool IsActionValid(GameObject targetGo, Vector3 targetPos)

@@ -71,6 +71,9 @@ public class GatherAction : UnitAction
         var resourcePoint = _currentResource.transform.position;
         var viableBuildings = _sc.Selectable.FindAll(e => e is Building building
                                                           && buildingType.Contains(building.BuildingData.BuildingType));
+        if (viableBuildings.Count == 0)
+            viableBuildings = _sc.Selectable.FindAll(e => e is Building building
+                                                              && GoldDrop.Contains(building.BuildingData.BuildingType));
         var closest = viableBuildings.OrderBy(e => e.DistanceToPoint(resourcePoint)).First();
         return closest as Building;
     }
@@ -79,8 +82,6 @@ public class GatherAction : UnitAction
     {
         switch (_resourceType)
         {
-            case ResourceType.Gold:
-                return GoldDrop;
             case ResourceType.Iron:
                 return IronDrop;
             case ResourceType.Lumber:

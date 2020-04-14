@@ -50,5 +50,6 @@ public enum Modifier
     MoveSpeed,
     GatherSpeed,
     BuildSpeed,
-    ResourceCapacity
+    ResourceCapacity,
+    Range
 }

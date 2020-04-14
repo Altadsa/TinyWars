@@ -11,3 +11,9 @@ SWORDSMAN=Damage=1
 SWORDSMAN=Armour=0
 SWORDSMAN=AttackSpeed=1.25
 SWORDSMAN=MoveSpeed=4
+SWORDSMAN=Range=1
+ARCHER=Damage=1
+ARCHER=Armour=0
+ARCHER=AttackSpeed=1.25
+ARCHER=MoveSpeed=4
+ARCHER=Range=10
