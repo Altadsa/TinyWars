@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -9,15 +10,25 @@ public class UiTooltip : MonoBehaviour
     [SerializeField] private TMP_Text _description;
     [SerializeField] private TMP_Text _requirements;
 
+    [SerializeField] private GameObject _costGameObject;
+    [SerializeField] private UiResourceCostTooltip[] _costTooltips;
+    
+    
     [SerializeField] private GameObject _tooltipGo;
     
     private const string REQ_TEXT = "Requirements:\n";
 
     private RectTransform _tooltipRect;
+
+    private float _titleHeight = 0f,
+        _descriptionHeight = 0f,
+        _requirementsHeight = 0f,
+        _costHeight = 0f;
     
     private void Awake()
     {
         FindObjectsOfType<UiBuildingMenuButton>().ToList().ForEach(b => b.TooltipUpdated += UpdateTooltip);
+        SetRectHeights();
         _tooltipGo.SetActive(false);
         _tooltipRect = _tooltipGo.GetComponent<RectTransform>();
     }
@@ -32,27 +43,59 @@ public class UiTooltip : MonoBehaviour
         _title.text = data.Name;
         _description.text = data.Description;
         _tooltipGo.SetActive(true);
-        if (data is Queueable queuable && queuable.Requirements.Length > 0)
+        
+        if (data is Queueable queueable)
         {
-            _requirements.gameObject.SetActive(true);
-            _requirements.text = REQ_TEXT;
-            var reqs = queuable.Requirements;
-            foreach (var req in reqs)
+            if (queueable.Requirements.Length > 0)
             {
-                _requirements.text += $"\t-{req}";
+                LoadRequirementData(queueable.Requirements);
             }
+            else
+            {
+                _requirements.gameObject.SetActive(false);
+            }
+            
+            _costGameObject.SetActive(true);
+            var cost = queueable.Data;
+            var resourceCosts = new int[] {cost.Gold, cost.Lumber, cost.Iron, cost.Food};
+            for (int i = 0; i < resourceCosts.Length; i++)
+            {
+                var resourceCost = resourceCosts[i];
+                if (resourceCost > 0)
+                {
+                    _costTooltips[i].SetActive(true, resourceCosts[i].ToString());
+                }
+                else
+                {
+                    _costTooltips[i].SetActive(false);
+                }
+            }
+            _costTooltips[4].SetActive(true, queueable.Time.ToString());
         }
         else
         {
             _requirements.gameObject.SetActive(false);
+            _costGameObject.SetActive(false);
         }
 
-        var newSize = _tooltipRect.sizeDelta;
-        newSize.y = 20 + _title.GetComponent<RectTransform>().sizeDelta.y + _description.GetComponent<RectTransform>().sizeDelta.y;
+        var newHeight = 0f;
+        newHeight = 20 + _titleHeight + _descriptionHeight;
         if (_requirements.gameObject.activeInHierarchy)
-            newSize.y += _requirements.GetComponent<RectTransform>().sizeDelta.y + 5;
-        _tooltipRect.sizeDelta = newSize;
+            newHeight += _requirementsHeight;
+        if (_costGameObject.activeInHierarchy)
+            newHeight += _costHeight;
+        _tooltipRect.sizeDelta = new Vector2(_tooltipRect.sizeDelta.x, newHeight);
         _tooltipRect.position = SetNetPosition(newPos);
+    }
+
+    private void LoadRequirementData(BuildingType[] requirements)
+    {
+        _requirements.gameObject.SetActive(true);
+        _requirements.text = REQ_TEXT;
+        foreach (var req in requirements)
+        {
+            _requirements.text += $"\t-{req}";
+        }   
     }
     
     private Vector3 SetNetPosition(Vector3 newPos)
@@ -61,6 +104,14 @@ public class UiTooltip : MonoBehaviour
         newPos.x -= size.x/2;
         newPos.y += size.y/2;
         return newPos;
+    }
+
+    private void SetRectHeights()
+    {
+        _titleHeight = _title.GetComponent<RectTransform>().sizeDelta.y;
+        _descriptionHeight = _description.GetComponent<RectTransform>().sizeDelta.y;
+        _requirementsHeight = _requirements.GetComponent<RectTransform>().sizeDelta.y;
+        _costHeight = _costGameObject.GetComponent<RectTransform>().sizeDelta.y;
     }
     
 }

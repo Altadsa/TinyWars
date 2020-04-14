@@ -18,7 +18,7 @@ MonoBehaviour:
   _priority: 2
   _time: 5
   _requirements: 02000000
-  _goldCost: 240
+  _goldCost: 1200
   _lumberCost: 100
   _ironCost: 0
   _foodCost: 0
