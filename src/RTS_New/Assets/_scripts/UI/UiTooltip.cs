@@ -28,6 +28,7 @@ public class UiTooltip : MonoBehaviour
     private void Awake()
     {
         FindObjectsOfType<UiBuildingMenuButton>().ToList().ForEach(b => b.TooltipUpdated += UpdateTooltip);
+        FindObjectsOfType<UiBuildMenuButton>().ToList().ForEach(b => b.TooltipUpdated += UpdateTooltip);
         SetRectHeights();
         _tooltipGo.SetActive(false);
         _tooltipRect = _tooltipGo.GetComponent<RectTransform>();
@@ -46,31 +47,11 @@ public class UiTooltip : MonoBehaviour
         
         if (data is Queueable queueable)
         {
-            if (queueable.Requirements.Length > 0)
-            {
-                LoadRequirementData(queueable.Requirements);
-            }
-            else
-            {
-                _requirements.gameObject.SetActive(false);
-            }
-            
-            _costGameObject.SetActive(true);
-            var cost = queueable.Data;
-            var resourceCosts = new int[] {cost.Gold, cost.Lumber, cost.Iron, cost.Food};
-            for (int i = 0; i < resourceCosts.Length; i++)
-            {
-                var resourceCost = resourceCosts[i];
-                if (resourceCost > 0)
-                {
-                    _costTooltips[i].SetActive(true, resourceCosts[i].ToString());
-                }
-                else
-                {
-                    _costTooltips[i].SetActive(false);
-                }
-            }
-            _costTooltips[4].SetActive(true, queueable.Time.ToString());
+            LoadQueueableInfo(queueable);
+        }
+        else if (data is BuildMenuData building)
+        {
+            LoadBuildingInfo(building);
         }
         else
         {
@@ -88,6 +69,51 @@ public class UiTooltip : MonoBehaviour
         _tooltipRect.position = SetNetPosition(newPos);
     }
 
+    private void LoadQueueableInfo(Queueable queueable)
+    {
+        LoadRequirements(queueable.Requirements);
+        LoadItemCost(queueable.Data);
+        _costTooltips[4].SetActive(true, queueable.Time.ToString());
+    }
+
+    private void LoadBuildingInfo(BuildMenuData data)
+    {
+        if (data.FoodProvided > 0)
+            _description.text += $"\nProvides {data.FoodProvided} Food.";
+        LoadRequirements(data.Requirements);
+        LoadItemCost(data.Data);
+    }
+
+    private void LoadRequirements(BuildingType[] requirements)
+    {
+        if (requirements.Length > 0)
+        {
+            LoadRequirementData(requirements);
+        }
+        else
+        {
+            _requirements.gameObject.SetActive(false);
+        }
+    }
+
+    private void LoadItemCost(ResourceData cost)
+    {
+        _costGameObject.SetActive(true);
+        var resourceCosts = new int[] {cost.Gold, cost.Lumber, cost.Iron, cost.Food};
+        for (int i = 0; i < resourceCosts.Length; i++)
+        {
+            var resourceCost = resourceCosts[i];
+            if (resourceCost > 0)
+            {
+                _costTooltips[i].SetActive(true, resourceCosts[i].ToString());
+            }
+            else
+            {
+                _costTooltips[i].SetActive(false);
+            }
+        }
+    }
+    
     private void LoadRequirementData(BuildingType[] requirements)
     {
         _requirements.gameObject.SetActive(true);

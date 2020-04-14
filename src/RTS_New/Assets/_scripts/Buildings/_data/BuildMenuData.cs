@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/BuildMenuData")]
-public class BuildMenuData : MenuData, IResourceCost
+public class BuildMenuData : MenuData
 {
     [SerializeField] private Building _buildingPrefab;
     
@@ -12,7 +12,7 @@ public class BuildMenuData : MenuData, IResourceCost
     [Tooltip("Iron Cost")]
     [SerializeField] private int _ironCost;
 
-    
+    [SerializeField] private BuildingType[] _requirements;
 
     [Tooltip("How much the players max food capacity will increase")]
     [SerializeField] private int _foodProvided;
@@ -27,6 +27,8 @@ public class BuildMenuData : MenuData, IResourceCost
     
     public Building Building => _buildingPrefab;
 
+    public BuildingType[] Requirements => _requirements;
+    
     public int FoodProvided => _foodProvided;
 
 }

@@ -16,7 +16,7 @@ public class UiBuildMenu : MonoBehaviour
     [SerializeField] private PlayerController _controller;
     [SerializeField] private BuildArea _buildArea;
     [FormerlySerializedAs("_meunButtons")] 
-    [SerializeField] private Button[] _menuButtons;
+    [SerializeField] private UiBuildMenuButton[] _menuButtons;
     [SerializeField] private CameraController _cameraController;
 
     
@@ -37,12 +37,12 @@ public class UiBuildMenu : MonoBehaviour
             //Setup buttons for which there exists build data
             if (i < _menuData.Length)
             {
-                _menuButtons[i].onClick.RemoveAllListeners();
+                _menuButtons[i].SetButtonData(_menuData[i], _controller.Player);
                 _menuButtons[i].GetComponent<Image>().sprite = _menuData[i].Icon;
                 var building = _menuData[i];
                 var buildingCost = building.Data;
-
-                _menuButtons[i].onClick.AddListener(delegate
+                var button = _menuButtons[i].GetComponent<Button>();
+                button.onClick.AddListener(delegate
                 {
                     StopAllCoroutines();
                     if (_controller.Player.CanAfford(buildingCost))
