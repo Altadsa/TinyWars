@@ -18,7 +18,8 @@ MonoBehaviour:
   _priority: 3
   _buildingPrefab: {fileID: 3303625002740042829, guid: f8d9773ff2ed3f24f87188d2092f1090,
     type: 3}
-  _goldCost: 20
-  _lumberCost: 0
+  _goldCost: 160
+  _lumberCost: 60
   _ironCost: 0
+  _requirements: 
   _foodProvided: 0
