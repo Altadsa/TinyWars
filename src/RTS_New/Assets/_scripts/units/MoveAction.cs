@@ -6,12 +6,12 @@ using UnityEngine.AI;
 /// <summary>
 /// Basic Unit movement Script
 /// </summary>
-public class MoveAction : MonoBehaviour, IUnitAction
+public class MoveAction : UnitAction
 {
     [SerializeField] private NavMeshAgent agent;
 
     public int Priority { get; } = 3;
-    public bool IsActionValid(GameObject targetGo, Vector3 targetPos)
+    public override bool IsActionValid(GameObject targetGo, Vector3 targetPos)
     {
         StartCoroutine(Move(targetPos));
         return true;
@@ -19,10 +19,10 @@ public class MoveAction : MonoBehaviour, IUnitAction
 
     IEnumerator Move(Vector3 targetPos)
     {
-        GetComponent<UnitActions>().SetState(UnitState.MOVE);
+        _unitActions.SetState(UnitState.MOVE);
         agent.SetDestination(targetPos);
         yield return new WaitUntil(() => agent.hasPath);
         yield return new WaitUntil(() => agent.remainingDistance < agent.stoppingDistance);
-        GetComponent<UnitActions>().SetState(UnitState.IDLE);
+        _unitActions.SetState(UnitState.IDLE);
     }
 }

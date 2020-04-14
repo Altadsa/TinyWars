@@ -2,20 +2,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BuildAction : MonoBehaviour, IUnitAction
+public class BuildAction : UnitAction
  {
-     [SerializeField] private NavMeshAgent _agent;
- 
-     private Unit _unit;
-     
      private float _efficiency = 25;
      private float _speed;
      
      public int Priority { get; } = 1;
  
-     private void Start()
+     protected override void Start()
      {
-         _unit = GetComponent<Unit>();
+         base.Start();
          _speed = _unit.GetModifierValue(Modifier.BuildSpeed);
          _unit.ModifiersUpdated += UpdateModifiers;
      }
@@ -25,10 +21,8 @@ public class BuildAction : MonoBehaviour, IUnitAction
          _speed = _unit.GetModifierValue(Modifier.BuildSpeed);
      }
  
-     public bool IsActionValid(GameObject targetGo, Vector3 targetPos)
+     public  override bool IsActionValid(GameObject targetGo, Vector3 targetPos)
      {
-         
-         StopAllCoroutines();
          if (!targetGo) return false;
          var building = targetGo.GetComponent<Building>();
          if (!building) return false;
@@ -41,19 +35,19 @@ public class BuildAction : MonoBehaviour, IUnitAction
  
      IEnumerator Build(Building building, Vector3 position)
      {
-         GetComponent<UnitActions>().SetState(UnitState.MOVE);
+         _unitActions.SetState(UnitState.MOVE);
          var dst = position;
          _agent.SetDestination(dst);
          yield return new WaitUntil(() => _agent.hasPath);
          yield return new WaitUntil(() => _agent.remainingDistance < _agent.stoppingDistance);
          var buildingHealth = building.Health as BuildingHealth;
-         GetComponent<UnitActions>().SetState(UnitState.ACT);
+         _unitActions.SetState(UnitState.ACT);
          while (!buildingHealth.HealthFull)
          {
              buildingHealth.Repair(_efficiency);
              yield return new WaitForSeconds(_speed);
          }
-         GetComponent<UnitActions>().SetState(UnitState.IDLE);
+         _unitActions.SetState(UnitState.IDLE);
      }
      
  }

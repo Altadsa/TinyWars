@@ -3,21 +3,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitCombat : MonoBehaviour, IUnitAction
+public class CombatAction : UnitAction
 {
-    [SerializeField] private NavMeshAgent _agent;
-
-    private Unit _unit;
-
+    
     private float _baseDamage;
     private float _damage;
     private float _speed;
     
     public int Priority { get; } = 1;
 
-    private void Start()
+    protected override void Start()
     {
-        _unit = GetComponent<Unit>();
+        base.Start();
         _baseDamage = _unit.Data.Damage;
         _damage = _unit.GetModifierValue(Modifier.Damage);
         _speed = _unit.GetModifierValue(Modifier.AttackSpeed);
@@ -30,9 +27,8 @@ public class UnitCombat : MonoBehaviour, IUnitAction
         _speed = _unit.GetModifierValue(Modifier.AttackSpeed);
     }
 
-    public bool IsActionValid(GameObject targetGo, Vector3 targetPos)
+    public override bool IsActionValid(GameObject targetGo, Vector3 targetPos)
     {
-        StopAllCoroutines();
         if (!targetGo) return false;
         var entity = targetGo.GetComponent<Entity>();
         if (!entity || entity.IsAllied(_unit.Player)) return false;
@@ -44,7 +40,7 @@ public class UnitCombat : MonoBehaviour, IUnitAction
 
     private void TargetDestroyed()
     {
-        GetComponent<UnitActions>().SetState(UnitState.IDLE);
+        _unitActions.SetState(UnitState.IDLE);
         StopAllCoroutines();
     }
     
@@ -52,11 +48,11 @@ public class UnitCombat : MonoBehaviour, IUnitAction
     {
         health.EntityDestroyed += TargetDestroyed;
         var tarPos = entity.transform.position;
-        GetComponent<UnitActions>().SetState(UnitState.MOVE);
+        _unitActions.SetState(UnitState.MOVE);
         _agent.SetDestination(tarPos);
         yield return new WaitUntil(() => _agent.hasPath);
         yield return new WaitUntil(() => !_agent.hasPath);
-        GetComponent<UnitActions>().SetState(UnitState.ACT);
+        _unitActions.SetState(UnitState.ACT);
         while (health)
         {
             health.TakeDamage(_baseDamage*_damage);
