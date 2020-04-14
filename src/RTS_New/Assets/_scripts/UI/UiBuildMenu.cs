@@ -45,14 +45,19 @@ public class UiBuildMenu : MonoBehaviour
                 button.onClick.AddListener(delegate
                 {
                     StopAllCoroutines();
-                    if (_controller.Player.CanAfford(buildingCost))
+                    var canAfford = _controller.Player.CanAfford(buildingCost);
+                    var requirementsMet = _controller.Player.RequirementsMet(building.Requirements);
+                    if (requirementsMet && canAfford)
                     {
                         _controller.Player.DeductResources(buildingCost);
                         StartCoroutine(SelectBuilding(building));
                     }
                     else
                     {
-                        FindObjectOfType<UiMessageSystem>().CostMessage(buildingCost);                        
+                        if (!canAfford)
+                            FindObjectOfType<UiMessageSystem>().CostMessage(buildingCost);
+                        else
+                            FindObjectOfType<UiMessageSystem>().RequirementMessage(_controller.Player, building.Requirements);
                     }
                 });
                 _menuButtons[i].gameObject.SetActive(true);
@@ -87,6 +92,7 @@ public class UiBuildMenu : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 _cameraController.BlockRaycast(false);
+                _controller.Player.RefundResources(data.Data);
                 Destroy(building.gameObject);
                 _buildArea.Hide(true);
                 yield break;

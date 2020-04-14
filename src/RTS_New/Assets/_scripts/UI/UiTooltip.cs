@@ -82,6 +82,7 @@ public class UiTooltip : MonoBehaviour
             _description.text += $"\nProvides {data.FoodProvided} Food.";
         LoadRequirements(data.Requirements);
         LoadItemCost(data.Data);
+        _costTooltips[4].SetActive(false);
     }
 
     private void LoadRequirements(BuildingType[] requirements)

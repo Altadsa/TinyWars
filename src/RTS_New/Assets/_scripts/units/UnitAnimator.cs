@@ -32,7 +32,6 @@ public class UnitAnimator : MonoBehaviour
                 triggerName = "die";
                 break;
         }
-        Debug.Log($"Trigger Name: {triggerName}");
         _controller.SetTrigger(triggerName);
     }
 }

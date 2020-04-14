@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 1988211999206352586}
   - component: {fileID: 3340534920831444352}
   - component: {fileID: 7315955427480646958}
+  - component: {fileID: 440308263681922058}
   m_Layer: 9
   m_Name: townhall
   m_TagString: Untagged
@@ -326,6 +327,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c5f43a47e4b64c14da6e0081f639fdd3, type: 3}
+--- !u!114 &440308263681922058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041440516132864934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85326123b9cb2747861219066e7f96b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _barCanvas: {fileID: 4264996606707928950}
+  _healthBar: {fileID: 3530622865968476869}
 --- !u!1 &9075613629041051908
 GameObject:
   m_ObjectHideFlags: 0
