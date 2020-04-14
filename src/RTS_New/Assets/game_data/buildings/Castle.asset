@@ -15,3 +15,4 @@ MonoBehaviour:
   _buildingType: 4
   _name: Castle
   _icon: {fileID: 21300000, guid: d789ca6c8e1a6c149b1112596a2e5608, type: 3}
+  _foodProvided: 48

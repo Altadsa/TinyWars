@@ -15,3 +15,4 @@ MonoBehaviour:
   _buildingType: 9
   _name: Keep
   _icon: {fileID: 21300000, guid: 08367032efe53ea438dd14a0db24bc0e, type: 3}
+  _foodProvided: 36

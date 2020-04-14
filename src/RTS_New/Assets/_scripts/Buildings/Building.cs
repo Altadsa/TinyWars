@@ -124,6 +124,7 @@ public class Building : Entity
     private void OnDestroy()
     {
         BuildingDataUpdated = null;
+        Player.ChangeMaxFood(-_buildingData.FoodProvided);
         if (_pc)
             _pc.RemoveSelected(this);
     }
