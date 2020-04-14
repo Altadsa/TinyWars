@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public static class Extensions
@@ -36,7 +33,7 @@ public static class Extensions
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                if (!agent.hasPath || agent.velocity.sqrMagnitude <= Mathf.Epsilon)
                 {
                     return true;
                 }
@@ -45,4 +42,5 @@ public static class Extensions
 
         return false;
     }
+    
 }

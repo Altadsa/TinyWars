@@ -15,12 +15,13 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
     public event Action<BuildingMenuItem, Vector3,bool> TooltipUpdated;
 
     private static Camera _mainCamera;
+    private static UiMessageSystem _messageSystem;
     
     private void Awake()
     {
         _menuButton = GetComponent<Button>();
         _buttonImage = GetComponent<Image>();
-        
+        _messageSystem = FindObjectOfType<UiMessageSystem>();
     }
 
     public void SetButtonData(BuildingMenuItem item, Building building)
@@ -49,7 +50,8 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                 {
                     if (!player.CanAfford(queueable.Data))
                     {
-                        FindObjectOfType<UiMessageSystem>().CostMessage(queueable.Data);
+                        var discrepancy = player.GetDiscrepancy(queueable.Data);
+                        _messageSystem.CostMessage(discrepancy);
                     }
                     else
                     {

@@ -9,7 +9,7 @@
     
     public PlayerResources()
     {
-        _gold = 1000;
+        _gold = 2000;
         _lumber = 1000;
         _iron = 1000;
         _food = 0;

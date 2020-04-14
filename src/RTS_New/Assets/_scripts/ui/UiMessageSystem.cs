@@ -40,6 +40,7 @@ public class UiMessageSystem : MonoBehaviour
         _messageText.text += data.ToString();
         StartCoroutine(ShowMessage());
     }
+
     
     IEnumerator ShowMessage()
     {

@@ -25,7 +25,6 @@ public class UnitActions : MonoBehaviour
             unitAction.StopAction();
             if (!hasValidAction)
                 hasValidAction = unitAction.IsActionValid(targetGo, targetPos);
-            //if (unitAction.IsActionValid(targetGo, targetPos)) return;
         }
     }
 
@@ -48,11 +47,18 @@ public abstract class UnitAction : MonoBehaviour
         StopAllCoroutines();
     }
 
-    protected virtual void Start()
+    private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _unit = GetComponent<Unit>();
         _unitActions = GetComponent<UnitActions>();
+    }
+
+    protected virtual void Start()
+    {
+//        _agent = GetComponent<NavMeshAgent>();
+//        _unit = GetComponent<Unit>();
+//        _unitActions = GetComponent<UnitActions>();
     }
     
     protected IEnumerator MoveToPosition(Vector3 position)

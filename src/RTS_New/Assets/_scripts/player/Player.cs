@@ -93,6 +93,19 @@ public class Player
         _playerResources.ChangeFoodUsage(amount);
         ResourcesUpdated?.Invoke(_playerResources.Data, MaxFood);
     }
+ 
+    public ResourceData GetDiscrepancy(ResourceData data)
+    {
+        var goldDiscrepancy = data.Gold - PlayerResources.Gold;
+        var lumberDiscrepancy = data.Lumber - PlayerResources.Lumber;
+        var ironDiscrepancy = data.Iron - PlayerResources.Iron;
+        var foodDiscrepancy = data.Food + PlayerResources.Food;
+        foodDiscrepancy = foodDiscrepancy - MaxFood > 0 ? foodDiscrepancy - MaxFood : 0;
+        return new ResourceData(goldDiscrepancy,
+            lumberDiscrepancy,
+            ironDiscrepancy,
+            foodDiscrepancy);
+    }
     
 }
 
@@ -114,8 +127,26 @@ public struct ResourceData
 
     public override string ToString()
     {
-        return $"\n\tGold: {Gold}\n\tLumber: {Lumber}\n\tIron: {Iron}\n\tFood: {Food}";
+        var dataString = "";
+        dataString += Gold > 0 ? $"\n\tGold: {Gold}" : "";
+        dataString += Lumber > 0 ? $"\n\tLumber: {Lumber}" : "";
+        dataString += Iron > 0 ? $"\n\tIron: {Iron}" : "";
+        dataString += Food > 0 ? $"\n\tFood: {Food}" : "";
+        return dataString;
     }
+
+    public ResourceData GetDiscrepancy(ResourceData data)
+    {
+        var goldDiscrepancy = data.Gold - Gold;
+        var lumberDiscrepancy = data.Lumber - Lumber;
+        var ironDiscrepancy = data.Iron - Iron;
+        var foodDiscrepancy = data.Food;
+        return new ResourceData(goldDiscrepancy,
+            lumberDiscrepancy,
+            ironDiscrepancy,
+            foodDiscrepancy);
+    }
+    
 }
 
 public enum ResourceType
