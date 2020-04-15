@@ -87,6 +87,10 @@ public class Building : Entity
 
     private void GetNewModifiers(BuildingData data)
     {
+        // update max food if new provided food is an increase
+        var foodDifference = data.FoodProvided - _buildingData.FoodProvided;
+        if (foodDifference > 0)
+            Player.ChangeMaxFood(foodDifference);
         // Remove subscription to old modifier object.
         var oldModifiers = Player.GetBuildingModifiers(_buildingData.BuildingType);
         oldModifiers.ModifiersChanged -= UpdateModifiers;
@@ -95,6 +99,7 @@ public class Building : Entity
         var newModifiers = Player.GetBuildingModifiers(_buildingData.BuildingType);
         UpdateModifiers(newModifiers.EntityModifiers);
         newModifiers.ModifiersChanged += UpdateModifiers;
+        
     }
 
     public void SetRally()
