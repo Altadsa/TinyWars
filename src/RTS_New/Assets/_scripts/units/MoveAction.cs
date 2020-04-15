@@ -8,7 +8,6 @@ using UnityEngine.AI;
 /// </summary>
 public class MoveAction : UnitAction
 {
-    [SerializeField] private NavMeshAgent agent;
 
     public int Priority { get; } = 3;
     public override bool IsActionValid(GameObject targetGo, Vector3 targetPos)
@@ -19,7 +18,7 @@ public class MoveAction : UnitAction
 
     IEnumerator Move(Vector3 position)
     {
-        yield return StartCoroutine(MoveToPosition(position));
+        yield return StartCoroutine(MoveToPosition(position, _agent.stoppingDistance));
         _unitActions.SetState(UnitState.IDLE);
     }
 }

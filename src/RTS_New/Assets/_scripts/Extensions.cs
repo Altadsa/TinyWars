@@ -27,16 +27,15 @@ public static class Extensions
         return Mathf.Abs((bPosition - point).magnitude);
     }
 
-    public static bool TotallyStopped(this NavMeshAgent agent)
+    public static bool TotallyStopped(this NavMeshAgent agent, float stopPoint)
     {
         if (!agent.pathPending)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (agent.remainingDistance <= stopPoint)
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude <= Mathf.Epsilon)
-                {
+
                     return true;
-                }
+
             }
         }
 

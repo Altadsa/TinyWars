@@ -47,6 +47,10 @@ public class GatherAction : UnitAction
     private void TargetResourceDepleted()
     {
         _currentResource = null;
+        StopAllCoroutines();
+        if (_agent.hasPath)
+            _agent.SetDestination(transform.position);
+        _unitActions.SetState(UnitState.IDLE);
         if (_resourceCount > 0)
             StartCoroutine(StoreResource());
     }
@@ -94,7 +98,7 @@ public class GatherAction : UnitAction
     IEnumerator Gather()
     {
         var dst = _currentResource.transform.position;
-        yield return StartCoroutine(MoveToPosition(dst));
+        yield return StartCoroutine(MoveToPosition(dst, _agent.stoppingDistance));
         var currentCarryWeight = 0;
         var resourceWeight = _currentResource.Weight;
         _unitActions.SetState(UnitState.ACT);
@@ -112,7 +116,7 @@ public class GatherAction : UnitAction
     IEnumerator StoreResource()
     {
         var dst = _dropOffBuilding.transform.position;
-        yield return StartCoroutine(MoveToPosition(dst));
+        yield return StartCoroutine(MoveToPosition(dst, _agent.stoppingDistance));
         _unitActions.SetState(UnitState.IDLE);
         _player.AddToResources(_resourceType, _resourceCount);
         _resourceCount = 0;

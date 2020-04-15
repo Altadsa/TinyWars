@@ -52,7 +52,7 @@ public class CombatAction : UnitAction
     {
         health.EntityDestroyed += TargetDestroyed;
         var tarPos = entity.transform.position;
-        yield return StartCoroutine(MoveToPosition(tarPos));
+        yield return StartCoroutine(MoveToPosition(tarPos, _range));
         _unitActions.SetState(UnitState.ACT);
         while (health)
         {

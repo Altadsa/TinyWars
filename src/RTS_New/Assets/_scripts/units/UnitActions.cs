@@ -56,18 +56,16 @@ public abstract class UnitAction : MonoBehaviour
 
     protected virtual void Start()
     {
-//        _agent = GetComponent<NavMeshAgent>();
-//        _unit = GetComponent<Unit>();
-//        _unitActions = GetComponent<UnitActions>();
+
     }
     
-    protected IEnumerator MoveToPosition(Vector3 position)
+    protected IEnumerator MoveToPosition(Vector3 position, float stopDistance)
     {
         _unitActions.SetState(UnitState.MOVE);
-        //_agent.isStopped = false;
+        _agent.isStopped = false;
         _agent.SetDestination(position);
         yield return new WaitUntil(() => _agent.hasPath);
-        yield return new WaitUntil(() => _agent.TotallyStopped());
-        //_agent.isStopped = false;
+        yield return new WaitUntil(() => _agent.remainingDistance <= stopDistance);
+        _agent.isStopped = true;
     }
 }

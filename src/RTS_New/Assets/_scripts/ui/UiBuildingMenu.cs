@@ -28,7 +28,7 @@ public class UiBuildingMenu
     {
         if (entities.Count == 0 || entities[0] is Unit || entities[0] == null)
         {
-            _rallyPoint.RallyPointSet();
+            //_rallyPoint.RallyPointSet();
             _buildingMenuGo.SetActive(false);
             return; 
         }
