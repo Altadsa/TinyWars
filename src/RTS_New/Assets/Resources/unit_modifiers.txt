@@ -7,6 +7,7 @@ PEASANT=MoveSpeed=5
 PEASANT=GatherSpeed=1
 PEASANT=BuildSpeed=1
 PEASANT=ResourceCapacity=10
+PEASANT=Range=1
 SWORDSMAN=Damage=1
 SWORDSMAN=Armour=0
 SWORDSMAN=AttackSpeed=1.25
