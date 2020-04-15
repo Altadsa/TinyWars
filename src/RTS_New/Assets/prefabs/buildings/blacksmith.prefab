@@ -143,9 +143,8 @@ MonoBehaviour:
   _buildingData: {fileID: 11400000, guid: 25fd0c12e633716488d5d48eb83f7740, type: 2}
   _buildingMenuItems:
   - {fileID: 11400000, guid: ac0c0487951bb44488aaf64c41ba1283, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 00158a1fb07b0aa4e9df3170085f4835, type: 2}
+  - {fileID: 11400000, guid: 80c0a45e22aeff244816171a239f522c, type: 2}
 --- !u!114 &6786169187473563826
 MonoBehaviour:
   m_ObjectHideFlags: 0
