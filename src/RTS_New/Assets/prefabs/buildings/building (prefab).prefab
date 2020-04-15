@@ -83,9 +83,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5565896827126889803}
   - component: {fileID: 196383061388563790}
+  - component: {fileID: 3543158471811576845}
   - component: {fileID: 2897535519783110684}
   - component: {fileID: 6612296559839454435}
-  - component: {fileID: 1622359860191822422}
   - component: {fileID: 6881582127248548997}
   m_Layer: 9
   m_Name: building (prefab)
@@ -125,6 +125,20 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!64 &3543158471811576845
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300379378642578081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!114 &2897535519783110684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,19 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff5089daf4d88143b6768de73b516d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1622359860191822422
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3300379378642578081}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6881582127248548997
 MonoBehaviour:
   m_ObjectHideFlags: 0
