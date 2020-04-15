@@ -26,6 +26,7 @@ public abstract class EntityHealth : MonoBehaviour
     protected void CreateHealthUi()
     {
         GetComponent<UiEntityHealthBar>().Init();
+        UpdateHealth();
     }
 
     protected virtual void CheckHealth()
