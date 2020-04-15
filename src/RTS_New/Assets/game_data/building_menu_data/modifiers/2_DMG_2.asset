@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe35903554a24f2fbf89e445ba61b797, type: 3}
+  m_Name: 2_DMG_2
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: d9a45c0b9dab78b40b122b86f15980e6, type: 3}
+  _name: Dwaren Smith
+  _description: 'We have enlisted the services of a master blacksmith. Further increases
+    the damage of Commanders, Knights, Spearmen and Swordsmen. '
+  _priority: 1
+  _time: 90
+  _requirements: 04000000
+  _goldCost: 260
+  _lumberCost: 80
+  _ironCost: 120
+  _foodCost: 0
+  _affectedUnits: 0e000000
+  _modifierKey: 0
+  _value: 1.25
+  _nextUpgrade: {fileID: 0}
