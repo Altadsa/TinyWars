@@ -15,7 +15,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 691245df1183d804583a303b8c3fff1f, type: 3}
   _name: Blacksmith
   _description: Researches upgrades to weapons and armour. Drop-off for Iron
-  _priority: 3
+  _priority: 4
   _buildingPrefab: {fileID: 3303625002740042829, guid: f8d9773ff2ed3f24f87188d2092f1090,
     type: 3}
   _goldCost: 160

@@ -15,11 +15,11 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: e1d8b6883e0e5ed4384d6631a23ba29d, type: 3}
   _name: Archery
   _description: Recruits ranged units. Can research new abilities for ranged units.
-  _priority: 4
+  _priority: 3
   _buildingPrefab: {fileID: 33295920058709549, guid: 435112b83693f2a40a066137c3196a5b,
     type: 3}
   _goldCost: 240
   _lumberCost: 120
   _ironCost: 0
-  _requirements: 09000000
+  _requirements: 
   _foodProvided: 0

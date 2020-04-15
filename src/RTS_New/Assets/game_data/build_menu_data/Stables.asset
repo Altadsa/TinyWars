@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a51f24778f415d4cac210c295e32b03, type: 3}
-  m_Name: Barracks
+  m_Name: Stables
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: ff3e8b4f5e8a0984a8b4b1543530497c, type: 3}
-  _name: Barracks
-  _description: Allows the player to recruit melee units and research new abilities.
-  _priority: 1
-  _buildingPrefab: {fileID: 4602336477293120865, guid: 1635fbf57b7200547bc15e4006dcb072,
-    type: 3}
-  _goldCost: 120
-  _lumberCost: 40
-  _ironCost: 0
-  _requirements: 
+  _icon: {fileID: 21300000, guid: cfb138414a135b84cb3251fe93602604, type: 3}
+  _name: Stables
+  _description: Recruits mounted units. Researches upgrades for mounted units.
+  _priority: 9
+  _buildingPrefab: {fileID: 0}
+  _goldCost: 320
+  _lumberCost: 140
+  _ironCost: 60
+  _requirements: 09000000
   _foodProvided: 0

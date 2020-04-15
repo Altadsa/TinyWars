@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a51f24778f415d4cac210c295e32b03, type: 3}
-  m_Name: Workshop
+  m_Name: Tower
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 9dc9c3011ed7e824aace762ef31f4331, type: 3}
-  _name: Workshop
-  _description: Building that constructs siege engines. Researches improvements for
-    siege engines.
-  _priority: 13
-  _buildingPrefab: {fileID: 3504778991987722223, guid: e2681a59014e23c4db10f971c5a069f1,
-    type: 3}
-  _goldCost: 260
-  _lumberCost: 0
+  _icon: {fileID: 21300000, guid: 6f469c6cd87f0114e82fabad93a26b6c, type: 3}
+  _name: Lookout Tower
+  _description: Increases player's vision over the area. Can be upgraded to add defensive
+    capabilities.
+  _priority: 6
+  _buildingPrefab: {fileID: 0}
+  _goldCost: 80
+  _lumberCost: 40
   _ironCost: 0
-  _requirements: 04000000
+  _requirements: 
   _foodProvided: 0
