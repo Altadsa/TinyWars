@@ -74,6 +74,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 370613936912972887, guid: 037e62d8f2274f04caa10d4537619031,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 370613936912972888, guid: 037e62d8f2274f04caa10d4537619031,
         type: 3}
       propertyPath: _data
