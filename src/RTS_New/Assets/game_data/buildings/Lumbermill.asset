@@ -9,17 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a51f24778f415d4cac210c295e32b03, type: 3}
-  m_Name: LumberMill
+  m_Script: {fileID: 11500000, guid: 6e64e981af5d0864494523fca5ff33f8, type: 3}
+  m_Name: Lumbermill
   m_EditorClassIdentifier: 
+  _buildingType: 10
+  _name: Lumbermill
   _icon: {fileID: 21300000, guid: abe536532b559e64f99f8a00e0578aaa, type: 3}
-  _name: Lumber Mill
-  _description: Drop off for Lumber. Can research improvements for buildings.
-  _priority: 5
-  _buildingPrefab: {fileID: 2107734429593494697, guid: 3abab10172dc2e846ae22e02490004ef,
-    type: 3}
-  _goldCost: 100
-  _lumberCost: 20
-  _ironCost: 40
-  _requirements: 
   _foodProvided: 0

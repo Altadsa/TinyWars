@@ -16,7 +16,8 @@ MonoBehaviour:
   _name: Stables
   _description: Recruits mounted units. Researches upgrades for mounted units.
   _priority: 9
-  _buildingPrefab: {fileID: 0}
+  _buildingPrefab: {fileID: 5473720391304066224, guid: ca13f9b0fc0930d479e86be1535a209d,
+    type: 3}
   _goldCost: 320
   _lumberCost: 140
   _ironCost: 60

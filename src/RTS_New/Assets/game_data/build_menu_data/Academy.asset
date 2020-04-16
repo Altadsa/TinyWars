@@ -16,7 +16,8 @@ MonoBehaviour:
   _name: Academy
   _description: Recruits special combat units. Can research upgrades to unit quality.
   _priority: 12
-  _buildingPrefab: {fileID: 0}
+  _buildingPrefab: {fileID: 4111562938153779985, guid: 0221bc9becec2ce42b9d73aac8a17c16,
+    type: 3}
   _goldCost: 280
   _lumberCost: 60
   _ironCost: 0

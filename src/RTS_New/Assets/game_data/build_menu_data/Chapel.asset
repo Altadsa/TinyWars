@@ -17,7 +17,8 @@ MonoBehaviour:
   _description: Trains clergymen to heal your injured units. Can research new abilities
     for clergymen.
   _priority: 8
-  _buildingPrefab: {fileID: 0}
+  _buildingPrefab: {fileID: 1691533931681871176, guid: a72493331b85fed48b9e7618d823a1f5,
+    type: 3}
   _goldCost: 160
   _lumberCost: 120
   _ironCost: 0

@@ -17,7 +17,8 @@ MonoBehaviour:
   _description: Increases player's vision over the area. Can be upgraded to add defensive
     capabilities.
   _priority: 6
-  _buildingPrefab: {fileID: 0}
+  _buildingPrefab: {fileID: 5654833318912841715, guid: 3670c251b6cc26544bfb41cd3dd8addc,
+    type: 3}
   _goldCost: 80
   _lumberCost: 40
   _ironCost: 0
