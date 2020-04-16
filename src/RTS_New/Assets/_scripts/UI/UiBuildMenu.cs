@@ -9,10 +9,7 @@ using UnityEngine.UI;
 
 public class UiBuildMenu : MonoBehaviour
 {
-    //When enabled, the build menu gets the available buildings for the player to purchase. Locked buildings should show their requirements and 
-    //should be greyed out to indicate they are unavailable.
-    
-    //Menu needs a reference to the player to inspect its data
+
     [SerializeField] private PlayerController _controller;
     [SerializeField] private BuildArea _buildArea;
     [FormerlySerializedAs("_meunButtons")] 
@@ -31,47 +28,42 @@ public class UiBuildMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        //var buildings = _controller.Player;
-        for (int i = 0; i < _menuButtons.Length; i++)
+
+        foreach (var menuButton in _menuButtons)
         {
-            //Setup buttons for which there exists build data
-            if (i < _menuData.Length)
+            menuButton.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < _menuData.Length; i++)
+        {
+            var building = _menuData[i];
+            var buttonIndex = building.Priority;
+            _menuButtons[buttonIndex].SetButtonData(_menuData[i], _controller.Player);
+            _menuButtons[buttonIndex].GetComponent<Image>().sprite = _menuData[i].Icon;
+
+            var buildingCost = building.Data;
+            var button = _menuButtons[buttonIndex].GetComponent<Button>();
+            button.onClick.AddListener(delegate
             {
-                _menuButtons[i].SetButtonData(_menuData[i], _controller.Player);
-                _menuButtons[i].GetComponent<Image>().sprite = _menuData[i].Icon;
-                var building = _menuData[i];
-                var buildingCost = building.Data;
-                var button = _menuButtons[i].GetComponent<Button>();
-                button.onClick.AddListener(delegate
+                StopAllCoroutines();
+                var canAfford = _controller.Player.CanAfford(buildingCost);
+                var requirementsMet = _controller.Player.RequirementsMet(building.Requirements);
+                if (requirementsMet && canAfford)
                 {
-                    StopAllCoroutines();
-                    var canAfford = _controller.Player.CanAfford(buildingCost);
-                    var requirementsMet = _controller.Player.RequirementsMet(building.Requirements);
-                    if (requirementsMet && canAfford)
-                    {
-                        _controller.Player.DeductResources(buildingCost);
-                        StartCoroutine(SelectBuilding(building));
-                    }
+                    _controller.Player.DeductResources(buildingCost);
+                    StartCoroutine(SelectBuilding(building));
+                }
+                else
+                {
+                    if (!canAfford)
+                        FindObjectOfType<UiMessageSystem>().CostMessage(buildingCost);
                     else
-                    {
-                        if (!canAfford)
-                            FindObjectOfType<UiMessageSystem>().CostMessage(buildingCost);
-                        else
-                            FindObjectOfType<UiMessageSystem>().RequirementMessage(_controller.Player, building.Requirements);
-                    }
-                });
-                _menuButtons[i].gameObject.SetActive(true);
-            }
-            //set all remaining buttons to inactive
-            else
-            {
-                _menuButtons[i].gameObject.SetActive(false);
-            }
+                        FindObjectOfType<UiMessageSystem>().RequirementMessage(_controller.Player, building.Requirements);
+                }
+            });
+            _menuButtons[buttonIndex].gameObject.SetActive(true);
         }
     }
-    
-    //Click on a button, we need to know which building data to pass
-    //Wait for next left click such that we can spawn a building and deduct the appropriate resources
 
     private IEnumerator SelectBuilding(BuildMenuData data)
     {

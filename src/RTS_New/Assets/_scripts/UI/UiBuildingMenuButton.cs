@@ -43,9 +43,10 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
             else 
             {
                 var isUpgrade = queueable is BuildingUpgrade || queueable is ModifierUpgrade;
+                var isUpgradeInQueue = false;
                 if (isUpgrade)
-                    isUpgrade =  building.Queue.IsUpgradeInQueue(queueable);
-                if (isUpgrade) return;
+                    isUpgradeInQueue = building.Queue.IsUpgradeInQueue(queueable); 
+                if (isUpgradeInQueue) return;
                 _menuButton.onClick.AddListener(delegate
                 {
                     if (!player.CanAfford(queueable.Data))
@@ -61,6 +62,7 @@ public class UiBuildingMenuButton : MonoBehaviour, IPointerEnterHandler, IPointe
                         
                         if (isUpgrade)
                         {
+                            TooltipUpdated?.Invoke(_data, Input.mousePosition, false);
                             _menuButton.gameObject.SetActive(false);
                         }
                     }
