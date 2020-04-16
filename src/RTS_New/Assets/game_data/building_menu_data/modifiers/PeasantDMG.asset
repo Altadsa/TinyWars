@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: d9a45c0b9dab78b40b122b86f15980e6, type: 3}
   _name: DMG1
-  _desc: 
-  _time: 10
+  _description: 
   _priority: 1
-  _requirements: 09000000
-  _entityKey: 12
+  _time: 10
+  _requirements: 
+  _goldCost: 0
+  _lumberCost: 0
+  _ironCost: 0
+  _foodCost: 0
+  _affectedUnits: 
   _modifierKey: 0
   _value: 10
   _nextUpgrade: {fileID: 0}

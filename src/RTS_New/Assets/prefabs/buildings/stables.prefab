@@ -164,7 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buildingData: {fileID: 11400000, guid: aa59549cb8dfe4c4d87ac78e4c6f920c, type: 2}
-  _buildingMenuItems: []
+  _buildingMenuItems:
+  - {fileID: 11400000, guid: ac0c0487951bb44488aaf64c41ba1283, type: 2}
+  - {fileID: 11400000, guid: 19b905a88cbcf83458159eff872d7665, type: 2}
+  - {fileID: 11400000, guid: a1150c5c3fb3f1d4598179835784ce5d, type: 2}
 --- !u!114 &4036080917981616207
 MonoBehaviour:
   m_ObjectHideFlags: 0
