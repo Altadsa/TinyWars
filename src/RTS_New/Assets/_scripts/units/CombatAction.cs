@@ -53,13 +53,14 @@ public class CombatAction : UnitAction
         health.EntityDestroyed += TargetDestroyed;
         var tarPos = entity.transform.position;
         yield return StartCoroutine(MoveToPosition(tarPos, _range));
-        _unitActions.SetState(UnitState.ACT);
         while (health)
         {
+            yield return new WaitForSeconds(_speed);
+            _unitActions.SetState(UnitState.ACT);
             var dmg = _baseDamage * _damage;
             health.TakeDamage(Random.Range(dmg/2, dmg));
-            yield return new WaitForSeconds(_speed);
         }
+        _unitActions.SetState(UnitState.IDLE);
     }
     
 }
