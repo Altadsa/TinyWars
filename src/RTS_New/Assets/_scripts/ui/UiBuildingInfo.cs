@@ -64,8 +64,8 @@ public class UiBuildingInfo
         // Set queue info
         ProcessQueue(0);
         var queue = _target.Queue;
-        SetQueueButtons(queue, queue.Queue); 
         if (!queue) return;
+        SetQueueButtons(queue, queue.Queue);
         queue.QueueChanged += UpdateQueue;
         queue.QueueProcessing += ProcessQueue;
     }

@@ -16,7 +16,8 @@ public class BuildingQueue : MonoBehaviour
 
     private QueueRts<Queueable> _buildQueue;
     private Building _building;
-    
+
+    private float _queueProgress = 0f;
     
     private void Awake()
     {
@@ -57,16 +58,17 @@ public class BuildingQueue : MonoBehaviour
     {
         // Halt Queue production while we remove the item
         StopAllCoroutines();
-        
         var removedItem = _buildQueue.RemoveFromQueue(index);
         var player = _building.Player;
+
+        var newProgress = index != 0 ? _queueProgress : 0f;
         
         player.RefundResources(removedItem.Data);
         
         // Start the queue again if it isn't empty
         // Otherwise reset the elpased time
         if (!_buildQueue.IsEmpty())
-            StartCoroutine(ProcessQueue());
+            StartCoroutine(ProcessQueue(newProgress));
         else
             QueueProcessing?.Invoke(0);
         QueueChanged?.Invoke();
@@ -86,23 +88,25 @@ public class BuildingQueue : MonoBehaviour
     
     
     // We only want to update the Queue once it has items in it.
-    IEnumerator ProcessQueue()
+    IEnumerator ProcessQueue(float progress = 0f)
     {
         do
         {
-            float elapsedTime = 0;
+            _queueProgress = progress;
             var item = _buildQueue.Peek();
             var queueTime = item.Time;
-            while (elapsedTime < queueTime)
+            while (_queueProgress < queueTime)
             {
-                elapsedTime += Time.deltaTime;
-                QueueProcessing?.Invoke(Math.Round(elapsedTime/queueTime, 2));
+                _queueProgress += Time.deltaTime;
+                QueueProcessing?.Invoke(Math.Round(_queueProgress/queueTime, 2));
                 yield return new WaitForEndOfFrame();
             }
             item.Complete(_building);
+
             _buildQueue.Dequeue();
             QueueChanged?.Invoke();
         } while (!_buildQueue.IsEmpty());
+        _queueProgress = 0f;
         QueueProcessing?.Invoke(0);
     }
     
