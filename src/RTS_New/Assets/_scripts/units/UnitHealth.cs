@@ -29,7 +29,7 @@ public class UnitHealth : EntityHealth
             return;
         }
         _unitActions.SetState(UnitState.DIE);
-        Destroy(gameObject,2);
+        //Destroy(gameObject,2);
     }
 
     private void UpdateModifiers()
