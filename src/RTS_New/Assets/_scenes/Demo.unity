@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resource: 0
   _weight: 1
-  _resourceCount: 100
+  _resourceCount: 10000
 --- !u!1 &721737238
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resource: 1
   _weight: 3
-  _resourceCount: 25
+  _resourceCount: 10000
 --- !u!65 &1137193481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178723673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.8, y: 0, z: 0}
+  m_LocalPosition: {x: 9.68, y: 0, z: -24.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -610,8 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartUnitCount: 1
   PLayerCount: 2
-  StartUnit: {fileID: 1629727984278909781, guid: eb343a77c6ae0dd499a6fdbd6ff2dca0,
-    type: 3}
+  StartUnit: {fileID: 11400000, guid: a1150c5c3fb3f1d4598179835784ce5d, type: 2}
   StartBuilding: {fileID: 5321121232333414465, guid: 7115b47ebeb5f4242a322c1f143e56db,
     type: 3}
   PlayerPrefab: {fileID: 525903319877800112, guid: 11eee3829b8a49f45a078afd8bef4edf,
@@ -738,7 +737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884949190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: 0, z: 0}
+  m_LocalPosition: {x: -11.74, y: 0, z: -24.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -809,7 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resource: 2
   _weight: 5
-  _resourceCount: 20
+  _resourceCount: 10000
 --- !u!65 &1976132532
 BoxCollider:
   m_ObjectHideFlags: 0

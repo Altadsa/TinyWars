@@ -20,6 +20,8 @@ public class UiBuildMenu : MonoBehaviour
     [Header("Debug")] public BuildMenuData[] _menuData;
     private Player _player;
     private Camera _mCam;
+
+    private bool _buildingSelected = false;
     
     private void Awake()
     {
@@ -56,7 +58,10 @@ public class UiBuildMenu : MonoBehaviour
                 else
                 {
                     if (!canAfford)
-                        FindObjectOfType<UiMessageSystem>().CostMessage(buildingCost);
+                    {
+                        var discrepancy = _controller.Player.GetDiscrepancy(buildingCost);
+                        FindObjectOfType<UiMessageSystem>().CostMessage(discrepancy);
+                    }
                     else
                         FindObjectOfType<UiMessageSystem>().RequirementMessage(_controller.Player, building.Requirements);
                 }
