@@ -17,6 +17,8 @@ using UnityEngine.Serialization;
     Camera _mCamera;
     public event Action<List<Entity>> SelectionUpdated;
 
+    private Vector2 _pointerDownPosition;
+    
     private void Awake()
     {
         _mCamera = Camera.main;
@@ -33,12 +35,14 @@ using UnityEngine.Serialization;
         {
             startMousePosition = _mCamera.ScreenToViewportPoint(Input.mousePosition);
             Select(_cameraController.Hit, Input.GetKey(KeyCode.LeftControl));
+            _pointerDownPosition = eventData.position;
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON) && IsDeltaReal(eventData.delta) )
+        var delta = _pointerDownPosition - eventData.position;
+        if (Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON) && IsDeltaReal(delta) )
         {
             endMousePosition = _mCamera.ScreenToViewportPoint(Input.mousePosition);
             if (startMousePosition != endMousePosition)

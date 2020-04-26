@@ -27,7 +27,7 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         if (Input.GetMouseButtonDown(LEFT_MOUSE_BUTTON))
         {
-            _boxStart = Input.mousePosition;
+            _boxStart = eventData.position;
             StartCoroutine(DrawBox());
         }
     }
@@ -51,14 +51,20 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         {
             _boxEnd = Input.mousePosition;
             
-            Vector3 centre = (_boxStart + _boxEnd) / 2;
-            _boxStart.z = 0;
+            Debug.Log("Start " + _boxStart);
+            
             float sizeX = Mathf.Abs(_boxStart.x - _boxEnd.x);
             float sizeY = Mathf.Abs(_boxStart.y - _boxEnd.y);
-
+            
+            var centre = (_boxStart + _boxEnd) / 2;
+//            var centreX = _boxEnd.x > _boxStart.x ? sizeX : -sizeX;
+//            var centreY = _boxEnd.y > _boxStart.y ? sizeY : -sizeY;
+//            var centre = _boxStart + new Vector3(centreX / 2, centreY / 2, 0);
+            _boxStart.z = 0;
+            
             _selectionBox.sizeDelta = new Vector2(sizeX, sizeY);
             _selectionBox.position = centre;       
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
 
     }
