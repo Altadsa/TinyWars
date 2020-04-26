@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
@@ -10,16 +11,20 @@ public class UiUnitSelection : MonoBehaviour
     [SerializeField] private PlayerSelectionController _sc;
     [SerializeField] private GameObject _selectionUI;
     [SerializeField] private Transform _selection;
-    private GameObject[] _selectionObjects;
+    private UiUnitInfoButton[] _selectionObjects;
 
     [Header("****INFO PANEL****")] 
     public Image Icon;
 
+    public TMP_Text UnitName;
+    
     public Image Health;
 
     public TMP_Text HealthText;
 
     public TMP_Text DamageText;
+
+    private EntityHealth _health;
     
     
     void Awake()
@@ -42,14 +47,19 @@ public class UiUnitSelection : MonoBehaviour
         {
             var unit = units[i] as Unit;
 
-            _selectionObjects[i].GetComponent<Image>().sprite = unit.Data.Icon;
-            _selectionObjects[i].SetActive(true);
-            var button = _selectionObjects[i].GetComponent<Button>();
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(delegate
+            _selectionObjects[i].SetButton(unit, delegate
             {
                 SetInfo(unit);
             });
+            
+//            _selectionObjects[i].GetComponent<Image>().sprite = unit.Data.Icon;
+//            var button = _selectionObjects[i].GetComponent<Button>();
+//            button.onClick.RemoveAllListeners();
+//            button.onClick.AddListener(delegate
+//            {
+//                SetInfo(unit);
+//            });
+            _selectionObjects[i].SetActive(true);
         }
 
         for (int i = units.Count; i < _selectionObjects.Length; i++)
@@ -60,16 +70,28 @@ public class UiUnitSelection : MonoBehaviour
 
     private void SetInfo(Unit unit)
     {
+        if (_health)
+            _health.HealthChanged -= UpdateHealth;
         Icon.sprite = unit.Data.Icon;
-        
+        UnitName.text = unit.name;
+        _health = unit.Health;
+        UpdateHealth(_health.CurrentHealth, unit.Data.Health);
+        _health.HealthChanged += UpdateHealth;
+    }
+
+    private void UpdateHealth(float current, float max)
+    {
+        Health.fillAmount = current / max;
+        HealthText.text = $"{current}/{max}";
     }
     
     private void SetObjects()
     {
-        _selectionObjects = new GameObject[_selection.childCount];
+        _selectionObjects = new UiUnitInfoButton[_selection.childCount];
         for (int i = 0; i < _selection.childCount; i++)
         {
-            _selectionObjects[i] = _selection.GetChild(i).GetChild(0).gameObject;
+            var obj = _selection.GetChild(i).GetChild(0);
+            _selectionObjects[i] = obj.GetComponent<UiUnitInfoButton>();
             _selectionObjects[i].SetActive(false);
         }
     }

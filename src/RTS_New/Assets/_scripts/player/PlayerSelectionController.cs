@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -103,6 +104,7 @@ using UnityEngine.Serialization;
 
     protected override void UpdateSelection()
     {
+        Selected.OrderBy(e => e.name);
         SelectionUpdated?.Invoke(Selected);
     }
     
