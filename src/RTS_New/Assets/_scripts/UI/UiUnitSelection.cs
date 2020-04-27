@@ -49,10 +49,15 @@ public class UiUnitSelection : MonoBehaviour
         {
             var unit = units[i] as Unit;
             
-            _selectionObjects[i].SetButton(unit, delegate
-            {
-                SetInfo(unit);
-            });
+            _selectionObjects[i].SetButton(unit, 
+                delegate
+                {
+                    SetInfo(unit);
+                },
+                delegate
+                {
+                    _sc.OnUiSelect(unit);
+                });
             
             _selectionObjects[i].SetActive(true);
         }
@@ -69,9 +74,17 @@ public class UiUnitSelection : MonoBehaviour
             _health.HealthChanged -= UpdateHealth;
         Icon.sprite = unit.Data.Icon;
         UnitName.text = unit.Data.Name;
+        
+        // health
         _health = unit.Health;
         UpdateHealth(_health.CurrentHealth, unit.Data.Health);
         _health.HealthChanged += UpdateHealth;
+        
+        // damage
+        var combat = unit.GetComponent<CombatAction>();
+        var maxDmg = combat.Damage;
+        maxDmg = (float) Math.Round(maxDmg, 2);
+        DamageText.text = $"Damage: {maxDmg / 2} - {maxDmg}";
     }
 
     private void UpdateHealth(float current, float max)
