@@ -16,6 +16,7 @@ public class UiUnitInfoButton : MonoBehaviour
             _unit.Health.HealthChanged -= UpdateUnitHealth;
         _unit = unit;
         _icon.sprite = _unit.Data.Icon;
+        UpdateUnitHealth(_unit.Health.CurrentHealth, _unit.Data.Health);
         _unit.Health.HealthChanged += UpdateUnitHealth;
         _button.onClick.RemoveAllListeners();
         _button.onClick.AddListener(onClick);

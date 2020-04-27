@@ -50,9 +50,7 @@ public class UiSelectionBox : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         while (!Input.GetMouseButtonUp(LEFT_MOUSE_BUTTON))
         {
             _boxEnd = Input.mousePosition;
-            
-            Debug.Log("Start " + _boxStart);
-            
+
             float sizeX = Mathf.Abs(_boxStart.x - _boxEnd.x);
             float sizeY = Mathf.Abs(_boxStart.y - _boxEnd.y);
             

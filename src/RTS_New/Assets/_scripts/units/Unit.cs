@@ -11,7 +11,6 @@ public class Unit : Entity
     private Modifiers _modifiers;
 
     UnitActions _unitActions;
-    //[SerializeField] UnitHealth health;
 
     public override void Initialize(Player player)
     {
@@ -31,5 +30,11 @@ public class Unit : Entity
     public void AssignAction(GameObject targetGo, Vector3 targetPos)
     {
         _unitActions.DetermineAction(targetGo, targetPos);
+    }
+    
+    private void OnDestroy()
+    {
+        if (!_pc) return;
+        _pc.RemoveSelected(this);
     }
 }

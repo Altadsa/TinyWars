@@ -25,11 +25,13 @@ public class UiUnitSelection : MonoBehaviour
     public TMP_Text DamageText;
 
     private EntityHealth _health;
-    
+
+    private List<UnitHealth> _selectedUnits;
     
     void Awake()
     {
         SetObjects();
+        _selectedUnits = new List<UnitHealth>();
         _sc.SelectionUpdated += SelectionUpdated;
         _selectionUI.SetActive(false);
     }
@@ -46,19 +48,12 @@ public class UiUnitSelection : MonoBehaviour
         for (int i = 0; i < units.Count; i++)
         {
             var unit = units[i] as Unit;
-
+            
             _selectionObjects[i].SetButton(unit, delegate
             {
                 SetInfo(unit);
             });
             
-//            _selectionObjects[i].GetComponent<Image>().sprite = unit.Data.Icon;
-//            var button = _selectionObjects[i].GetComponent<Button>();
-//            button.onClick.RemoveAllListeners();
-//            button.onClick.AddListener(delegate
-//            {
-//                SetInfo(unit);
-//            });
             _selectionObjects[i].SetActive(true);
         }
 
@@ -73,7 +68,7 @@ public class UiUnitSelection : MonoBehaviour
         if (_health)
             _health.HealthChanged -= UpdateHealth;
         Icon.sprite = unit.Data.Icon;
-        UnitName.text = unit.name;
+        UnitName.text = unit.Data.Name;
         _health = unit.Health;
         UpdateHealth(_health.CurrentHealth, unit.Data.Health);
         _health.HealthChanged += UpdateHealth;
