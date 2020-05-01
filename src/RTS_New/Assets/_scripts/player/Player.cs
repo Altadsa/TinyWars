@@ -7,7 +7,8 @@ public class Player
 {
     public Color Color { get; private set; }
     
-    public Material EntityMaterial { get; private set; }
+    public Material BuildingMaterial { get; private set; }
+    public Material UnitMaterial { get; private set; }
     public bool IsAi { get; private set; }
 
     public event Action<ResourceData,int> ResourcesUpdated;
@@ -28,10 +29,11 @@ public class Player
 
     public ResourceData PlayerResources => _playerResources.Data;
     public int MaxFood => _playerResources.MaxFood;
-    public Player(Color color, Material entityMaterial, bool isAi)
+    public Player(Color color, Material buildingMaterial, Material unitMaterial, bool isAi)
     {
         Color = color;
-        EntityMaterial = entityMaterial;
+        BuildingMaterial = buildingMaterial;
+        UnitMaterial = unitMaterial;
         IsAi = isAi;
         _playerModifiers = new PlayerModifiers();
         _playerResources = new PlayerResources();

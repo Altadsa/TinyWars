@@ -34,7 +34,7 @@ public class Building : Entity
     public override void Initialize(Player player)
     {
         base.Initialize(player);
-
+        GetComponentInChildren<MeshRenderer>().material = player.BuildingMaterial;
         
         // setup components
         GetComponent<MeshCollider>().enabled = true;
@@ -139,7 +139,7 @@ public class Building : Entity
         var _rallyPoint = FindObjectOfType<BuildingRallyPoint>();
         var _camera = FindObjectOfType<CameraController>();
         Vector3 newPosHit = Vector3.zero;
-        while (!Input.GetMouseButtonDown(0))
+        while (!_camera.BlockOnInput(0))
         {
             if (Input.GetMouseButtonDown(1))
             {
@@ -150,6 +150,10 @@ public class Building : Entity
             _rallyPoint.SetRallyPoint(newPosHit);
             yield return null;
         }
+        yield return new WaitForEndOfFrame();
         RallyPoint = newPosHit;
+        _rallyPoint.RallyPointSet();
+        _camera.BlockRaycast(false);
+
     }
 }

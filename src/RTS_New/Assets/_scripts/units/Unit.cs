@@ -15,6 +15,8 @@ public class Unit : Entity
     public override void Initialize(Player player)
     {
         base.Initialize(player);
+        GetComponentInChildren<SkinnedMeshRenderer>().material = player.UnitMaterial;
+        
         _unitActions = GetComponent<UnitActions>();
         Health = GetComponent<UnitHealth>();
         SetupModifiers();

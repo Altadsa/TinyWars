@@ -14,7 +14,7 @@ public class BuildingConstruction : MonoBehaviour
         {
             var model = transform.GetChild(i);
             var meshRenderer = model.GetComponent<MeshRenderer>();
-            meshRenderer.material = player.EntityMaterial;
+            meshRenderer.material = player.BuildingMaterial;
             if (i != 0)
                 model.gameObject.SetActive(false);
         }

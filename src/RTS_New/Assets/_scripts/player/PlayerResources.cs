@@ -9,11 +9,11 @@
     
     public PlayerResources()
     {
-        _gold = 2000;
-        _lumber = 1000;
-        _iron = 1000;
+        _gold = 10000;
+        _lumber = 10000;
+        _iron = 10000;
         _food = 0;
-        _maxFood = 24;
+        _maxFood = 240;
     }
 
     public ResourceData Data => new ResourceData(_gold,_lumber,_iron,_food);

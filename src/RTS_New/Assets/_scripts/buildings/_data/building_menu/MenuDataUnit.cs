@@ -13,6 +13,6 @@ public class MenuDataUnit : Queueable
         var spawnPos = building.UnitSpawn;
         var newUnit = Instantiate(_unitPrefab, spawnPos, Quaternion.identity);
         newUnit.Initialize(building.Player);
-        newUnit.AssignAction(null, building.RallyPoint);
+        newUnit.AssignAction(FindObjectOfType<Terrain>().gameObject, building.RallyPoint);
     }
 }

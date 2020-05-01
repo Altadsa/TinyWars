@@ -15,6 +15,8 @@ public class GameInit : MonoBehaviour
 
     //public Dictionary<Color, Texture> entityTextures;
     public Material[] PlayerColors;
+
+    public Material[] PlayerUnitColors;
     
     private void Awake()
     {
@@ -24,14 +26,14 @@ public class GameInit : MonoBehaviour
         {
             if (!realPlayerSet)
             {
-                _players[i] = new Player(Color.blue, PlayerColors[i], false);
+                _players[i] = new Player(Color.blue, PlayerColors[i], PlayerUnitColors[i], false);
                 var controller = Instantiate(PlayerPrefab, StartPositions[i].position, Quaternion.identity);
                 controller.Initialize(_players[i]);
                 realPlayerSet = true;
             }
             else
             {
-                _players[i] = new Player(Color.red, PlayerColors[i], true);
+                _players[i] = new Player(Color.red, PlayerColors[i], PlayerUnitColors[i], true);
                 
                 var controller = Instantiate(AiPrefab, StartPositions[i].position, Quaternion.identity);    
                 controller.Initialize(_players[i]);
@@ -49,12 +51,13 @@ public class GameInit : MonoBehaviour
             
             var newBuilding = Instantiate(StartBuilding, start, StartBuilding.transform.rotation);
             newBuilding.Initialize(player);
-            newBuilding.GetComponentInChildren<MeshRenderer>().material = player.EntityMaterial;
-            
+
+
             for (int j = 0; j < StartUnitCount; j++)
             {
 
                 player.ChangeFoodUsage(unitFoodUse);
+                
                 StartUnit.Complete(newBuilding);                
             }
 

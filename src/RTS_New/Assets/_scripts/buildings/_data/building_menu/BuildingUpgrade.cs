@@ -26,6 +26,6 @@ public class BuildingUpgrade : Queueable
         newModel.transform.rotation =  oldModel.transform.rotation;
         Destroy(oldModel.gameObject);
         
-        newModel.GetComponent<MeshRenderer>().material = player.EntityMaterial;
+        newModel.GetComponent<MeshRenderer>().material = player.BuildingMaterial;
     }
 }
